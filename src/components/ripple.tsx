@@ -6,6 +6,8 @@ import { useRipple } from "../hooks/use_ripple";
 
 import type { PointerEvent, PointerEventHandler, ReactElement, ReactNode } from "react";
 
+import "./ripple.css";
+
 export type RippleChildProps = {
   children?: ReactNode;
   className?: string;

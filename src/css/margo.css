@@ -3,6 +3,5 @@
 @import "./theme.css";
 @import "./base.css";
 @import "./utility.css";
-@import "./components.css";
 
 @source "../**/*.{ts,tsx,js,mjs}";

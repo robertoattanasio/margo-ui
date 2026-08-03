@@ -2,6 +2,8 @@ import { cn } from "../helpers/cn";
 
 import type { PointerEvent } from "react";
 
+import "./use_glow_border.css";
+
 export type GlowBorderPosition = "up" | "down" | "left" | "right" | "all";
 
 const GLOW_BORDER_POSITION_CLASS: Record<GlowBorderPosition, string> = {

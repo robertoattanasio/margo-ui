@@ -31,7 +31,9 @@ import { Button, Card } from "margo-ui";
 </Card>;
 ```
 
-`margo-ui/css` ships design tokens, a base reset, the `dark` / `closed` variants, the utilities and the component styles. It also declares its own `@source`, so Tailwind picks up the classes used inside the package with no extra configuration.
+`margo-ui/css` ships design tokens, a base reset, the `dark` / `closed` variants and the utilities. It also declares its own `@source`, so Tailwind picks up the classes used inside the package with no extra configuration. Styles belonging to a single component or hook are imported by that file, so they load only when you use it.
+
+The package is published as TypeScript source — your bundler compiles it, exactly as it already has to scan it for Tailwind classes.
 
 ## Fonts
 
