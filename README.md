@@ -83,7 +83,15 @@ The dark theme lives under a `.dark` class: add it to `<html>` to switch.
 
 ## Exports
 
-Components `Button` (with `Button.Icon`, `Button.Label`, `Button.IconLabel`), `Card`, `Ripple`; hooks `useRipple`, `useGlowBorder`; helper `cn`.
+Components `Button` (with `Button.Icon`, `Button.Label`, `Button.IconLabel`), `Card`, `Ripple`, `BorderGlow`; helper `cn`.
+
+`Ripple` and `BorderGlow` wrap a single element and clone it, so they add their behaviour to whatever you give them without an extra DOM node:
+
+```tsx
+<BorderGlow position="down">
+  <header className="border-b-2 border-border">…</header>
+</BorderGlow>
+```
 
 ## License
 

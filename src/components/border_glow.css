@@ -1,23 +1,23 @@
-.glow-border::before {
+.margo-glow-border::before {
   content: "";
   position: absolute;
   z-index: 1;
   pointer-events: none;
   opacity: 0;
   background: radial-gradient(
-    480px circle at var(--glow-x, 70%) var(--glow-y, 70%),
+    480px circle at var(--margo-glow-border-x, 70%) var(--margo-glow-border-y, 70%),
     var(--color-primary),
     transparent 70%
   );
   transition: opacity 300ms ease-out;
 }
 
-.glow-border:hover::before,
-.glow-border:focus-within::before {
+.margo-glow-border:hover::before,
+.margo-glow-border:focus-within::before {
   opacity: 1;
 }
 
-.glow-border--ring::before {
+.margo-glow-border--ring::before {
   inset: calc(-1 * var(--border-width-2));
   border-radius: inherit;
   padding: var(--border-width-2);
@@ -28,22 +28,22 @@
   -webkit-mask-composite: xor;
 }
 
-.glow-border--edge-top::before {
+.margo-glow-border--edge-top::before {
   inset: calc(-1 * var(--border-width-2)) 0 auto 0;
   height: var(--border-width-2);
 }
 
-.glow-border--edge-bottom::before {
+.margo-glow-border--edge-bottom::before {
   inset: auto 0 calc(-1 * var(--border-width-2)) 0;
   height: var(--border-width-2);
 }
 
-.glow-border--edge-left::before {
+.margo-glow-border--edge-left::before {
   inset: 0 auto 0 calc(-1 * var(--border-width-2));
   width: var(--border-width-2);
 }
 
-.glow-border--edge-right::before {
+.margo-glow-border--edge-right::before {
   inset: 0 calc(-1 * var(--border-width-2)) 0 auto;
   width: var(--border-width-2);
 }

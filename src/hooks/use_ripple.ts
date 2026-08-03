@@ -9,7 +9,7 @@ type Ripple = {
   y: number;
 };
 
-export type UseRipple = {
+type UseRipple = {
   ripple: Ripple | null;
   endRipple: () => void;
   startRipple: (event: PointerEvent<HTMLElement>) => void;

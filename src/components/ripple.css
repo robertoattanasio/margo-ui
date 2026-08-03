@@ -1,8 +1,8 @@
-.animate-ripple {
-  animation: ripple 500ms ease-out forwards;
+.margo-ripple {
+  animation: margo-ripple 500ms ease-out forwards;
 }
 
-@keyframes ripple {
+@keyframes margo-ripple {
   from {
     opacity: 0.4;
     transform: translate(-50%, -50%) scale(0);
