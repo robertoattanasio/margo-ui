@@ -1,7 +1,0 @@
-@import "./variables.css";
-@import "./custom-variant.css";
-@import "./theme.css";
-@import "./base.css";
-@import "./utility.css";
-
-@source "../**/*.{ts,tsx,js,mjs}";

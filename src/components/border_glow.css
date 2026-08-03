@@ -1,23 +1,23 @@
-.margo-glow-border::before {
+.margo-border-glow::before {
   content: "";
   position: absolute;
   z-index: 1;
   pointer-events: none;
   opacity: 0;
   background: radial-gradient(
-    480px circle at var(--margo-glow-border-x, 70%) var(--margo-glow-border-y, 70%),
+    480px circle at var(--margo-border-glow-x, 70%) var(--margo-border-glow-y, 70%),
     var(--color-primary),
     transparent 70%
   );
   transition: opacity 300ms ease-out;
 }
 
-.margo-glow-border:hover::before,
-.margo-glow-border:focus-within::before {
+.margo-border-glow:hover::before,
+.margo-border-glow:focus-within::before {
   opacity: 1;
 }
 
-.margo-glow-border--ring::before {
+.margo-border-glow--ring::before {
   inset: calc(-1 * var(--border-width-2));
   border-radius: inherit;
   padding: var(--border-width-2);
@@ -28,22 +28,22 @@
   -webkit-mask-composite: xor;
 }
 
-.margo-glow-border--edge-top::before {
+.margo-border-glow--edge-top::before {
   inset: calc(-1 * var(--border-width-2)) 0 auto 0;
   height: var(--border-width-2);
 }
 
-.margo-glow-border--edge-bottom::before {
+.margo-border-glow--edge-bottom::before {
   inset: auto 0 calc(-1 * var(--border-width-2)) 0;
   height: var(--border-width-2);
 }
 
-.margo-glow-border--edge-left::before {
+.margo-border-glow--edge-left::before {
   inset: 0 auto 0 calc(-1 * var(--border-width-2));
   width: var(--border-width-2);
 }
 
-.margo-glow-border--edge-right::before {
+.margo-border-glow--edge-right::before {
   inset: 0 calc(-1 * var(--border-width-2)) 0 auto;
   width: var(--border-width-2);
 }

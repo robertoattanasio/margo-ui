@@ -29,20 +29,7 @@
   --margo-font-weight-extrabold: 800;
   --margo-font-weight-black: 900;
 
-  --margo-screen-max-width: 90rem;
-  --margo-screen-padding-sm: 1rem;
-  --margo-screen-padding-md: 1rem;
-
   --margo-border-width-2: 1.5px;
-
-  --margo-duration-route-change: 500ms;
-  --margo-duration-layer-enter: 1000ms;
-  --margo-duration-layer-exit: 1000ms;
-
-  --margo-z-index-max: 9999;
-  --margo-z-index-navigation-loader: 9998;
-  --margo-z-index-navbar: 50;
-  --margo-z-index-toolbar: 50;
 }
 
 /* Colors Theme Light */
@@ -73,11 +60,4 @@
   --margo-color-secondary: #2c2c2c;
   --margo-color-medium: #999999;
   --margo-color-border: #2c2c2c;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --margo-duration-layer-enter: 1ms;
-    --margo-duration-layer-exit: 1ms;
-  }
 }

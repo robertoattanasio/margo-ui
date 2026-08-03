@@ -17,7 +17,7 @@ export const Card = <T extends ElementType = "div">(props: CardProps<T>) => {
         {...nativeProps}
         className={cn(
           "rounded-lg border-2 border-border bg-main p-5 text-on-main",
-          `focus:border-primary-gradient focus-visible:outline focus-visible:outline-offset-1
+          `focus:margo-border-gradient-primary focus-visible:outline focus-visible:outline-offset-1
           focus-visible:outline-on-main`,
           className,
         )}

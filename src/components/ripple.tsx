@@ -37,7 +37,7 @@ export const Ripple = ({ children, rippleClassName = "bg-primary" }: RippleProps
           <span
             key={ripple?.id}
             aria-hidden
-            className={cn("pointer-events-none absolute z-0 rounded-full margo-ripple", rippleClassName)}
+            className={cn("pointer-events-none absolute z-0 rounded-full margo-animation-ripple", rippleClassName)}
             style={{
               height: ripple?.size,
               left: ripple?.x,

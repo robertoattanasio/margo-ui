@@ -71,16 +71,4 @@
   --text-9xl: var(--margo-font-size-9xl);
   --text-9xl--line-height: 0.75;
 
-  /* Max widths */
-  --max-width-screen-legacy: var(--margo-screen-max-width);
-
-  /* Spacing */
-  --spacing-screen-sm: var(--margo-screen-padding-sm);
-  --spacing-screen-md: var(--margo-screen-padding-md);
-
-  /* Z-index */
-  --z-index-max: var(--margo-z-index-max);
-  --z-index-navbar: var(--margo-z-index-navbar);
-  --z-index-navigation-loader: var(--margo-z-index-navigation-loader);
-  --z-index-toolbar: var(--margo-z-index-toolbar);
 }

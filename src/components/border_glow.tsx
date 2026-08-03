@@ -19,11 +19,11 @@ export type BorderGlowProps = {
 };
 
 const BORDER_GLOW_POSITION_CLASS: Record<BorderGlowPosition, string> = {
-  up: "margo-glow-border--edge-top",
-  down: "margo-glow-border--edge-bottom",
-  left: "margo-glow-border--edge-left",
-  right: "margo-glow-border--edge-right",
-  all: "margo-glow-border--ring",
+  up: "margo-border-glow--edge-top",
+  down: "margo-border-glow--edge-bottom",
+  left: "margo-border-glow--edge-left",
+  right: "margo-border-glow--edge-right",
+  all: "margo-border-glow--ring",
 };
 
 export const BorderGlow = ({ children, position = "all" }: BorderGlowProps) => {
@@ -32,14 +32,14 @@ export const BorderGlow = ({ children, position = "all" }: BorderGlowProps) => {
     const x = event.clientX - bounds.left;
     const y = event.clientY - bounds.top;
 
-    event.currentTarget.style.setProperty("--margo-glow-border-x", `${position === "right" ? bounds.width - x : x}px`);
-    event.currentTarget.style.setProperty("--margo-glow-border-y", `${position === "down" ? bounds.height - y : y}px`);
+    event.currentTarget.style.setProperty("--margo-border-glow-x", `${position === "right" ? bounds.width - x : x}px`);
+    event.currentTarget.style.setProperty("--margo-border-glow-y", `${position === "down" ? bounds.height - y : y}px`);
 
     children.props.onPointerMove?.(event);
   };
 
   return cloneElement(children, {
-    className: cn("relative isolate margo-glow-border", BORDER_GLOW_POSITION_CLASS[position], children.props.className),
+    className: cn("relative isolate margo-border-glow", BORDER_GLOW_POSITION_CLASS[position], children.props.className),
     onPointerMove: handlePointerMove,
   });
 };

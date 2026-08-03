@@ -5,9 +5,10 @@ import { Ripple } from "./ripple";
 import type { CSSProperties, ElementType, ReactNode } from "react";
 import type { TagProps } from "react-renderable";
 
-const CLASSNAME_BASE = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-lg border-2 border-border
-bg-main text-on-main transform-gpu hover:border-on-main hover:text-on-main
-focus:border-primary-gradient focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-on-main`;
+const CLASSNAME_BASE = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-lg border-2 text-on-main
+hover:border-on-main hover:text-on-main
+focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-on-main`;
+const CLASSNAME_SURFACE = "border-border bg-main";
 const CLASSNAME_ICON = "relative z-10 flex size-4 min-w-0 shrink-0 items-center justify-center [direction:ltr]";
 const CLASSNAME_LABEL = "relative z-10 flex items-center text-sm whitespace-nowrap lowercase [direction:ltr] px-0.5";
 const CLASSNAME_GRID = "grid items-center gap-0 transition-[grid-template-columns,gap] duration-[180ms] ease-in-out";
@@ -31,8 +32,8 @@ export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) 
         data-open={open}
         className={cn(
           CLASSNAME_BASE,
+          active ? "margo-border-gradient-primary" : CLASSNAME_SURFACE,
           !clickable && "pointer-events-none",
-          active && "border-primary-gradient",
           props.className,
         )}
       />
