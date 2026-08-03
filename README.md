@@ -66,7 +66,21 @@ Every token is a CSS custom property on `:root`, mapped into Tailwind's `@theme`
 }
 ```
 
-The dark theme lives under a `.dark` class: add it to `<html>` to switch.
+The dark theme lives under a `.dark` class on `<html>`, so a document can start in dark even when the operating system asks for light. `themeClient` (`get` / `set` / `toggle`) is the whole switching API — it moves that one class and nothing else.
+
+`MetaColorScheme` renders `<meta name="color-scheme" content="dark light">`. It is server-safe and carries no colour, so it cannot drift from the tokens; the CSS `color-scheme` property in `variables.css` covers everything after the stylesheet has loaded, and the meta covers the moment before it.
+
+```tsx
+import { MetaColorScheme, THEME, themeClient } from "margo-ui";
+
+<html className={THEME.DARK}>
+  <head>
+    <MetaColorScheme />
+  </head>
+</html>;
+
+<button onClick={() => themeClient.toggle()}>theme</button>;
+```
 
 ### Tokens
 
@@ -83,7 +97,7 @@ The dark theme lives under a `.dark` class: add it to `<html>` to switch.
 
 ## Exports
 
-Components `Button` (with `Button.Icon`, `Button.Label`, `Button.IconLabel`), `Card`, `Ripple`, `BorderGlow`; helper `cn`.
+Components `Button` (with `Button.Icon`, `Button.Label`, `Button.IconLabel`), `Card`, `Ripple`, `BorderGlow`, `MetaColorScheme`; helper `cn`; theme `THEME`, `themeClient`.
 
 `Ripple` and `BorderGlow` wrap a single element and clone it, so they add their behaviour to whatever you give them without an extra DOM node:
 
