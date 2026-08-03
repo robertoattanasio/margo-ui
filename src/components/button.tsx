@@ -6,7 +6,7 @@ import type { CSSProperties, ElementType, ReactNode } from "react";
 import type { TagProps } from "react-renderable";
 
 const CLASSNAME_BASE = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-lg border-2 text-on-main
-hover:border-on-main hover:text-on-main
+hover:border-on-main hover:text-on-main focus-visible:margo-border-gradient-primary
 focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-on-main`;
 const CLASSNAME_SURFACE = "border-border bg-main";
 const CLASSNAME_ICON = "relative z-10 flex size-4 min-w-0 shrink-0 items-center justify-center [direction:ltr]";
