@@ -1,0 +1,79 @@
+:root {
+  --margo-font-family-primary: "Nunito", helvetica, sans-serif;
+  --margo-font-family-secondary: "Bebas Neue", impact, sans-serif;
+
+  --margo-font-size-mc: 0.625rem;
+  --margo-font-size-xs: 0.75rem;
+  --margo-font-size-sm: 0.875rem;
+  --margo-font-size-base: 1rem;
+  --margo-font-size-md: 1.125rem;
+  --margo-font-size-lg: 1.375rem;
+  --margo-font-size-2lg: 1.5rem;
+  --margo-font-size-xl: 1.75rem;
+  --margo-font-size-2xl: 2rem;
+  --margo-font-size-3xl: 2.5rem;
+  --margo-font-size-4xl: 3rem;
+  --margo-font-size-5xl: 4rem;
+  --margo-font-size-6xl: 5.25rem;
+  --margo-font-size-7xl: 6.75rem;
+  --margo-font-size-8xl: 8.75rem;
+  --margo-font-size-9xl: 11.25rem;
+
+  --margo-font-weight-thin: 100;
+  --margo-font-weight-extralight: 200;
+  --margo-font-weight-light: 300;
+  --margo-font-weight-normal: 400;
+  --margo-font-weight-medium: 500;
+  --margo-font-weight-semibold: 600;
+  --margo-font-weight-bold: 700;
+  --margo-font-weight-extrabold: 800;
+  --margo-font-weight-black: 900;
+
+  --margo-screen-max-width: 90rem;
+  --margo-screen-padding-sm: 1rem;
+  --margo-screen-padding-md: 1rem;
+
+  --margo-border-width-2: 1.5px;
+
+  --margo-duration-route-change: 500ms;
+  --margo-duration-layer-enter: 1000ms;
+  --margo-duration-layer-exit: 1000ms;
+
+  --margo-z-index-max: 9999;
+  --margo-z-index-navigation-loader: 9998;
+  --margo-z-index-navbar: 50;
+  --margo-z-index-toolbar: 50;
+}
+
+/* Colors Theme Light */
+:root {
+  --margo-color-neutral: #ffffff;
+  --margo-color-on-neutral: #000000;
+  --margo-color-main: #e9e9e9;
+  --margo-color-on-main: #222222;
+  --margo-color-primary: #2c4ee7;
+  --margo-color-primary-darken: #1b24a5;
+  --margo-color-secondary: #d3d3d3;
+  --margo-color-medium: #7e7e7e;
+  --margo-color-border: #d3d3d3;
+}
+
+/* Colors Theme Dark */
+.dark {
+  --margo-color-neutral: #000000;
+  --margo-color-on-neutral: #ffffff;
+  --margo-color-main: #141414;
+  --margo-color-on-main: #f9f9f9;
+  --margo-color-primary: #f5cb77;
+  --margo-color-primary-darken: #ad9055;
+  --margo-color-secondary: #2c2c2c;
+  --margo-color-medium: #999999;
+  --margo-color-border: #2c2c2c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --margo-duration-layer-enter: 1ms;
+    --margo-duration-layer-exit: 1ms;
+  }
+}

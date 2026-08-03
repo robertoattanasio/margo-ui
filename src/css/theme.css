@@ -1,0 +1,86 @@
+@theme {
+  /* Breakpoints */
+  --breakpoint-480: 480px;
+  --breakpoint-640: 640px;
+  --breakpoint-768: 768px;
+  --breakpoint-900: 900px;
+  --breakpoint-1080: 1080px;
+  --breakpoint-1280: 1280px;
+  --breakpoint-1920: 1920px;
+
+  /* Fonts */
+  --font-primary: var(--margo-font-family-primary);
+  --font-secondary: var(--margo-font-family-secondary);
+
+  /* Colors */
+  --color-neutral: var(--margo-color-neutral);
+  --color-on-neutral: var(--margo-color-on-neutral);
+  --color-main: var(--margo-color-main);
+  --color-on-main: var(--margo-color-on-main);
+  --color-primary: var(--margo-color-primary);
+  --color-primary-darken: var(--margo-color-primary-darken);
+  --color-secondary: var(--margo-color-secondary);
+  --color-medium: var(--margo-color-medium);
+  --color-border: var(--margo-color-border);
+
+  /* Border widths */
+  --border-width-2: var(--margo-border-width-2);
+
+  /* Font weights */
+  --font-weight-thin: var(--margo-font-weight-thin);
+  --font-weight-extralight: var(--margo-font-weight-extralight);
+  --font-weight-light: var(--margo-font-weight-light);
+  --font-weight-normal: var(--margo-font-weight-normal);
+  --font-weight-medium: var(--margo-font-weight-medium);
+  --font-weight-semibold: var(--margo-font-weight-semibold);
+  --font-weight-bold: var(--margo-font-weight-bold);
+  --font-weight-extrabold: var(--margo-font-weight-extrabold);
+  --font-weight-black: var(--margo-font-weight-black);
+
+  /* Font sizes */
+  --text-mc: var(--margo-font-size-mc);
+  --text-mc--line-height: 1.5;
+  --text-xs: var(--margo-font-size-xs);
+  --text-xs--line-height: 1.5;
+  --text-sm: var(--margo-font-size-sm);
+  --text-sm--line-height: 1.5;
+  --text-base: var(--margo-font-size-base);
+  --text-base--line-height: 1.25;
+  --text-md: var(--margo-font-size-md);
+  --text-md--line-height: 1.25;
+  --text-lg: var(--margo-font-size-lg);
+  --text-lg--line-height: 1.25;
+  --text-2lg: var(--margo-font-size-2lg);
+  --text-2lg--line-height: 1;
+  --text-xl: var(--margo-font-size-xl);
+  --text-xl--line-height: 1;
+  --text-2xl: var(--margo-font-size-2xl);
+  --text-2xl--line-height: 0.75;
+  --text-3xl: var(--margo-font-size-3xl);
+  --text-3xl--line-height: 0.75;
+  --text-4xl: var(--margo-font-size-4xl);
+  --text-4xl--line-height: 0.75;
+  --text-5xl: var(--margo-font-size-5xl);
+  --text-5xl--line-height: 0.75;
+  --text-6xl: var(--margo-font-size-6xl);
+  --text-6xl--line-height: 0.75;
+  --text-7xl: var(--margo-font-size-7xl);
+  --text-7xl--line-height: 0.75;
+  --text-8xl: var(--margo-font-size-8xl);
+  --text-8xl--line-height: 0.75;
+  --text-9xl: var(--margo-font-size-9xl);
+  --text-9xl--line-height: 0.75;
+
+  /* Max widths */
+  --max-width-screen-legacy: var(--margo-screen-max-width);
+
+  /* Spacing */
+  --spacing-screen-sm: var(--margo-screen-padding-sm);
+  --spacing-screen-md: var(--margo-screen-padding-md);
+
+  /* Z-index */
+  --z-index-max: var(--margo-z-index-max);
+  --z-index-navbar: var(--margo-z-index-navbar);
+  --z-index-navigation-loader: var(--margo-z-index-navigation-loader);
+  --z-index-toolbar: var(--margo-z-index-toolbar);
+}

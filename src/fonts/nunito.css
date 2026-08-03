@@ -1,0 +1,71 @@
+/*!
+ * Font Family: Nunito
+ * Designed by: Vernon Adams, Cyreal, Jacques Le Bailly
+ * Copyright (c) 2026 Vernon Adams, Cyreal, Jacques Le Bailly
+ * Source: https://github.com/googlefonts/nunito
+ * License: SIL Open Font License (OFL), Version 1.1 - see ./nunito/OFL.txt
+ */
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("./nunito/nunito-extralight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./nunito/nunito-light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./nunito/nunito-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./nunito/nunito-medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./nunito/nunito-semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./nunito/nunito-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("./nunito/nunito-extrabold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./nunito/nunito-black.woff2") format("woff2");
+}

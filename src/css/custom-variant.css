@@ -1,0 +1,2 @@
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant closed (&:not([open]));

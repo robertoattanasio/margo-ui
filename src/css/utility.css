@@ -1,0 +1,6 @@
+@utility border-primary-gradient {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--margo-color-main), var(--margo-color-main)) padding-box,
+    linear-gradient(to bottom right, var(--margo-color-primary-darken), var(--margo-color-primary)) border-box;
+}

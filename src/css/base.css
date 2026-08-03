@@ -1,0 +1,84 @@
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  canvas {
+    width: 100% !important;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  svg {
+    outline: none !important;
+    flex: none;
+  }
+
+  button {
+    text-align: left;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  option,
+  optgroup {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+  }
+
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    display: none;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]):not([disabled]) {
+    cursor: pointer;
+  }
+
+  input:-webkit-autofill,
+  input:autofill {
+    -webkit-text-fill-color: var(--margo-color-on-main) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+
+  .dark input:-webkit-autofill,
+  .dark input:autofill {
+    -webkit-text-fill-color: var(--margo-color-on-main) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+}
