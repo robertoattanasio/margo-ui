@@ -6,7 +6,7 @@
   opacity: 0;
   background: radial-gradient(
     480px circle at var(--margo-border-glow-x, 70%) var(--margo-border-glow-y, 70%),
-    var(--color-primary),
+    var(--color-primary-darken),
     transparent 70%
   );
   transition: opacity 300ms ease-out;

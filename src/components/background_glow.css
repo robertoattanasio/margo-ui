@@ -1,0 +1,32 @@
+.margo-background-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    var(--margo-background-glow-size) circle at var(--margo-background-glow-x, 50%) var(--margo-background-glow-y, 50%),
+    var(--color-primary),
+    transparent 70%
+  );
+  transition: opacity 300ms ease-out;
+}
+
+.margo-background-glow:hover::before,
+.margo-background-glow:focus-within::before {
+  opacity: var(--margo-background-glow-opacity, 0.1);
+}
+
+.margo-background-glow--size-sm {
+  --margo-background-glow-size: 200px;
+}
+
+.margo-background-glow--size-md {
+  --margo-background-glow-size: 320px;
+}
+
+.margo-background-glow--size-lg {
+  --margo-background-glow-size: 480px;
+}

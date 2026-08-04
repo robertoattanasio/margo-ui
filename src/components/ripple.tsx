@@ -19,7 +19,7 @@ export type RippleProps = {
   rippleClassName?: string;
 };
 
-export const Ripple = ({ children, rippleClassName = "bg-primary" }: RippleProps) => {
+export const Ripple = ({ children, rippleClassName = "bg-primary-darken" }: RippleProps) => {
   const { endRipple, ripple, startRipple } = useRipple();
 
   const handlePointerDown = (event: PointerEvent<HTMLElement>) => {

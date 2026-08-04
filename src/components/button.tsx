@@ -2,7 +2,7 @@ import { Tag } from "react-renderable";
 import { cn } from "../helpers/cn";
 import { Ripple } from "./ripple";
 
-import type { CSSProperties, ElementType, ReactNode } from "react";
+import type { CSSProperties, ElementType, MouseEvent, MouseEventHandler, ReactNode } from "react";
 import type { TagProps } from "react-renderable";
 
 const CLASSNAME_BASE = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-lg border-2 text-on-main
@@ -15,21 +15,31 @@ const CLASSNAME_GRID = "grid items-center gap-0 transition-[grid-template-column
 const CLASSNAME_SLOT = `min-w-0 overflow-hidden opacity-0 transition-opacity duration-[180ms] ease-in
 group-hover/button:opacity-100 group-focus-visible/button:opacity-100 group-data-[open=true]/button:opacity-100`;
 
+export type ButtonIconLabelSide = "start" | "end";
+
 export type ButtonProps<T extends ElementType = "button"> = TagProps<T> & {
   clickable?: boolean;
   active?: boolean;
   open?: boolean;
+  blurOnClick?: boolean;
 };
 
 export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) => {
-  const { as, clickable = true, active = false, open = false, ...restProps } = props;
+  const { as, clickable = true, active = false, open = false, blurOnClick = true, ...restProps } = props;
   const nativeProps = { as: as ?? "button", ...restProps } as TagProps<T>;
+  const onClick = props.onClick as MouseEventHandler<HTMLElement> | undefined;
+
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    onClick?.(event);
+    if (blurOnClick && event.detail > 0) setTimeout(() => event.currentTarget.blur(), 150);
+  };
 
   return (
     <Ripple>
       <Tag
         {...nativeProps}
         data-open={open}
+        onClick={handleClick}
         className={cn(
           CLASSNAME_BASE,
           active ? "margo-border-gradient-primary" : CLASSNAME_SURFACE,
@@ -61,7 +71,7 @@ Button.IconLabel = ({
   label: ReactNode;
   gap?: string;
   reverse?: boolean;
-  side?: "start" | "end";
+  side?: ButtonIconLabelSide;
   className?: string | null;
 }) => {
   return (
