@@ -1,22 +1,10 @@
 import { useState } from "react";
 
 import type { PointerEvent } from "react";
-
-type Ripple = {
-  id: number;
-  size: number;
-  x: number;
-  y: number;
-};
-
-type UseRipple = {
-  ripple: Ripple | null;
-  endRipple: () => void;
-  startRipple: (event: PointerEvent<HTMLElement>) => void;
-};
+import type { RippleState, UseRipple } from "./type.js";
 
 export const useRipple = (): UseRipple => {
-  const [ripple, setRipple] = useState<Ripple | null>(null);
+  const [ripple, setRipple] = useState<RippleState | null>(null);
 
   const startRipple = (event: PointerEvent<HTMLElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();

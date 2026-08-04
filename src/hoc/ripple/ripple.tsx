@@ -1,23 +1,14 @@
 import { cloneElement } from "react";
 
-import { Guard } from "../../../react-renderable";
-import { useRipple } from "../hooks/use_ripple";
-import { cn } from "../utils/cn";
+import { Guard } from "react-renderable";
 
-import type { PointerEvent, PointerEventHandler, ReactElement, ReactNode } from "react";
+import { cn } from "../../utils/cn/cn.js";
+import { useRipple } from "./use_ripple.js";
+
+import type { PointerEvent } from "react";
+import type { RippleProps } from "./type.js";
 
 import "./ripple.css";
-
-export type RippleChildProps = {
-  children?: ReactNode;
-  className?: string;
-  onPointerDown?: PointerEventHandler<HTMLElement>;
-};
-
-export type RippleProps = {
-  children: ReactElement<RippleChildProps>;
-  rippleClassName?: string;
-};
 
 export const Ripple = ({ children, rippleClassName = "bg-primary-darken" }: RippleProps) => {
   const { endRipple, ripple, startRipple } = useRipple();

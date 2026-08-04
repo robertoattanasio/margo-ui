@@ -1,20 +1,20 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { themeClient } from "../utils/theme";
+import { margoThemeClient } from "../utils/theme/theme.js";
 
-import type { Theme } from "../utils/theme";
+import type { MargoTheme } from "../utils/theme/type.js";
 
-export const useTheme = (): [Theme, (next: Theme | ((current: Theme) => Theme)) => void] => {
-  const [theme, setThemeState] = useState<Theme>(() => themeClient.get());
+export const useMargoTheme = (): [MargoTheme, (next: MargoTheme | ((current: MargoTheme) => MargoTheme)) => void] => {
+  const [theme, setThemeState] = useState<MargoTheme>(() => margoThemeClient.get());
 
   useEffect(() => {
     if (typeof document === "undefined") return;
 
     const root = document.documentElement;
-    setThemeState(themeClient.get());
+    setThemeState(margoThemeClient.get());
 
     const observer = new MutationObserver(() => {
-      setThemeState(themeClient.get());
+      setThemeState(margoThemeClient.get());
     });
 
     observer.observe(root, { attributes: true, attributeFilter: ["class"] });
@@ -22,8 +22,8 @@ export const useTheme = (): [Theme, (next: Theme | ((current: Theme) => Theme)) 
     return () => observer.disconnect();
   }, []);
 
-  const setTheme = useCallback((next: Theme | ((current: Theme) => Theme)) => {
-    themeClient.set(typeof next === "function" ? next(themeClient.get()) : next);
+  const setTheme = useCallback((next: MargoTheme | ((current: MargoTheme) => MargoTheme)) => {
+    margoThemeClient.set(typeof next === "function" ? next(margoThemeClient.get()) : next);
   }, []);
 
   return [theme, setTheme];
