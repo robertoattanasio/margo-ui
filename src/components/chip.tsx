@@ -1,8 +1,8 @@
-import { Tag } from "react-renderable";
-import { cn } from "../helpers/cn";
+import { Tag } from "../../../react-renderable";
+import { cn } from "../utils/cn";
 
 import type { ElementType } from "react";
-import type { TagProps } from "react-renderable";
+import type { TagProps } from "../../../react-renderable";
 
 export type ChipProps<T extends ElementType = "div"> = TagProps<T> & {
   active?: boolean;

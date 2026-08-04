@@ -1,9 +1,9 @@
-import { Tag } from "react-renderable";
-import { cn } from "../helpers/cn";
+import { Tag } from "../../../react-renderable";
+import { cn } from "../utils/cn";
 import { Ripple } from "./ripple";
 
 import type { CSSProperties, ElementType, MouseEvent, MouseEventHandler, ReactNode } from "react";
-import type { TagProps } from "react-renderable";
+import type { TagProps } from "../../../react-renderable";
 
 const CLASSNAME_BASE = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-lg border-2 text-on-main
 hover:border-on-main hover:text-on-main focus-visible:margo-border-gradient-primary

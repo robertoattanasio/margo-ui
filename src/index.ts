@@ -9,8 +9,8 @@ export { Tooltip } from "./components/tooltip";
 
 export { useTheme } from "./hooks/use_theme";
 
-export { cn } from "./helpers/cn";
-export { THEME, themeClient } from "./helpers/theme";
+export { cn } from "./utils/cn";
+export { THEME, themeClient } from "./utils/theme";
 
 export type { BackgroundGlowChildProps, BackgroundGlowProps, BackgroundGlowSize } from "./components/background_glow";
 export type { BorderGlowChildProps, BorderGlowPosition, BorderGlowProps } from "./components/border_glow";
@@ -19,4 +19,4 @@ export type { CardProps } from "./components/card";
 export type { ChipProps } from "./components/chip";
 export type { RippleChildProps, RippleProps } from "./components/ripple";
 export type { TooltipPosition, TooltipProps } from "./components/tooltip";
-export type { Theme } from "./helpers/theme";
+export type { Theme } from "./utils/theme";

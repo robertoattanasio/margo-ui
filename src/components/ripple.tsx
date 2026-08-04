@@ -1,8 +1,8 @@
 import { cloneElement } from "react";
 
-import { Guard } from "react-renderable";
-import { cn } from "../helpers/cn";
+import { Guard } from "../../../react-renderable";
 import { useRipple } from "../hooks/use_ripple";
+import { cn } from "../utils/cn";
 
 import type { PointerEvent, PointerEventHandler, ReactElement, ReactNode } from "react";
 

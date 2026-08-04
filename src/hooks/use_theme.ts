@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { themeClient } from "../helpers/theme";
+import { themeClient } from "../utils/theme";
 
-import type { Theme } from "../helpers/theme";
+import type { Theme } from "../utils/theme";
 
 export const useTheme = (): [Theme, (next: Theme | ((current: Theme) => Theme)) => void] => {
   const [theme, setThemeState] = useState<Theme>(() => themeClient.get());

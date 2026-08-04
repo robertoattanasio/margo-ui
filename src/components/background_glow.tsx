@@ -1,6 +1,6 @@
 import { cloneElement } from "react";
 
-import { cn } from "../helpers/cn";
+import { cn } from "../utils/cn";
 
 import type { PointerEvent, PointerEventHandler, ReactElement } from "react";
 
@@ -35,11 +35,7 @@ export const BackgroundGlow = ({ children, size = "md" }: BackgroundGlowProps) =
   };
 
   return cloneElement(children, {
-    className: cn(
-      "relative isolate margo-background-glow",
-      BACKGROUND_GLOW_SIZE_CLASS[size],
-      children.props.className,
-    ),
+    className: cn("relative isolate margo-background-glow", BACKGROUND_GLOW_SIZE_CLASS[size], children.props.className),
     onPointerMove: handlePointerMove,
   });
 };

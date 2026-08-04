@@ -1,10 +1,10 @@
-import { Tag } from "react-renderable";
-import { cn } from "../helpers/cn";
+import { Tag } from "../../../react-renderable";
+import { cn } from "../utils/cn";
 
 import { useRef } from "react";
 
 import type { ElementType, ReactNode } from "react";
-import type { TagProps } from "react-renderable";
+import type { TagProps } from "../../../react-renderable";
 
 export type TooltipPosition = "up" | "down" | "left" | "right";
 

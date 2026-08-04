@@ -1,6 +1,6 @@
 import { cloneElement } from "react";
 
-import { cn } from "../helpers/cn";
+import { cn } from "../utils/cn";
 
 import type { PointerEvent, PointerEventHandler, ReactElement } from "react";
 
