@@ -1,14 +1,17 @@
-import type { ElementType, ReactNode } from "react";
 import type { TagProps } from "react-renderable";
+import type { ElementType, MouseEventHandler, ReactNode } from "react";
 
 export type ButtonIconLabelSide = "start" | "end";
 
-export type ButtonProps<T extends ElementType = "button"> = TagProps<T> & {
+export type ButtonOwnProps = {
   clickable?: boolean;
   active?: boolean;
   open?: boolean;
   blurOnClick?: boolean;
+  onClick?: MouseEventHandler<HTMLElement>;
 };
+
+export type ButtonProps<T extends ElementType = "button"> = TagProps<T, ButtonOwnProps>;
 
 export type ButtonIconProps = {
   icon: ReactNode;

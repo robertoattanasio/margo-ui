@@ -14,15 +14,18 @@ import {
   buttonSurfaceClassName,
 } from "./style.js";
 
-import type { CSSProperties, ElementType, MouseEvent, MouseEventHandler } from "react";
-import type { TagProps } from "react-renderable";
+import type { CSSProperties, ElementType, MouseEvent } from "react";
 import type { ButtonIconLabelProps, ButtonIconProps, ButtonLabelProps, ButtonProps } from "./type.js";
 
-export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) => {
-  const { as, clickable = true, active = false, open = false, blurOnClick = true, ...restProps } = props;
-  const nativeProps = { as: as ?? "button", ...restProps } as TagProps<T>;
-  const onClick = props.onClick as MouseEventHandler<HTMLElement> | undefined;
-
+export const Button = <T extends ElementType = "button">({
+  clickable = true,
+  active = false,
+  open = false,
+  blurOnClick = true,
+  className,
+  onClick,
+  ...rest
+}: ButtonProps<T>) => {
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     onClick?.(event);
     if (blurOnClick && event.detail > 0) setTimeout(() => event.currentTarget.blur(), 150);
@@ -31,14 +34,14 @@ export const Button = <T extends ElementType = "button">(props: ButtonProps<T>) 
   return (
     <Ripple>
       <Tag
-        {...nativeProps}
+        {...Tag.forward<T>(rest, "button")}
         data-open={open}
         onClick={handleClick}
         className={cn(
           buttonBaseClassName,
           active ? buttonActiveClassName : buttonSurfaceClassName,
           !clickable && "pointer-events-none",
-          props.className,
+          className,
         )}
       />
     </Ripple>
@@ -60,19 +63,17 @@ Button.IconLabel = ({
   reverse = false,
   side = "end",
   className = null,
-}: ButtonIconLabelProps) => {
-  return (
-    <span
-      style={{ "--button-gap": gap } as CSSProperties}
-      className={cn(
-        buttonGridClassName,
-        side === "start" && "[direction:rtl]",
-        reverse ? buttonGridReverseClassName : buttonGridForwardClassName,
-        className,
-      )}
-    >
-      {reverse ? label : icon}
-      <span className={buttonSlotClassName}>{reverse ? icon : label}</span>
-    </span>
-  );
-};
+}: ButtonIconLabelProps) => (
+  <span
+    style={{ "--button-gap": gap } as CSSProperties}
+    className={cn(
+      buttonGridClassName,
+      side === "start" && "[direction:rtl]",
+      reverse ? buttonGridReverseClassName : buttonGridForwardClassName,
+      className,
+    )}
+  >
+    {reverse ? label : icon}
+    <span className={buttonSlotClassName}>{reverse ? icon : label}</span>
+  </span>
+);

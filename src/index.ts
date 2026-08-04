@@ -25,8 +25,8 @@ export type { CardProps } from "./components/card/type.js";
 export type { ChipProps } from "./components/chip/type.js";
 export type { TooltipPosition, TooltipProps } from "./components/tooltip/type.js";
 
-export type { BackgroundGlowChildProps, BackgroundGlowProps, BackgroundGlowSize } from "./hoc/background_glow/type.js";
-export type { BorderGlowChildProps, BorderGlowPosition, BorderGlowProps } from "./hoc/border_glow/type.js";
-export type { RippleChildProps, RippleProps } from "./hoc/ripple/type.js";
+export type { BackgroundGlowProps, BackgroundGlowSize } from "./hoc/background_glow/type.js";
+export type { BorderGlowPosition, BorderGlowProps } from "./hoc/border_glow/type.js";
+export type { RippleProps } from "./hoc/ripple/type.js";
 
 export type { MargoTheme, MargoThemeClient } from "./utils/theme/type.js";

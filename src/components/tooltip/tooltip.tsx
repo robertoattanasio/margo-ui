@@ -12,13 +12,17 @@ import {
 } from "./style.js";
 
 import type { ElementType, ReactNode } from "react";
-import type { TagProps } from "react-renderable";
 import type { TooltipProps } from "./type.js";
 
-export const Tooltip = <T extends ElementType = "div">(props: TooltipProps<T>) => {
-  const { as, ariaLabel, children, className, id, placeholder, position = "down", ...restProps } = props;
-  const nativeProps = { as: as ?? "div", ...restProps } as TagProps<T>;
-
+export const Tooltip = <T extends ElementType = "div">({
+  ariaLabel,
+  children,
+  className,
+  id,
+  placeholder,
+  position = "down",
+  ...rest
+}: TooltipProps<T>) => {
   const placeholderRef = useRef<ReactNode>(null);
 
   const isFilled = placeholder !== null && placeholder !== undefined;
@@ -26,7 +30,7 @@ export const Tooltip = <T extends ElementType = "div">(props: TooltipProps<T>) =
   if (isFilled) placeholderRef.current = placeholder;
 
   return (
-    <Tag {...nativeProps} className={cn(tooltipAnchorClassName, className)}>
+    <Tag {...Tag.forward<T>(rest)} className={cn(tooltipAnchorClassName, className)}>
       {children}
       <span
         id={id}

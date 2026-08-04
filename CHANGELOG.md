@@ -1,5 +1,16 @@
 # margo-ui
 
+## 1.1.1
+
+### Patch Changes
+
+- Source tree split into `components`, `hoc`, `meta`, `hooks` and `utils`, one folder per unit with its own `type.ts` and `style.ts`
+- Polymorphic components now type their props as `TagProps<T, OwnProps>` and forward them through `Tag.forward`, with no type assertion left in the components
+- Class name constants renamed to camelCase `<component><piece>ClassName`
+- `useTheme`, `Theme`, `ThemeClient`, `THEME` and `themeClient` renamed to `useMargoTheme`, `MargoTheme`, `MargoThemeClient`, `margoTheme` and `margoThemeClient`
+- `Button` own `onClick` typed as `MouseEventHandler<HTMLElement>`, so `event.currentTarget` is `HTMLElement` whatever the rendered tag is
+- Own props and HOC child props are no longer exported from the package entry point
+
 ## 1.1.0
 
 ### Minor Changes

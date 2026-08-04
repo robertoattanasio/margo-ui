@@ -1,6 +1,6 @@
 {
   "name": "margo-ui",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A small React UI kit built on Tailwind CSS v4 design tokens, themeable through plain CSS custom properties.",
   "keywords": [
     "react",
@@ -36,15 +36,13 @@
   },
   "scripts": {
     "ts:check": "tsc --noEmit",
-    "build": "rm -rf dist && tsc",
-    "change": "changeset",
-    "change:status": "changeset status --verbose",
-    "release:version": "changeset version",
-    "release": "npm run ts:check && changeset publish"
+    "changeset:add": "changeset",
+    "changeset:bump": "changeset version",
+    "build:release": "npm run ts:check && npm pack && changeset publish && git push --follow-tags"
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "react-renderable": "^1.0.1",
+    "react-renderable": "^1.0.4",
     "tailwind-merge": "^3.6.0"
   },
   "peerDependencies": {
