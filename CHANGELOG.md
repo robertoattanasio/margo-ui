@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.1.0
+
+### Minor Changes
+
+- f052b31: BackgroundGlow, Chip, Tooltip components added
+
 ## 1.0.1
 
 ### Patch Changes
