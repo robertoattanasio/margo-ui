@@ -1,5 +1,16 @@
 # margo-ui
 
+## 1.2.0
+
+### Minor Changes
+
+- f3102bd: ProgressBar component added, with `determinate` and `indeterminate` modes and a `--margo-progress-bar-fill` custom property to override the indicator
+  Spinner component added
+
+### Patch Changes
+
+- f3102bd: Blockquote, ProgressBar, Spinner components added, shadow colors added
+
 ## 1.1.1
 
 ### Patch Changes
