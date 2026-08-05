@@ -3,5 +3,6 @@
 @import "./src/css/theme.css";
 @import "./src/css/custom-variant.css";
 @import "./src/css/utility.css";
+@import "./src/css/grid.css";
 
 @source "../**/*.{ts,tsx,js,mjs}";

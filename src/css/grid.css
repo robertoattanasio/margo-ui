@@ -1,0 +1,229 @@
+/*
+ * 12-column grid with full-bleed support.
+ *
+ * Tunable from the consumer through four variables only (see variables.css):
+ * --margo-grid-max-width, --margo-grid-padding, --margo-grid-gutter-x,
+ * --margo-grid-gutter-y. Padding and gutters are fully independent: the side
+ * padding is real padding on the container, the gutters are column gaps that
+ * only exist between the 12 columns. Any combination is valid, including a
+ * padding smaller than the gutter.
+ *
+ * Named lines available inside `margo-grid`:
+ * content-start | col-start 1..12 / col-end 1..12 | content-end
+ * Rows have no template and no names: they are addressed by index.
+ *
+ * Full bleed is not a line: it is a negative margin that cancels the distance
+ * between the content area and the viewport edge (--margo-grid-bleed), so it
+ * works from any column and at any nesting depth.
+ */
+
+/*
+ * Root layout container: centers a 12-column content area capped at
+ * --margo-grid-max-width and pads it by --margo-grid-padding on both sides.
+ * Direct children sit on the whole content area by default, so a plain
+ * `<div className="margo-grid"><section /></div>` is already correctly aligned.
+ * That default has zero specificity, so any margo-col-* utility overrides it.
+ *
+ * Use on: page sections, headers, footers — the outermost element of a layout.
+ */
+@utility margo-grid {
+  --margo-grid-bleed: max(var(--margo-grid-padding), calc((100vw - var(--margo-grid-max-width)) / 2));
+
+  width: 100%;
+  max-width: calc(var(--margo-grid-max-width) + var(--margo-grid-padding) * 2);
+  margin-inline: auto;
+  padding-inline: var(--margo-grid-padding);
+
+  display: grid;
+  column-gap: var(--margo-grid-gutter-x);
+  row-gap: var(--margo-grid-gutter-y);
+  grid-template-columns: [content-start] repeat(12, [col-start] minmax(0, 1fr) [col-end]) [content-end];
+
+  :where(&) > * {
+    grid-column-start: content-start;
+    grid-column-end: content-end;
+  }
+}
+
+/*
+ * Nested grid that reuses the parent tracks and line names instead of creating
+ * new ones, so children keep aligning to the same 12 columns at any depth.
+ * Must be a child of margo-grid (or of another margo-grid-sub) and must span
+ * the columns it wants to inherit — as a child of margo-grid it already covers
+ * the whole content area.
+ *
+ * Children are auto-placed: one column each unless they carry a margo-col-*
+ * utility, so `margo-col-span-6` items flow two per row.
+ *
+ * Use on: a list/card wrapper whose grandchildren still need global alignment.
+ */
+@utility margo-grid-sub {
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: var(--margo-grid-gutter-y);
+}
+
+/*
+ * Standalone 12-column grid: same line names and gutters, but no max-width and
+ * no side padding — it fills whatever box it is placed in.
+ *
+ * Use on: an isolated component that needs 12 columns of its own, outside of
+ * (or independent from) the page layout.
+ */
+@utility margo-grid-flat {
+  display: grid;
+  grid-template-columns: [content-start] repeat(12, [col-start] minmax(0, 1fr) [col-end]) [content-end];
+  column-gap: var(--margo-grid-gutter-x);
+  row-gap: var(--margo-grid-gutter-y);
+}
+
+/*
+ * Full bleed: edge to edge of the viewport, escaping both the max-width and the
+ * side padding. Use on: background bands, hero images, sticky bars.
+ * To keep inner content on the grid, nest a margo-grid inside it.
+ */
+@utility margo-col-full {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+  margin-inline: calc(var(--margo-grid-bleed) * -1);
+}
+
+/*
+ * Back to the centered content area (all 12 columns), dropping any bleed.
+ * Use to reset an element that a variant put on `full` at another breakpoint.
+ */
+@utility margo-col-content {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+  margin-inline: 0;
+}
+
+/*
+ * A single column, by index: `margo-col-4` occupies column 4 only.
+ * Use for one-cell items; combine with variants, e.g. `900:margo-col-7`.
+ */
+@utility margo-col-* {
+  grid-column-start: col-start --value(integer);
+  grid-column-end: col-end --value(integer);
+}
+
+/* Bleed off the left edge of the viewport, keeping the current end line. */
+@utility margo-col-start-full {
+  grid-column-start: content-start;
+  margin-inline-start: calc(var(--margo-grid-bleed) * -1);
+}
+
+/* Start at the left edge of the content area, dropping any left bleed. */
+@utility margo-col-start-content {
+  grid-column-start: content-start;
+  margin-inline-start: 0;
+}
+
+/*
+ * Start at the beginning of column N: `margo-col-start-5`.
+ * Pairs with margo-col-end-* (explicit range) or margo-col-span-* (length).
+ */
+@utility margo-col-start-* {
+  grid-column-start: col-start --value(integer);
+}
+
+/* Bleed off the right edge of the viewport, keeping the current start line. */
+@utility margo-col-end-full {
+  grid-column-end: content-end;
+  margin-inline-end: calc(var(--margo-grid-bleed) * -1);
+}
+
+/* End at the right edge of the content area, dropping any right bleed. */
+@utility margo-col-end-content {
+  grid-column-end: content-end;
+  margin-inline-end: 0;
+}
+
+/*
+ * End at the end of column N, inclusive: `margo-col-start-5 margo-col-end-8`
+ * covers columns 5 through 8.
+ */
+@utility margo-col-end-* {
+  grid-column-end: col-end --value(integer);
+}
+
+/* Span the full bleed width regardless of where the item starts. */
+@utility margo-col-span-full {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+  margin-inline: calc(var(--margo-grid-bleed) * -1);
+}
+
+/*
+ * Span N columns from wherever the item starts: `margo-col-span-6`.
+ * In margo-grid-sub / margo-grid-flat the item keeps auto-placing, so
+ * `margo-col-span-12 900:margo-col-span-6` items flow one per row on mobile
+ * and two per row from 900 up. As a direct child of margo-grid the start is
+ * pinned to the content edge instead.
+ */
+@utility margo-col-span-* {
+  grid-column-end: span --value(integer);
+}
+
+/*
+ * Rows are implicit and unnamed, so they are addressed by index only.
+ * `margo-row-2` puts the item on the second row, which is how two items are
+ * made to share a row band or to overlap a column that spans several rows.
+ */
+@utility margo-row-* {
+  grid-row-start: --value(integer);
+  grid-row-end: span 1;
+}
+
+/*
+ * Start on row N and keep the current end: `margo-row-start-2`.
+ * Pair with margo-row-span-* for the length; there is no margo-row-end-*,
+ * because without named row lines an end index would mean the line before
+ * the row, the opposite of how margo-col-end-* reads.
+ */
+@utility margo-row-start-* {
+  grid-row-start: --value(integer);
+}
+
+/* Span N rows from wherever the item starts: `margo-row-span-2`. */
+@utility margo-row-span-* {
+  grid-row-end: span --value(integer);
+}
+
+/*
+ * Gutter overrides, on the spacing scale: `margo-gutter-y-0`, `margo-gutter-x-4`.
+ * They set the grid variables rather than the gap properties, so they never
+ * depend on utility order to win, and they cascade into nested margo-grid /
+ * margo-grid-sub unless those override the gutter again.
+ */
+@utility margo-gutter-* {
+  --margo-grid-gutter-x: --spacing(--value(integer));
+  --margo-grid-gutter-y: --spacing(--value(integer));
+}
+
+@utility margo-gutter-x-* {
+  --margo-grid-gutter-x: --spacing(--value(integer));
+}
+
+@utility margo-gutter-y-* {
+  --margo-grid-gutter-y: --spacing(--value(integer));
+}
+
+/*
+ * Side padding override, on the spacing scale: `margo-padding-8`.
+ * Also feeds --margo-grid-bleed, so full-bleed children stay exact.
+ */
+@utility margo-padding-* {
+  --margo-grid-padding: --spacing(--value(integer));
+}
+
+/*
+ * Non-grid escape hatch: same max-width and side padding as margo-grid, but a
+ * plain block. Use when a section needs the layout width without any columns.
+ */
+@utility margo-container {
+  width: 100%;
+  max-width: calc(var(--margo-grid-max-width) + var(--margo-grid-padding) * 2);
+  margin-inline: auto;
+  padding-inline: var(--margo-grid-padding);
+}

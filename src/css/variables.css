@@ -30,6 +30,12 @@
   --margo-font-weight-black: 900;
 
   --margo-border-width-2: 1.5px;
+
+  --margo-grid-max-width: 80rem;
+  --margo-grid-padding: 1rem;
+  --margo-grid-gutter-x: 2rem;
+  --margo-grid-gutter-y: 2rem;
+  --margo-grid-bleed: max(var(--margo-grid-padding), calc((100vw - var(--margo-grid-max-width)) / 2));
 }
 
 :root {
