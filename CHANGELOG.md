@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.2.2
+
+### Patch Changes
+
+- 24a02b2: Margo Grid utilities added
+
 ## 1.2.1
 
 ### Patch Changes
