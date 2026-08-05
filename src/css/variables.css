@@ -30,34 +30,44 @@
   --margo-font-weight-black: 900;
 
   --margo-border-width-2: 1.5px;
+
+  --margo-shadow-card-color: 0 0 0;
+  --margo-shadow-button-color: 0 0 0;
+  --margo-shadow-chip-color: 0 0 0;
 }
 
-/* Colors Theme Light */
 :root {
   color-scheme: light;
 
   --margo-color-neutral: #ffffff;
   --margo-color-on-neutral: #000000;
-  --margo-color-main: #e9e9e9;
-  --margo-color-on-main: #222222;
-  --margo-color-primary: #2c4ee7;
-  --margo-color-primary-darken: #1b24a5;
+  --margo-color-main: #f6f6f6;
+  --margo-color-on-main: #151515;
+  --margo-color-primary: #57e550;
+  --margo-color-primary-darken: #45b93f;
   --margo-color-secondary: #d3d3d3;
   --margo-color-medium: #7e7e7e;
-  --margo-color-border: #d3d3d3;
+  --margo-color-border: #dcdcdc;
+
+  --margo-shadow-card: 0 4px 12px -4px rgb(var(--margo-shadow-card-color) / 0.1);
+  --margo-shadow-button: 0 2px 6px -2px rgb(var(--margo-shadow-button-color) / 0.1);
+  --margo-shadow-chip: 0 1px 3px -1px rgb(var(--margo-shadow-chip-color) / 0.5);
 }
 
-/* Colors Theme Dark */
 .dark {
   color-scheme: dark;
 
   --margo-color-neutral: #000000;
   --margo-color-on-neutral: #ffffff;
-  --margo-color-main: #141414;
-  --margo-color-on-main: #f9f9f9;
-  --margo-color-primary: #f5cb77;
-  --margo-color-primary-darken: #ad9055;
+  --margo-color-main: #151515;
+  --margo-color-on-main: #eeeeee;
+  --margo-color-primary: #57e550;
+  --margo-color-primary-darken: #45b93f;
   --margo-color-secondary: #2c2c2c;
   --margo-color-medium: #999999;
   --margo-color-border: #2c2c2c;
+
+  --margo-shadow-card: 0 4px 12px -4px rgb(var(--margo-shadow-card-color) / 0.5);
+  --margo-shadow-button: 0 2px 6px -2px rgb(var(--margo-shadow-button-color) / 0.5);
+  --margo-shadow-chip: 0 1px 3px -1px rgb(var(--margo-shadow-chip-color) / 0.5);
 }

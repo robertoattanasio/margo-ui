@@ -1,6 +1,6 @@
 export const buttonBaseClassName = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-lg border-2 text-on-main
 hover:border-on-main hover:text-on-main focus-visible:margo-border-gradient-primary
-focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-on-main`;
+focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-on-main shadow-button`;
 
 export const buttonSurfaceClassName = "border-border bg-main";
 

@@ -23,6 +23,11 @@
   --color-medium: var(--margo-color-medium);
   --color-border: var(--margo-color-border);
 
+  /* Shadows */
+  --shadow-card: var(--margo-shadow-card);
+  --shadow-button: var(--margo-shadow-button);
+  --shadow-chip: var(--margo-shadow-chip);
+
   /* Border widths */
   --border-width-2: var(--margo-border-width-2);
 

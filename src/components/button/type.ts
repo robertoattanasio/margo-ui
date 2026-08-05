@@ -7,8 +7,8 @@ export type ButtonOwnProps = {
   clickable?: boolean;
   active?: boolean;
   open?: boolean;
-  blurOnClick?: boolean;
   onClick?: MouseEventHandler<HTMLElement>;
+  onClickBlur?: MouseEventHandler<HTMLElement>;
 };
 
 export type ButtonProps<T extends ElementType = "button"> = TagProps<T, ButtonOwnProps>;

@@ -21,14 +21,18 @@ export const Button = <T extends ElementType = "button">({
   clickable = true,
   active = false,
   open = false,
-  blurOnClick = true,
+  onClickBlur,
   className,
   onClick,
   ...rest
 }: ButtonProps<T>) => {
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     onClick?.(event);
-    if (blurOnClick && event.detail > 0) setTimeout(() => event.currentTarget.blur(), 150);
+    if (typeof onClickBlur === "function") {
+      const target = event.currentTarget;
+      onClickBlur(event);
+      setTimeout(() => target.blur(), 150);
+    }
   };
 
   return (
