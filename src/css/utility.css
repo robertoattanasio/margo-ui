@@ -4,3 +4,7 @@
     linear-gradient(var(--margo-color-main), var(--margo-color-main)) padding-box,
     linear-gradient(to bottom right, var(--margo-color-primary-darken), var(--margo-color-primary)) border-box;
 }
+
+@utility margo-text-box-trim {
+  text-box: trim-start cap alphabetic;
+}

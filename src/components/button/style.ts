@@ -10,7 +10,7 @@ export const buttonIconClassName =
   "relative z-10 flex size-4 min-w-0 shrink-0 items-center justify-center [direction:ltr]";
 
 export const buttonLabelClassName =
-  "relative z-10 flex items-center text-sm whitespace-nowrap lowercase [direction:ltr] px-0.5";
+  "relative z-10 flex items-center text-sm whitespace-nowrap margo-text-box-trim lowercase [direction:ltr] px-0.5";
 
 export const buttonGridClassName =
   "grid items-center gap-0 transition-[grid-template-columns,gap] duration-[180ms] ease-in-out";

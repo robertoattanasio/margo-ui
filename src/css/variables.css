@@ -30,10 +30,6 @@
   --margo-font-weight-black: 900;
 
   --margo-border-width-2: 1.5px;
-
-  --margo-shadow-card-color: 0 0 0;
-  --margo-shadow-button-color: 0 0 0;
-  --margo-shadow-chip-color: 0 0 0;
 }
 
 :root {
@@ -47,11 +43,11 @@
   --margo-color-primary-darken: #45b93f;
   --margo-color-secondary: #d3d3d3;
   --margo-color-medium: #7e7e7e;
-  --margo-color-border: #dcdcdc;
+  --margo-color-border: #cfcfcf;
 
-  --margo-shadow-card: 0 4px 12px -4px rgb(var(--margo-shadow-card-color) / 0.1);
-  --margo-shadow-button: 0 2px 6px -2px rgb(var(--margo-shadow-button-color) / 0.1);
-  --margo-shadow-chip: 0 1px 3px -1px rgb(var(--margo-shadow-chip-color) / 0.5);
+  --margo-shadow-card: 0 8px 6px -4px rgb(220, 220, 220, 0.5);
+  --margo-shadow-button: 0px 2px 3px -1px rgb(220, 220, 220, 0.6);
+  --margo-shadow-chip: 0 1px 3px -1px rgb(0, 0, 0, 0.6);
 }
 
 .dark {
@@ -67,7 +63,7 @@
   --margo-color-medium: #999999;
   --margo-color-border: #2c2c2c;
 
-  --margo-shadow-card: 0 4px 12px -4px rgb(var(--margo-shadow-card-color) / 0.5);
-  --margo-shadow-button: 0 2px 6px -2px rgb(var(--margo-shadow-button-color) / 0.5);
-  --margo-shadow-chip: 0 1px 3px -1px rgb(var(--margo-shadow-chip-color) / 0.5);
+  --margo-shadow-card: 0 4px 12px -4px rgb(0, 0, 0, 0.5);
+  --margo-shadow-button: 0 2px 6px -2px rgb(0, 0, 0, 0.5);
+  --margo-shadow-chip: 0 1px 3px -1px rgb(0, 0, 0, 0.5);
 }
