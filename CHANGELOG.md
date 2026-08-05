@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.2.1
+
+### Patch Changes
+
+- f1551ef: UI and CSS improvements
+
 ## 1.2.0
 
 ### Minor Changes
