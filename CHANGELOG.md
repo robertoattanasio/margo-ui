@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.2.3
+
+### Patch Changes
+
+- f9c9b8f: Splash, MaskGradientY components added
+
 ## 1.2.2
 
 ### Patch Changes
