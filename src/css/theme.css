@@ -26,6 +26,7 @@
   /* Shadows */
   --shadow-card: var(--margo-shadow-card);
   --shadow-button: var(--margo-shadow-button);
+  --shadow-item: var(--margo-shadow-item);
   --shadow-chip: var(--margo-shadow-chip);
 
   /* Border widths */

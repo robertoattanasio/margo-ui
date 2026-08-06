@@ -7,10 +7,24 @@
   opacity: 0;
   border-radius: inherit;
   background: radial-gradient(
-    var(--margo-background-glow-size) circle at var(--margo-background-glow-x, 50%) var(--margo-background-glow-y, 50%),
+    var(--margo-background-glow-size, 480px) circle at var(--margo-background-glow-x, 50%) var(--margo-background-glow-y, 50%),
     var(--color-primary),
     transparent 70%
   );
+  transition: opacity 300ms ease-out;
+}
+
+.margo-background-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: var(--margo-background-glow-noise-tile, 120px);
+  mix-blend-mode: overlay;
   transition: opacity 300ms ease-out;
 }
 
@@ -19,14 +33,10 @@
   opacity: var(--margo-background-glow-opacity, 0.1);
 }
 
-.margo-background-glow--size-sm {
-  --margo-background-glow-size: 200px;
+.margo-background-glow:hover::after,
+.margo-background-glow:focus-within::after {
+  opacity: var(--margo-background-glow-noise-opacity, 0.04);
 }
 
-.margo-background-glow--size-md {
-  --margo-background-glow-size: 320px;
-}
 
-.margo-background-glow--size-lg {
-  --margo-background-glow-size: 480px;
-}
+

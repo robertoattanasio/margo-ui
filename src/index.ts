@@ -2,8 +2,12 @@ export { Blockquote } from "./components/blockquote/blockquote.js";
 export { Button } from "./components/button/button.js";
 export { Card } from "./components/card/card.js";
 export { Chip } from "./components/chip/chip.js";
+export { Item } from "./components/item/item.js";
+export { NavigationBar } from "./components/navigation_bar/navigation_bar.js";
 export { ProgressBar } from "./components/progress_bar/progress_bar.js";
+export { Table } from "./components/table/table.js";
 export { Splash } from "./components/splash/splash.js";
+export { Snippet } from "./components/snippet/snippet.js";
 export { Spinner } from "./components/spinner/spinner.js";
 export { Tooltip } from "./components/tooltip/tooltip.js";
 
@@ -30,12 +34,23 @@ export type {
 } from "./components/button/type.js";
 export type { CardProps } from "./components/card/type.js";
 export type { ChipProps } from "./components/chip/type.js";
+export type { ItemIconProps, ItemLabelProps, ItemProps } from "./components/item/type.js";
+export type { NavigationBarProps } from "./components/navigation_bar/type.js";
 export type { ProgressBarMode, ProgressBarProps } from "./components/progress_bar/type.js";
+export type {
+  TableBodyProps,
+  TableCellProps,
+  TableHeadCellProps,
+  TableHeadProps,
+  TableProps,
+  TableRowProps,
+} from "./components/table/type.js";
 export type { SplashProps, SplashServeProps } from "./components/splash/type.js";
+export type { SnippetProps, SnippetToken, SnippetTokenType } from "./components/snippet/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
 export type { TooltipPosition, TooltipProps } from "./components/tooltip/type.js";
 
-export type { BackgroundGlowProps, BackgroundGlowSize } from "./hoc/background_glow/type.js";
+export type { BackgroundGlowProps } from "./hoc/background_glow/type.js";
 export type { BorderGlowPosition, BorderGlowProps } from "./hoc/border_glow/type.js";
 export type { MaskGradientYProps } from "./hoc/mask_gradient_y/type.js";
 export type { RippleProps } from "./hoc/ripple/type.js";

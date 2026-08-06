@@ -89,6 +89,26 @@
 }
 
 /*
+ * Bleed padding: the exact counterpart of the bleed margins above. An element
+ * that bled off an edge gets its content back on the grid by padding it by the
+ * same distance, so the background reaches the viewport while the text stays
+ * aligned with the columns.
+ *
+ * Use on: a bled sidebar, band or bar whose children must keep the alignment.
+ */
+@utility margo-pl-bleed {
+  padding-inline-start: var(--margo-grid-bleed);
+}
+
+@utility margo-pr-bleed {
+  padding-inline-end: var(--margo-grid-bleed);
+}
+
+@utility margo-px-bleed {
+  padding-inline: var(--margo-grid-bleed);
+}
+
+/*
  * Back to the centered content area (all 12 columns), dropping any bleed.
  * Use to reset an element that a variant put on `full` at another breakpoint.
  */

@@ -43,17 +43,31 @@
 
   --margo-color-neutral: #ffffff;
   --margo-color-on-neutral: #000000;
-  --margo-color-main: #f6f6f6;
+  --margo-color-main: #e7e7e7;
   --margo-color-on-main: #151515;
   --margo-color-primary: #57e550;
   --margo-color-primary-darken: #45b93f;
   --margo-color-secondary: #d3d3d3;
-  --margo-color-medium: #7e7e7e;
-  --margo-color-border: #cfcfcf;
+  --margo-color-medium: #858585;
+  --margo-color-border: #cecece;
 
   --margo-shadow-card: 0 8px 6px -4px rgb(220, 220, 220, 0.5);
   --margo-shadow-button: 0px 2px 3px -1px rgb(220, 220, 220, 0.6);
+  --margo-shadow-item: 0px 2px 3px -1px rgb(220, 220, 220, 0.6);
   --margo-shadow-chip: 0 1px 3px -1px rgb(0, 0, 0, 0.6);
+
+  --margo-code-surface: #fbfbfb;
+  --margo-code-bar: #f1f1f1;
+  --margo-code-plain: #24292f;
+  --margo-code-comment: #8b949e;
+  --margo-code-string: #0a7d3f;
+  --margo-code-keyword: #a5309a;
+  --margo-code-number: #b3510f;
+  --margo-code-tag: #1f6fd6;
+  --margo-code-attr: #7a5cd6;
+  --margo-code-fn: #0f7c93;
+  --margo-code-type: #1f6fd6;
+  --margo-code-punct: #6e7781;
 }
 
 .dark {
@@ -71,5 +85,19 @@
 
   --margo-shadow-card: 0 4px 12px -4px rgb(0, 0, 0, 0.5);
   --margo-shadow-button: 0 2px 6px -2px rgb(0, 0, 0, 0.5);
+  --margo-shadow-item: 0 2px 6px -2px rgb(0, 0, 0, 0.5);
   --margo-shadow-chip: 0 1px 3px -1px rgb(0, 0, 0, 0.5);
+
+  --margo-code-surface: #0d0d0d;
+  --margo-code-bar: #161616;
+  --margo-code-plain: #e6e6e6;
+  --margo-code-comment: #6b6b6b;
+  --margo-code-string: #7ee787;
+  --margo-code-keyword: #ff7bd5;
+  --margo-code-number: #ffab70;
+  --margo-code-tag: #79c0ff;
+  --margo-code-attr: #c3a6ff;
+  --margo-code-fn: #56d4dd;
+  --margo-code-type: #79c0ff;
+  --margo-code-punct: #8b949e;
 }
