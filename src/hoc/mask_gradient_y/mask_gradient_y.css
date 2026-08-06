@@ -1,0 +1,17 @@
+.margo-mask-gradient-y {
+  --margo-mask-gradient-y-offset-top: 0px;
+  --margo-mask-gradient-y-offset-bottom: 0px;
+  --margo-mask-gradient-y-fade-top: 2rem;
+  --margo-mask-gradient-y-fade-bottom: 2rem;
+
+  --margo-mask-gradient-y-image: linear-gradient(
+    to bottom,
+    transparent var(--margo-mask-gradient-y-offset-top),
+    #000 calc(var(--margo-mask-gradient-y-offset-top) + var(--margo-mask-gradient-y-fade-top)),
+    #000 calc(100% - var(--margo-mask-gradient-y-offset-bottom) - var(--margo-mask-gradient-y-fade-bottom)),
+    transparent calc(100% - var(--margo-mask-gradient-y-offset-bottom))
+  );
+
+  -webkit-mask-image: var(--margo-mask-gradient-y-image);
+  mask-image: var(--margo-mask-gradient-y-image);
+}

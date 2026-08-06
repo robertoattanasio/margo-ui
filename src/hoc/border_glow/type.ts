@@ -10,4 +10,5 @@ export type BorderGlowChildProps = {
 export type BorderGlowProps = {
   children: ReactElement<BorderGlowChildProps>;
   position?: BorderGlowPosition;
+  tolerance?: number;
 };

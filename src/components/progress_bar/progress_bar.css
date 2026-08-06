@@ -18,7 +18,7 @@
 
 .margo-progress-bar[data-mode="indeterminate"]::before {
   inset: 0 auto 0 0;
-  width: 40%;
+  width: 50%;
   animation: margo-progress-bar-indeterminate 800ms ease-in-out infinite;
 }
 

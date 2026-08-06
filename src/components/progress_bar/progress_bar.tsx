@@ -10,10 +10,10 @@ import "./progress_bar.css";
 
 export const ProgressBar = <T extends ElementType = "div">({
   animate = true,
-  className,
   mode = "indeterminate",
   style,
   value = 0,
+  className,
   ...rest
 }: ProgressBarProps<T>) => {
   const isDeterminate = mode === "determinate";

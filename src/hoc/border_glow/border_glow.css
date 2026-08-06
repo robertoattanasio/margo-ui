@@ -5,7 +5,7 @@
   pointer-events: none;
   opacity: 0;
   background: radial-gradient(
-    480px circle at var(--margo-border-glow-x, 70%) var(--margo-border-glow-y, 70%),
+    var(--margo-border-glow-size, 480px) circle at var(--margo-border-glow-x, 70%) var(--margo-border-glow-y, 70%),
     var(--color-primary-darken),
     transparent 70%
   );

@@ -8,12 +8,14 @@ import type { BorderGlowProps } from "./type.js";
 
 import "./border_glow.css";
 
-export const BorderGlow = ({ children, position = "all" }: BorderGlowProps) => {
+export const BorderGlow = ({ children, position = "all", tolerance = 1 }: BorderGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - bounds.left;
     const y = event.clientY - bounds.top;
+    const size = Math.max(bounds.width, bounds.height) * Math.min(Math.max(tolerance, 0), 1);
 
+    event.currentTarget.style.setProperty("--margo-border-glow-size", `${size}px`);
     event.currentTarget.style.setProperty("--margo-border-glow-x", `${position === "right" ? bounds.width - x : x}px`);
     event.currentTarget.style.setProperty("--margo-border-glow-y", `${position === "down" ? bounds.height - y : y}px`);
 
