@@ -12,6 +12,15 @@
   ],
   "license": "MIT",
   "author": "Roberto Attanasio",
+  "homepage": "https://dev.robertoattanasio.com/margo-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertoattanasio/dev.robertoattanasio.com.git",
+    "directory": "lib/margo-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/robertoattanasio/dev.robertoattanasio.com/issues"
+  },
   "type": "module",
   "main": "./src/index.ts",
   "types": "./src/index.ts",

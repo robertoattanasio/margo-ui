@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
-import { cn } from "../../utils/cn/cn.js";
-import { navigationBarBaseClassName, navigationBarTrackClassName } from "./style.js";
+import { Tag } from "react-renderable";
 
-import type { CSSProperties } from "react";
+import { cn } from "../../utils/cn/cn.js";
+import { navigationBarDefaultFill, navigationBarBaseClassName, navigationBarTrackClassName } from "./style.js";
+
+import type { CSSProperties, ElementType } from "react";
 import type { NavigationBarProps } from "./type.js";
 
 import "./navigation_bar.css";
@@ -14,7 +16,12 @@ const TRICKLE_RATIO = 0.12;
 const START_PROGRESS = 8;
 const FADE_MS = 250;
 
-export const NavigationBar = ({ loading = false, className = null }: NavigationBarProps) => {
+export const NavigationBar = <T extends ElementType = "div">({
+  loading = false,
+  fill = navigationBarDefaultFill,
+  className,
+  ...rest
+}: NavigationBarProps<T>) => {
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<number | undefined>(undefined);
@@ -43,16 +50,14 @@ export const NavigationBar = ({ loading = false, className = null }: NavigationB
   }, [loading]);
 
   return (
-    <div
+    <Tag
+      {...Tag.forward<T>(rest)}
       role="progressbar"
       aria-hidden={!isVisible}
-      aria-valuemin={0}
-      aria-valuemax={100}
-      aria-valuenow={Math.round(progress)}
-      style={{ "--margo-navigation-bar-progress": `${progress}%` } as CSSProperties}
+      style={{ "--margo-navigation-bar-fill": fill, "--margo-navigation-bar-progress": `${progress}%` } as CSSProperties}
       className={cn(navigationBarBaseClassName, isVisible ? "opacity-100" : "opacity-0", className)}
     >
       <div className={navigationBarTrackClassName} />
-    </div>
+    </Tag>
   );
 };

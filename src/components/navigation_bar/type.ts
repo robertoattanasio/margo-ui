@@ -1,4 +1,9 @@
-export type NavigationBarProps = {
+import type { TagProps } from "react-renderable";
+import type { ElementType } from "react";
+
+export type NavigationBarOwnProps = {
   loading?: boolean;
-  className?: string | null;
+  fill?: string;
 };
+
+export type NavigationBarProps<T extends ElementType = "div"> = TagProps<T, NavigationBarOwnProps>;

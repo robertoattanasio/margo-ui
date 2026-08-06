@@ -11,10 +11,10 @@ export type ItemProps<T extends ElementType = "div"> = TagProps<T, ItemOwnProps>
 
 export type ItemIconProps = {
   icon?: ReactNode;
-  className?: string | null;
+  className?: string;
 };
 
 export type ItemLabelProps = {
   label: ReactNode;
-  className?: string | null;
+  className?: string;
 };

@@ -39,7 +39,7 @@ export const Button = <T extends ElementType = "button">({
     <Ripple>
       <Tag
         {...Tag.forward<T>(rest, "button")}
-        data-open={open}
+        data-margo-open={open}
         onClick={handleClick}
         className={cn(
           buttonBaseClassName,
@@ -52,11 +52,11 @@ export const Button = <T extends ElementType = "button">({
   );
 };
 
-Button.Icon = ({ icon, className = null }: ButtonIconProps) => (
+Button.Icon = ({ icon, className }: ButtonIconProps) => (
   <span className={cn(buttonIconClassName, className)}>{icon}</span>
 );
 
-Button.Label = ({ label, className = null }: ButtonLabelProps) => (
+Button.Label = ({ label, className }: ButtonLabelProps) => (
   <span className={cn(buttonLabelClassName, className)}>{label}</span>
 );
 
@@ -66,7 +66,7 @@ Button.IconLabel = ({
   gap = "0.5rem",
   reverse = false,
   side = "end",
-  className = null,
+  className,
 }: ButtonIconLabelProps) => (
   <span
     style={{ "--button-gap": gap } as CSSProperties}

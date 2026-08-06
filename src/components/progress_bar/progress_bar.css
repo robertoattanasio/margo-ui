@@ -2,21 +2,18 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(
-    --margo-progress-bar-fill,
-    linear-gradient(to right, var(--color-primary-darken), var(--color-primary))
-  );
+  background: var(--margo-progress-bar-fill);
 }
 
-.margo-progress-bar[data-mode="determinate"]::before {
+.margo-progress-bar[data-margo-mode="determinate"]::before {
   clip-path: inset(0 calc(100% - var(--margo-progress-bar-value, 0%)) 0 0);
 }
 
-.margo-progress-bar[data-mode="determinate"][data-animate="true"]::before {
+.margo-progress-bar[data-margo-mode="determinate"][data-margo-animate="true"]::before {
   transition: clip-path 300ms ease-out;
 }
 
-.margo-progress-bar[data-mode="indeterminate"]::before {
+.margo-progress-bar[data-margo-mode="indeterminate"]::before {
   inset: 0 auto 0 0;
   width: 50%;
   animation: margo-progress-bar-indeterminate 800ms ease-in-out infinite;

@@ -15,12 +15,12 @@ export type ButtonProps<T extends ElementType = "button"> = TagProps<T, ButtonOw
 
 export type ButtonIconProps = {
   icon: ReactNode;
-  className?: string | null;
+  className?: string;
 };
 
 export type ButtonLabelProps = {
   label: string;
-  className?: string | null;
+  className?: string;
 };
 
 export type ButtonIconLabelProps = {
@@ -29,5 +29,5 @@ export type ButtonIconLabelProps = {
   gap?: string;
   reverse?: boolean;
   side?: ButtonIconLabelSide;
-  className?: string | null;
+  className?: string;
 };

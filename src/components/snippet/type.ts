@@ -1,3 +1,6 @@
+import type { TagProps } from "react-renderable";
+import type { ElementType } from "react";
+
 export type SnippetTokenType =
   | "plain"
   | "comment"
@@ -15,8 +18,9 @@ export type SnippetToken = {
   value: string;
 };
 
-export type SnippetProps = {
+export type SnippetOwnProps = {
   snippet: string;
   title?: string;
-  className?: string | null;
 };
+
+export type SnippetProps<T extends ElementType = "div"> = TagProps<T, SnippetOwnProps>;

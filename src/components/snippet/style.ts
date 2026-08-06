@@ -7,6 +7,8 @@ export const snippetBarClassName =
 
 export const snippetTitleClassName = "text-mc uppercase tracking-widest text-medium";
 
+export const snippetCopyClassName = "ml-auto bg-neutral/60";
+
 export const snippetCodeClassName = "overflow-x-auto p-4 text-xs leading-relaxed";
 
 export const snippetTokenClassName: Record<SnippetTokenType, string> = {

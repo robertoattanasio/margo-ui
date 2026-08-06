@@ -15,19 +15,19 @@ import type { ElementType, ReactNode } from "react";
 import type { TooltipProps } from "./type.js";
 
 export const Tooltip = <T extends ElementType = "div">({
-  ariaLabel,
+  label,
   children,
   className,
   id,
-  placeholder,
+  content,
   position = "down",
   ...rest
 }: TooltipProps<T>) => {
-  const placeholderRef = useRef<ReactNode>(null);
+  const contentRef = useRef<ReactNode>(null);
 
-  const isFilled = placeholder !== null && placeholder !== undefined;
+  const isFilled = content !== null && content !== undefined;
 
-  if (isFilled) placeholderRef.current = placeholder;
+  if (isFilled) contentRef.current = content;
 
   return (
     <Tag {...Tag.forward<T>(rest)} className={cn(tooltipAnchorClassName, className)}>
@@ -35,7 +35,7 @@ export const Tooltip = <T extends ElementType = "div">({
       <span
         id={id}
         role="tooltip"
-        aria-label={isFilled ? undefined : ariaLabel}
+        aria-label={isFilled ? undefined : label}
         className={cn(
           tooltipBubbleClassName,
           tooltipTransitionClassName,
@@ -43,7 +43,7 @@ export const Tooltip = <T extends ElementType = "div">({
           tooltipPositionClassName[position],
         )}
       >
-        {placeholderRef.current}
+        {contentRef.current}
       </span>
     </Tag>
   );

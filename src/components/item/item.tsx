@@ -36,7 +36,7 @@ export const Item = <T extends ElementType = "div">({
     <Ripple>
       <Tag
         {...Tag.forward<T>(rest)}
-        data-active={active}
+        data-margo-active={active}
         onClick={handleClick}
         className={cn(itemBaseClassName, active ? itemActiveClassName : itemSurfaceClassName, className)}
       >
@@ -46,12 +46,12 @@ export const Item = <T extends ElementType = "div">({
   );
 };
 
-Item.Icon = ({ icon = <MdChevronRight className="text-md translate-x-1" />, className = null }: ItemIconProps) => (
+Item.Icon = ({ icon = <MdChevronRight className="text-md translate-x-1" />, className }: ItemIconProps) => (
   <span data-margo-item-slot={true} className={cn(itemIconClassName, className)}>
     {icon}
   </span>
 );
 
-Item.Label = ({ label, className = null }: ItemLabelProps) => (
+Item.Label = ({ label, className }: ItemLabelProps) => (
   <span className={cn(itemLabelClassName, className)}>{label}</span>
 );

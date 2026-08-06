@@ -4,9 +4,9 @@ import type { ElementType, ReactNode } from "react";
 export type TooltipPosition = "up" | "down" | "left" | "right";
 
 export type TooltipOwnProps = {
-  ariaLabel?: string;
+  label?: string;
   id?: string;
-  placeholder?: ReactNode;
+  content?: ReactNode;
   position?: TooltipPosition;
   children?: ReactNode;
 };
