@@ -28,7 +28,7 @@ The package is published as TypeScript source: your bundler compiles it, exactly
 
 ## Approach
 
-- **Tokens, not props.** Every visual decision is a `--margo-` custom property, mirrored into Tailwind's theme. Theming means redeclaring variables, never overriding classes.
+- **Tokens first.** Colours, type and elevation are `--margo-` custom properties, mirrored into Tailwind's theme: redeclaring them themes the kit. Per-instance overrides go through `className`, merged over the defaults.
 - **CSS first.** Effects live on pseudo-elements; JavaScript only writes coordinates. Most components hold no state.
 - **Polymorphic.** `as` chooses the rendered element, and the remaining props are typed against it.
 - **Composed, not configured.** Components expose parts to mount rather than booleans to set.
