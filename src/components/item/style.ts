@@ -7,7 +7,7 @@ hover:shadow-item focus-visible:shadow-item`;
 
 export const itemActiveClassName = "margo-border-gradient-primary text-on-main shadow-item";
 
-export const itemIconClassName = `ml-auto flex size-4 shrink-0 items-center justify-center
+export const itemIconClassName = `ml-auto flex size-4 shrink-0 items-center justify-center first:ml-0
 [[data-margo-item-slot]+&]:ml-0`;
 
 export const itemLabelClassName = "min-w-0 truncate text-left";

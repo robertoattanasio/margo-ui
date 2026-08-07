@@ -29,6 +29,13 @@
   --shadow-item: var(--margo-shadow-item);
   --shadow-chip: var(--margo-shadow-chip);
 
+  /* Durations */
+  --duration-layer: var(--margo-layer-duration);
+  --ease-layer: var(--margo-layer-easing);
+
+  /* Layers */
+  --z-index-layer: var(--margo-layer-z-index);
+
   /* Border widths */
   --border-width-2: var(--margo-border-width-2);
 

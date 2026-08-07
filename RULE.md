@@ -57,6 +57,8 @@ export type ButtonProps<T extends ElementType = "button"> = TagProps<T, ButtonOw
 
 Booleans are named for the state they describe — `active`, `open`, `loading` — and default to `false`. Defaults live in the signature, never as a fallback buried in CSS.
 
+One component is deliberately not polymorphic: `Layer` owns a platform element, a native `dialog`, and `as` would break `showModal()`. Any other exception needs a reason of that kind, written down.
+
 ## Customisation
 
 Three ways in, and which one to use is decided by who owns the value:

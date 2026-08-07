@@ -1,0 +1,41 @@
+.margo-sheet {
+  transition: translate var(--margo-layer-duration) var(--margo-layer-easing);
+}
+
+.margo-sheet[data-margo-side="start"] {
+  translate: -100% 0;
+}
+
+.margo-sheet[data-margo-side="end"] {
+  translate: 100% 0;
+}
+
+.margo-sheet[data-margo-side="top"] {
+  translate: 0 -100%;
+}
+
+.margo-sheet[data-margo-side="bottom"] {
+  translate: 0 100%;
+}
+
+dialog[open] .margo-sheet {
+  translate: 0 0;
+}
+
+@starting-style {
+  dialog[open] .margo-sheet[data-margo-side="start"] {
+    translate: -100% 0;
+  }
+
+  dialog[open] .margo-sheet[data-margo-side="end"] {
+    translate: 100% 0;
+  }
+
+  dialog[open] .margo-sheet[data-margo-side="top"] {
+    translate: 0 -100%;
+  }
+
+  dialog[open] .margo-sheet[data-margo-side="bottom"] {
+    translate: 0 100%;
+  }
+}

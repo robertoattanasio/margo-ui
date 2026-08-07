@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Tag } from "react-renderable";
 
 import { cn } from "../../utils/cn/cn.js";
-import { navigationBarDefaultFill, navigationBarBaseClassName, navigationBarTrackClassName } from "./style.js";
+import { navigationBarBaseClassName, navigationBarDefaultFill, navigationBarTrackClassName } from "./style.js";
 
 import type { CSSProperties, ElementType } from "react";
 import type { NavigationBarProps } from "./type.js";
@@ -14,7 +14,8 @@ const TRICKLE_MS = 200;
 const TRICKLE_CEILING = 90;
 const TRICKLE_RATIO = 0.12;
 const START_PROGRESS = 8;
-const FADE_MS = 250;
+const HOLD_MS = 300;
+const FADE_MS = 400;
 
 export const NavigationBar = <T extends ElementType = "div">({
   loading = false,
@@ -25,10 +26,12 @@ export const NavigationBar = <T extends ElementType = "div">({
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<number | undefined>(undefined);
+  const resetRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     if (loading) {
       window.clearTimeout(timeoutRef.current);
+      window.clearTimeout(resetRef.current);
       setIsVisible(true);
       setProgress(START_PROGRESS);
 
@@ -41,12 +44,14 @@ export const NavigationBar = <T extends ElementType = "div">({
     }
 
     setProgress((current) => (current > 0 ? 100 : 0));
-    timeoutRef.current = window.setTimeout(() => {
-      setIsVisible(false);
-      setProgress(0);
-    }, FADE_MS);
 
-    return () => window.clearTimeout(timeoutRef.current);
+    timeoutRef.current = window.setTimeout(() => setIsVisible(false), HOLD_MS);
+    resetRef.current = window.setTimeout(() => setProgress(0), HOLD_MS + FADE_MS);
+
+    return () => {
+      window.clearTimeout(timeoutRef.current);
+      window.clearTimeout(resetRef.current);
+    };
   }, [loading]);
 
   return (
@@ -54,7 +59,9 @@ export const NavigationBar = <T extends ElementType = "div">({
       {...Tag.forward<T>(rest)}
       role="progressbar"
       aria-hidden={!isVisible}
-      style={{ "--margo-navigation-bar-fill": fill, "--margo-navigation-bar-progress": `${progress}%` } as CSSProperties}
+      style={
+        { "--margo-navigation-bar-fill": fill, "--margo-navigation-bar-progress": `${progress}%` } as CSSProperties
+      }
       className={cn(navigationBarBaseClassName, isVisible ? "opacity-100" : "opacity-0", className)}
     >
       <div className={navigationBarTrackClassName} />

@@ -1,0 +1,51 @@
+.margo-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--margo-layer-z-index);
+  transition:
+    visibility var(--margo-layer-duration) var(--margo-layer-easing),
+    overlay var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete,
+    display var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete;
+}
+
+.margo-layer:not([open]) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.margo-layer > *:not([data-margo-travel]) {
+  opacity: 0;
+  transition: opacity var(--margo-layer-duration) var(--margo-layer-easing);
+}
+
+.margo-layer[open] > *:not([data-margo-travel]) {
+  opacity: 1;
+}
+
+@starting-style {
+  .margo-layer[open] > *:not([data-margo-travel]) {
+    opacity: 0;
+  }
+}
+
+.margo-layer::backdrop {
+  opacity: 0;
+  transition:
+    opacity var(--margo-layer-duration) var(--margo-layer-easing),
+    overlay var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete,
+    display var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete;
+}
+
+.margo-layer[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .margo-layer[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+html:has(.margo-layer[open]) {
+  overflow: clip;
+}
