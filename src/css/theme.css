@@ -35,6 +35,7 @@
 
   /* Layers */
   --z-index-layer: var(--margo-layer-z-index);
+  --z-index-max: var(--margo-max-z-index);
 
   /* Border widths */
   --border-width-2: var(--margo-border-width-2);
