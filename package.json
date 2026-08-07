@@ -15,11 +15,10 @@
   "homepage": "https://dev.robertoattanasio.com/margo-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robertoattanasio/dev.robertoattanasio.com.git",
-    "directory": "lib/margo-ui"
+    "url": "git+https://github.com/robertoattanasio/margo-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/robertoattanasio/dev.robertoattanasio.com/issues"
+    "url": "https://github.com/robertoattanasio/margo-ui/issues"
   },
   "type": "module",
   "main": "./src/index.ts",
