@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.3.2
+
+### Patch Changes
+
+- cda8b33: Point `repository` and `bugs` at this package's own repository instead of the documentation site, and link the npm package from the README.
+
 ## 1.3.1
 
 ### Patch Changes
