@@ -5,11 +5,13 @@ import { cn } from "../../utils/cn/cn.js";
 import {
   buttonActiveClassName,
   buttonBaseClassName,
+  buttonDisabledClassName,
   buttonGridClassName,
   buttonGridForwardClassName,
   buttonGridReverseClassName,
   buttonIconClassName,
   buttonLabelClassName,
+  buttonNotClickableClassName,
   buttonSlotClassName,
   buttonSurfaceClassName,
 } from "./style.js";
@@ -19,6 +21,7 @@ import type { ButtonIconLabelProps, ButtonIconProps, ButtonLabelProps, ButtonPro
 
 export const Button = <T extends ElementType = "button">({
   clickable = true,
+  disabled = false,
   active = false,
   open = false,
   onClickBlur,
@@ -27,6 +30,7 @@ export const Button = <T extends ElementType = "button">({
   ...rest
 }: ButtonProps<T>) => {
   const handleClick = (event: MouseEvent<HTMLElement>) => {
+    if (disabled) return;
     onClick?.(event);
     if (typeof onClickBlur === "function") {
       const target = event.currentTarget;
@@ -36,15 +40,19 @@ export const Button = <T extends ElementType = "button">({
   };
 
   return (
-    <Ripple>
+    <Ripple disabled={disabled || !clickable}>
       <Tag
         {...Tag.forward<T>(rest, "button")}
         data-margo-open={open}
+        data-margo-disabled={disabled}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled || !clickable ? -1 : undefined}
         onClick={handleClick}
         className={cn(
           buttonBaseClassName,
           active ? buttonActiveClassName : buttonSurfaceClassName,
-          !clickable && "pointer-events-none",
+          !clickable && buttonNotClickableClassName,
+          disabled && buttonDisabledClassName,
           className,
         )}
       />

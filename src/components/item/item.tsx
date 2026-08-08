@@ -6,8 +6,10 @@ import { cn } from "../../utils/cn/cn.js";
 import {
   itemActiveClassName,
   itemBaseClassName,
+  itemDisabledClassName,
   itemIconClassName,
   itemLabelClassName,
+  itemNotClickableClassName,
   itemSurfaceClassName,
 } from "./style.js";
 
@@ -15,7 +17,9 @@ import type { ElementType, MouseEvent } from "react";
 import { Ripple } from "../../hoc/ripple/ripple.js";
 import type { ItemIconProps, ItemLabelProps, ItemProps } from "./type.js";
 
-export const Item = <T extends ElementType = "div">({
+export const Item = <T extends ElementType = "button">({
+  clickable = true,
+  disabled = false,
   active = false,
   onClickBlur,
   onClick,
@@ -24,6 +28,7 @@ export const Item = <T extends ElementType = "div">({
   ...rest
 }: ItemProps<T>) => {
   const handleClick = (event: MouseEvent<HTMLElement>) => {
+    if (disabled) return;
     onClick?.(event);
     if (typeof onClickBlur === "function") {
       const target = event.currentTarget;
@@ -33,12 +38,21 @@ export const Item = <T extends ElementType = "div">({
   };
 
   return (
-    <Ripple>
+    <Ripple disabled={disabled || !clickable}>
       <Tag
-        {...Tag.forward<T>(rest)}
+        {...Tag.forward<T>(rest, "button")}
         data-margo-active={active}
+        data-margo-disabled={disabled}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled || !clickable ? -1 : undefined}
         onClick={handleClick}
-        className={cn(itemBaseClassName, active ? itemActiveClassName : itemSurfaceClassName, className)}
+        className={cn(
+          itemBaseClassName,
+          active ? itemActiveClassName : itemSurfaceClassName,
+          !clickable && itemNotClickableClassName,
+          disabled && itemDisabledClassName,
+          className,
+        )}
       >
         {children}
       </Tag>

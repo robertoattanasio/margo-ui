@@ -8,6 +8,7 @@ export type RippleChildProps = {
 
 export type RippleProps = {
   children: ReactElement<RippleChildProps>;
+  disabled?: boolean;
   rippleClassName?: string;
 };
 

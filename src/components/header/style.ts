@@ -1,4 +1,4 @@
-export const headerBaseClassName = "flex w-full items-center gap-3 px-5 py-4 shadow-sm";
+export const headerBaseClassName = "flex w-full items-center gap-3 px-5 py-4";
 
 export const headerLeadingClassName = "flex shrink-0 items-center gap-2";
 

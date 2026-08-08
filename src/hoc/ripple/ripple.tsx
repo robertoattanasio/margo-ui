@@ -10,11 +10,11 @@ import type { RippleProps } from "./type.js";
 
 import "./ripple.css";
 
-export const Ripple = ({ children, rippleClassName = "bg-primary-darken" }: RippleProps) => {
+export const Ripple = ({ children, disabled = false, rippleClassName = "bg-primary-darken" }: RippleProps) => {
   const { endRipple, ripple, startRipple } = useRipple();
 
   const handlePointerDown = (event: PointerEvent<HTMLElement>) => {
-    startRipple(event);
+    if (!disabled) startRipple(event);
     children.props.onPointerDown?.(event);
   };
 

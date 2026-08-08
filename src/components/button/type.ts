@@ -5,6 +5,7 @@ export type ButtonIconLabelSide = "start" | "end";
 
 export type ButtonOwnProps = {
   clickable?: boolean;
+  disabled?: boolean;
   active?: boolean;
   open?: boolean;
   onClick?: MouseEventHandler<HTMLElement>;
