@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.3.4
+
+### Patch Changes
+
+- 984c739: PointerHolder HOC component added
+
 ## 1.3.3
 
 ### Patch Changes
