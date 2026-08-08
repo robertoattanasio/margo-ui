@@ -18,6 +18,7 @@ export { Tooltip } from "./components/tooltip/tooltip.js";
 
 export { BackgroundGlow } from "./hoc/background_glow/background_glow.js";
 export { BorderGlow } from "./hoc/border_glow/border_glow.js";
+export { PointerHolder } from "./hoc/pointer_holder/pointer_holder.js";
 export { MaskGradientX } from "./hoc/mask_gradient_x/mask_gradient_x.js";
 export { MaskGradientY } from "./hoc/mask_gradient_y/mask_gradient_y.js";
 export { Ripple } from "./hoc/ripple/ripple.js";
@@ -68,6 +69,7 @@ export type { TooltipPosition, TooltipProps } from "./components/tooltip/type.js
 
 export type { BackgroundGlowProps } from "./hoc/background_glow/type.js";
 export type { BorderGlowPosition, BorderGlowProps } from "./hoc/border_glow/type.js";
+export type { PointerHolderProps } from "./hoc/pointer_holder/type.js";
 export type { MaskGradientXProps } from "./hoc/mask_gradient_x/type.js";
 export type { MaskGradientYProps } from "./hoc/mask_gradient_y/type.js";
 export type { RippleProps } from "./hoc/ripple/type.js";

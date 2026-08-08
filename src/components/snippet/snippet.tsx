@@ -17,6 +17,7 @@ import {
 } from "./style.js";
 
 import type { ElementType } from "react";
+import { MaskGradientX } from "../../hoc/mask_gradient_x/mask_gradient_x.js";
 import type { SnippetProps } from "./type.js";
 
 export const Snippet = <T extends ElementType = "div">({ snippet, title, className, ...rest }: SnippetProps<T>) => {
@@ -46,18 +47,20 @@ export const Snippet = <T extends ElementType = "div">({ snippet, title, classNa
           />
         </Button>
       </div>
-      <pre className={snippetCodeClassName}>
-        <code>
-          <List
-            array={snippetHighlight(source)}
-            itemExtractor={({ row, index }) => (
-              <span key={index} className={snippetTokenClassName[row.type]}>
-                {row.value}
-              </span>
-            )}
-          />
-        </code>
-      </pre>
+      <MaskGradientX fade="1rem">
+        <pre className={snippetCodeClassName}>
+          <code>
+            <List
+              array={snippetHighlight(source)}
+              itemExtractor={({ row, index }) => (
+                <span key={index} className={snippetTokenClassName[row.type]}>
+                  {row.value}
+                </span>
+              )}
+            />
+          </code>
+        </pre>
+      </MaskGradientX>
     </Tag>
   );
 };
