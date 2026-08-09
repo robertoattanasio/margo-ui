@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.4.0
+
+### Minor Changes
+
+- 68a5494: Button, Item behavior and color improvements, Ripple behavior improved, medium colour slightly changed
+
 ## 1.3.5
 
 ### Patch Changes
