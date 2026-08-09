@@ -64,6 +64,24 @@
 }
 
 /*
+ * Row subgrid: the item spans N rows of its parent grid and shares those tracks
+ * with its siblings, so sibling boxes with different content lengths keep their
+ * internal sections — dividers, footers, actions — on the exact same lines.
+ * Must be applied to every sibling that has to align, all with the same N, and
+ * each must expose exactly N children (wrap what belongs together).
+ *
+ * The rows inherit the parent row-gap; override it on the item (same value on
+ * every sibling) when the internal spacing differs from the layout gutter.
+ *
+ * Use on: cards in a row whose separators must line up.
+ */
+@utility margo-grid-sub-rows-* {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row-end: span --value(integer);
+}
+
+/*
  * Standalone 12-column grid: same line names and gutters, but no max-width and
  * no side padding — it fills whatever box it is placed in.
  *
