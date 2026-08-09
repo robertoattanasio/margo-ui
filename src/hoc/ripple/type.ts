@@ -3,7 +3,7 @@ import type { PointerEvent, PointerEventHandler, ReactElement, ReactNode } from 
 export type RippleChildProps = {
   children?: ReactNode;
   className?: string;
-  onPointerDown?: PointerEventHandler<HTMLElement>;
+  onPointerUp?: PointerEventHandler<HTMLElement>;
 };
 
 export type RippleProps = {

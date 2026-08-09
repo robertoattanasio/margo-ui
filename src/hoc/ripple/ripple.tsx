@@ -13,14 +13,14 @@ import "./ripple.css";
 export const Ripple = ({ children, disabled = false, rippleClassName = "bg-primary-darken" }: RippleProps) => {
   const { endRipple, ripple, startRipple } = useRipple();
 
-  const handlePointerDown = (event: PointerEvent<HTMLElement>) => {
+  const handlePointerUp = (event: PointerEvent<HTMLElement>) => {
     if (!disabled) startRipple(event);
-    children.props.onPointerDown?.(event);
+    children.props.onPointerUp?.(event);
   };
 
   return cloneElement(children, {
     className: cn("relative overflow-hidden", children.props.className),
-    onPointerDown: handlePointerDown,
+    onPointerUp: handlePointerUp,
     children: (
       <>
         {children.props.children}
