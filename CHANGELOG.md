@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.5.0
+
+### Minor Changes
+
+- 22e8a36: Code component added, Spinner and Tooltip accept aria-label, Table scroll without bounce, button gap custom property renamed to --margo-button-gap
+
 ## 1.4.0
 
 ### Minor Changes
