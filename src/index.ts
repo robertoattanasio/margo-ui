@@ -3,6 +3,7 @@ export { Button } from "./components/button/button.js";
 export { ButtonMicro } from "./components/button_micro/button_micro.js";
 export { Card } from "./components/card/card.js";
 export { Chip } from "./components/chip/chip.js";
+export { Code } from "./components/code/code.js";
 export { Dialog } from "./components/dialog/dialog.js";
 export { Header } from "./components/header/header.js";
 export { Layer } from "./components/layer/layer.js";
@@ -42,6 +43,7 @@ export type {
 export type { ButtonMicroProps } from "./components/button_micro/type.js";
 export type { CardProps } from "./components/card/type.js";
 export type { ChipProps } from "./components/chip/type.js";
+export type { CodeOwnProps, CodeProps } from "./components/code/type.js";
 export type { DialogBodyProps, DialogFooterProps, DialogProps } from "./components/dialog/type.js";
 export type {
   HeaderLeadingProps,

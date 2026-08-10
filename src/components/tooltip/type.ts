@@ -11,7 +11,4 @@ export type TooltipOwnProps = {
   children?: ReactNode;
 };
 
-export type TooltipProps<T extends ElementType = "div"> = Omit<
-  TagProps<T, TooltipOwnProps>,
-  "aria-label"
->;
+export type TooltipProps<T extends ElementType = "div"> = TagProps<T, TooltipOwnProps>;

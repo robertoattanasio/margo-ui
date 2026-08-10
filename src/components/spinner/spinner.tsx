@@ -8,9 +8,9 @@ import type { SpinnerProps } from "./type.js";
 
 export const Spinner = <T extends ElementType = "span">({ className, label = "Loading", ...rest }: SpinnerProps<T>) => (
   <Tag
+    aria-label={label}
     {...Tag.forward<T>(rest, "span")}
     role="status"
-    aria-label={label}
     className={cn(spinnerBaseClassName, className)}
   >
     <svg viewBox="0 0 24 24" aria-hidden className={spinnerIconClassName}>

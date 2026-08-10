@@ -77,7 +77,7 @@ Button.IconLabel = ({
   className,
 }: ButtonIconLabelProps) => (
   <span
-    style={{ "--button-gap": gap } as CSSProperties}
+    style={{ "--margo-button-gap": gap } as CSSProperties}
     className={cn(
       buttonGridClassName,
       side === "start" && "[direction:rtl]",

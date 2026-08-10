@@ -1,4 +1,4 @@
-export const tableWrapperClassName = "w-full overflow-x-auto rounded-lg border-2 border-border";
+export const tableWrapperClassName = "w-full overflow-x-auto overscroll-x-none rounded-lg border-2 border-border";
 
 export const tableBaseClassName = "w-full border-collapse text-xs text-on-main";
 

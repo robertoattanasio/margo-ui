@@ -5,4 +5,4 @@ export type SpinnerOwnProps = {
   label?: string;
 };
 
-export type SpinnerProps<T extends ElementType = "span"> = Omit<TagProps<T, SpinnerOwnProps>, "aria-label">;
+export type SpinnerProps<T extends ElementType = "span"> = TagProps<T, SpinnerOwnProps>;
