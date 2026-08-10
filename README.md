@@ -1,6 +1,6 @@
 # margo-ui
 
-A small React UI kit built on Tailwind CSS v4 design tokens, themeable through plain CSS custom properties.
+React UI kit built on Tailwind CSS v4 design tokens, themeable through plain CSS custom properties.
 
 Package: [npmjs.com/package/margo-ui](https://www.npmjs.com/package/margo-ui)
 

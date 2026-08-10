@@ -1,7 +1,7 @@
 {
   "name": "margo-ui",
   "version": "1.5.0",
-  "description": "A small React UI kit built on Tailwind CSS v4 design tokens, themeable through plain CSS custom properties.",
+  "description": "React UI kit built on Tailwind CSS v4 design tokens, themeable through plain CSS custom properties.",
   "keywords": [
     "react",
     "ui",
