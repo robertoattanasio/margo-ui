@@ -1,5 +1,11 @@
 # margo-ui
 
+## 1.5.1
+
+### Patch Changes
+
+- 89a5d4f: Minor fix of margo-grid on small devices
+
 ## 1.5.0
 
 ### Minor Changes
