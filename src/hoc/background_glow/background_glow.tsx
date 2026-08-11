@@ -10,6 +10,8 @@ import "./background_glow.css";
 
 export const BackgroundGlow = ({ children, tolerance = 1, opacity = 0.2, noise = 0.04 }: BackgroundGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse") return children.props.onPointerMove?.(event);
+
     const bounds = event.currentTarget.getBoundingClientRect();
     const spread = Math.max(bounds.width, bounds.height) * Math.min(Math.max(tolerance, 0), 1);
 

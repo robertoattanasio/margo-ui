@@ -6,6 +6,7 @@ export { Chip } from "./components/chip/chip.js";
 export { Code } from "./components/code/code.js";
 export { Dialog } from "./components/dialog/dialog.js";
 export { Header } from "./components/header/header.js";
+export { Label } from "./components/label/label.js";
 export { Layer } from "./components/layer/layer.js";
 export { Item } from "./components/item/item.js";
 export { NavigationBar } from "./components/navigation_bar/navigation_bar.js";
@@ -51,6 +52,7 @@ export type {
   HeaderTitleProps,
   HeaderTrailingProps,
 } from "./components/header/type.js";
+export type { LabelProps } from "./components/label/type.js";
 export type { LayerProps } from "./components/layer/type.js";
 export type { ItemIconProps, ItemLabelProps, ItemProps } from "./components/item/type.js";
 export type { NavigationBarProps } from "./components/navigation_bar/type.js";

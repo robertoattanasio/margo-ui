@@ -10,6 +10,8 @@ import "./border_glow.css";
 
 export const BorderGlow = ({ children, position = "all", tolerance = 1 }: BorderGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse") return children.props.onPointerMove?.(event);
+
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - bounds.left;
     const y = event.clientY - bounds.top;

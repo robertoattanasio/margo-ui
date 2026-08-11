@@ -6,15 +6,16 @@
   opacity: 0;
   background: radial-gradient(
     var(--margo-border-glow-size, 480px) circle at var(--margo-border-glow-x, 70%) var(--margo-border-glow-y, 70%),
-    var(--color-primary-darken),
+    var(--color-primary),
     transparent 70%
   );
   transition: opacity 300ms ease-out;
 }
 
-.margo-border-glow:hover::before,
-.margo-border-glow:focus-within::before {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .margo-border-glow:hover::before {
+    opacity: 1;
+  }
 }
 
 .margo-border-glow--ring::before {

@@ -28,14 +28,14 @@
   transition: opacity 300ms ease-out;
 }
 
-.margo-background-glow:hover::before,
-.margo-background-glow:focus-within::before {
-  opacity: var(--margo-background-glow-opacity, 0.1);
-}
+@media (hover: hover) and (pointer: fine) {
+  .margo-background-glow:hover::before {
+    opacity: var(--margo-background-glow-opacity, 0.1);
+  }
 
-.margo-background-glow:hover::after,
-.margo-background-glow:focus-within::after {
-  opacity: var(--margo-background-glow-noise-opacity, 0.04);
+  .margo-background-glow:hover::after {
+    opacity: var(--margo-background-glow-noise-opacity, 0.04);
+  }
 }
 
 
