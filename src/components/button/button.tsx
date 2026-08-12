@@ -11,7 +11,6 @@ import {
   buttonGridReverseClassName,
   buttonIconClassName,
   buttonLabelClassName,
-  buttonNotClickableClassName,
   buttonSlotClassName,
   buttonSurfaceClassName,
 } from "./style.js";
@@ -46,12 +45,11 @@ export const Button = <T extends ElementType = "button">({
         data-margo-open={open}
         data-margo-disabled={disabled}
         aria-disabled={disabled || undefined}
-        tabIndex={disabled || !clickable ? -1 : undefined}
+        inert={disabled || !clickable || undefined}
         onClick={handleClick}
         className={cn(
           buttonBaseClassName,
           active ? buttonActiveClassName : buttonSurfaceClassName,
-          !clickable && buttonNotClickableClassName,
           disabled && buttonDisabledClassName,
           className,
         )}

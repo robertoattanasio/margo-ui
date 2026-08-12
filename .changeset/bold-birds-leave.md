@@ -2,4 +2,4 @@
 "margo-ui": patch
 ---
 
-Button and Item color refactor. BackgroundGlow and BorderGlow interaction fix. Label component added
+Button and Item color refactor. BackgroundGlow and BorderGlow interaction fix

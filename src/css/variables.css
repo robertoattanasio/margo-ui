@@ -48,17 +48,19 @@
 
   --margo-color-neutral: #ffffff;
   --margo-color-on-neutral: #000000;
-  --margo-color-main: #e7e7e7;
+  --margo-color-main: #edecec;
   --margo-color-on-main: #151515;
   --margo-color-primary: #57e550;
   --margo-color-primary-darken: #45b93f;
-  --margo-color-secondary: #d3d3d3;
+  --margo-color-low: color-mix(in srgb, var(--margo-color-on-main) 4%, var(--margo-color-main));
+  --margo-color-low-alpha: color-mix(in srgb, var(--margo-color-on-main) 4%, transparent);
   --margo-color-medium: #808080;
   --margo-color-border: #cecece;
 
   --margo-shadow-card: 0 8px 6px -4px rgb(220, 220, 220, 0.5);
-  --margo-shadow-button: 0px 2px 3px -1px rgb(220, 220, 220, 0.6);
-  --margo-shadow-item: 0px 2px 3px -1px rgb(220, 220, 220, 0.6);
+  --margo-shadow-button: 0 2px 3px -1px rgb(220, 220, 220, 0.6);
+  --margo-shadow-item: 0 3px 3px -3px rgba(139, 139, 139, 0.6);
+  --margo-shadow-input: 0 3px 3px -3px rgba(139, 139, 139, 0.6);
   --margo-shadow-chip: 0 1px 3px -1px rgb(0, 0, 0, 0.6);
 
   --margo-code-surface: #fbfbfb;
@@ -84,13 +86,15 @@
   --margo-color-on-main: #eeeeee;
   --margo-color-primary: #57e550;
   --margo-color-primary-darken: #45b93f;
-  --margo-color-secondary: #2c2c2c;
+  --margo-color-low: color-mix(in srgb, var(--margo-color-on-main) 2.5%, var(--margo-color-main));
+  --margo-color-low-alpha: color-mix(in srgb, var(--margo-color-on-main) 2.5%, transparent);
   --margo-color-medium: #999999;
   --margo-color-border: #2c2c2c;
 
   --margo-shadow-card: 0 4px 12px -4px rgb(0, 0, 0, 0.5);
   --margo-shadow-button: 0 2px 6px -2px rgb(0, 0, 0, 0.5);
-  --margo-shadow-item: 0 2px 6px -2px rgb(0, 0, 0, 0.5);
+  --margo-shadow-item: 0 2px 3px -2px rgb(0, 0, 0, 0.5);
+  --margo-shadow-input: 0 2px 3px -2px rgb(0, 0, 0, 0.5);
   --margo-shadow-chip: 0 1px 3px -1px rgb(0, 0, 0, 0.5);
 
   --margo-code-surface: #0d0d0d;

@@ -8,6 +8,7 @@ export { Dialog } from "./components/dialog/dialog.js";
 export { Header } from "./components/header/header.js";
 export { Label } from "./components/label/label.js";
 export { Layer } from "./components/layer/layer.js";
+export { Input } from "./components/input/input.js";
 export { Item } from "./components/item/item.js";
 export { NavigationBar } from "./components/navigation_bar/navigation_bar.js";
 export { ProgressBar } from "./components/progress_bar/progress_bar.js";
@@ -52,8 +53,9 @@ export type {
   HeaderTitleProps,
   HeaderTrailingProps,
 } from "./components/header/type.js";
-export type { LabelProps } from "./components/label/type.js";
+export type { LabelOwnProps, LabelProps } from "./components/label/type.js";
 export type { LayerProps } from "./components/layer/type.js";
+export type { InputIconProps, InputProps, InputTextProps } from "./components/input/type.js";
 export type { ItemIconProps, ItemLabelProps, ItemProps } from "./components/item/type.js";
 export type { NavigationBarProps } from "./components/navigation_bar/type.js";
 export type { ProgressBarMode, ProgressBarProps } from "./components/progress_bar/type.js";

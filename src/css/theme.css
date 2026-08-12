@@ -6,6 +6,7 @@
   --breakpoint-900: 900px;
   --breakpoint-1080: 1080px;
   --breakpoint-1280: 1280px;
+  --breakpoint-1440: 1440px;
   --breakpoint-1920: 1920px;
 
   /* Fonts */
@@ -19,7 +20,8 @@
   --color-on-main: var(--margo-color-on-main);
   --color-primary: var(--margo-color-primary);
   --color-primary-darken: var(--margo-color-primary-darken);
-  --color-secondary: var(--margo-color-secondary);
+  --color-low: var(--margo-color-low);
+  --color-low-alpha: var(--margo-color-low-alpha);
   --color-medium: var(--margo-color-medium);
   --color-border: var(--margo-color-border);
 
@@ -27,6 +29,7 @@
   --shadow-card: var(--margo-shadow-card);
   --shadow-button: var(--margo-shadow-button);
   --shadow-item: var(--margo-shadow-item);
+  --shadow-input: var(--margo-shadow-input);
   --shadow-chip: var(--margo-shadow-chip);
 
   /* Durations */
@@ -84,5 +87,4 @@
   --text-8xl--line-height: 0.75;
   --text-9xl: var(--margo-font-size-9xl);
   --text-9xl--line-height: 0.75;
-
 }

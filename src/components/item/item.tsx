@@ -9,7 +9,6 @@ import {
   itemDisabledClassName,
   itemIconClassName,
   itemLabelClassName,
-  itemNotClickableClassName,
   itemSurfaceClassName,
 } from "./style.js";
 
@@ -44,12 +43,11 @@ export const Item = <T extends ElementType = "button">({
         data-margo-active={active}
         data-margo-disabled={disabled}
         aria-disabled={disabled || undefined}
-        tabIndex={disabled || !clickable ? -1 : undefined}
+        inert={disabled || !clickable || undefined}
         onClick={handleClick}
         className={cn(
           itemBaseClassName,
           active ? itemActiveClassName : itemSurfaceClassName,
-          !clickable && itemNotClickableClassName,
           disabled && itemDisabledClassName,
           className,
         )}
