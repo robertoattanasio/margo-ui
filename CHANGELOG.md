@@ -1,5 +1,11 @@
 # margo-ui
 
+## 2.0.1
+
+### Patch Changes
+
+- b6ea090: Button background color fix
+
 ## 2.0.0
 
 ### Major Changes
