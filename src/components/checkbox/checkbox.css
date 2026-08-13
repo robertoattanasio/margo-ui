@@ -1,0 +1,28 @@
+.margo-checkbox {
+  appearance: none;
+}
+
+.margo-checkbox::before {
+  content: "";
+  display: block;
+  block-size: 100%;
+  inline-size: 100%;
+  background-color: currentColor;
+  clip-path: polygon(14% 44%, 0 60%, 39% 100%, 100% 16%, 85% 0, 39% 69%);
+  scale: 0.6;
+  opacity: 0;
+  transition:
+    scale 160ms ease-out,
+    opacity 160ms ease-out;
+}
+
+.margo-checkbox:checked::before {
+  scale: 1;
+  opacity: 1;
+}
+
+.margo-checkbox:indeterminate::before {
+  clip-path: inset(44% 12% 44% 12% round 1px);
+  scale: 1;
+  opacity: 1;
+}

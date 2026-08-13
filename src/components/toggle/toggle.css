@@ -1,0 +1,18 @@
+.margo-toggle {
+  appearance: none;
+}
+
+/* the thumb travels the track's width minus its height: borders and padding cancel out on both axes */
+.margo-toggle::before {
+  content: "";
+  display: block;
+  block-size: 100%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background-color: currentColor;
+  transition: translate 160ms ease-out;
+}
+
+.margo-toggle:checked::before {
+  translate: var(--margo-toggle-travel, 1rem) 0;
+}

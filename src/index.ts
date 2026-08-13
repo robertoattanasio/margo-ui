@@ -2,6 +2,7 @@ export { Blockquote } from "./components/blockquote/blockquote.js";
 export { Button } from "./components/button/button.js";
 export { ButtonMicro } from "./components/button_micro/button_micro.js";
 export { Card } from "./components/card/card.js";
+export { Checkbox } from "./components/checkbox/checkbox.js";
 export { Chip } from "./components/chip/chip.js";
 export { Code } from "./components/code/code.js";
 export { Dialog } from "./components/dialog/dialog.js";
@@ -14,6 +15,7 @@ export { NavigationBar } from "./components/navigation_bar/navigation_bar.js";
 export { Popover } from "./components/popover/popover.js";
 export { ProgressBar } from "./components/progress_bar/progress_bar.js";
 export { Table } from "./components/table/table.js";
+export { Toggle } from "./components/toggle/toggle.js";
 export { Splash } from "./components/splash/splash.js";
 export { Sheet } from "./components/sheet/sheet.js";
 export { Snippet } from "./components/snippet/snippet.js";
@@ -46,6 +48,7 @@ export type {
 } from "./components/button/type.js";
 export type { ButtonMicroProps } from "./components/button_micro/type.js";
 export type { CardProps } from "./components/card/type.js";
+export type { CheckboxProps } from "./components/checkbox/type.js";
 export type { ChipProps } from "./components/chip/type.js";
 export type { CodeOwnProps, CodeProps } from "./components/code/type.js";
 export type { DialogBodyProps, DialogFooterProps, DialogProps } from "./components/dialog/type.js";
@@ -74,6 +77,7 @@ export type { SplashProps, SplashServeProps } from "./components/splash/type.js"
 export type { SheetBodyProps, SheetFooterProps, SheetProps, SheetSide } from "./components/sheet/type.js";
 export type { SnippetPreviewProps, SnippetProps, SnippetToken, SnippetTokenType } from "./components/snippet/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
+export type { ToggleProps } from "./components/toggle/type.js";
 export type { TooltipPosition, TooltipProps } from "./components/tooltip/type.js";
 
 export type { BackgroundGlowProps } from "./hoc/background_glow/type.js";
