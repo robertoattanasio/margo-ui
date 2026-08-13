@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "../../utils/cn/cn.js";
+import { isMargoLayerSupported } from "../../utils/support/support.js";
 import { layerBaseClassName } from "./style.js";
 
 import type { MouseEvent, SyntheticEvent } from "react";
@@ -21,6 +22,13 @@ export const Layer = ({ open = false, onClose, dismissible = true, className, ch
     const layer = layerRef.current;
 
     if (!layer) return;
+
+    if (!isMargoLayerSupported()) {
+      setIsMounted(open);
+
+      return;
+    }
+
     if (open && !layer.open) layer.showModal();
     if (open || !layer.open) return;
 

@@ -11,6 +11,7 @@ export { Layer } from "./components/layer/layer.js";
 export { Input } from "./components/input/input.js";
 export { Item } from "./components/item/item.js";
 export { NavigationBar } from "./components/navigation_bar/navigation_bar.js";
+export { Popover } from "./components/popover/popover.js";
 export { ProgressBar } from "./components/progress_bar/progress_bar.js";
 export { Table } from "./components/table/table.js";
 export { Splash } from "./components/splash/splash.js";
@@ -31,6 +32,7 @@ export { MetaColorScheme } from "./meta/meta_color_scheme/meta_color_scheme.js";
 export { useMargoTheme } from "./hooks/use_theme.js";
 
 export { cn } from "./utils/cn/cn.js";
+export { isMargoLayerSupported } from "./utils/support/support.js";
 export { margoTheme, margoThemeClient } from "./utils/theme/theme.js";
 
 export type { BlockquoteProps } from "./components/blockquote/type.js";
@@ -58,6 +60,7 @@ export type { LayerProps } from "./components/layer/type.js";
 export type { InputIconProps, InputProps, InputTextProps } from "./components/input/type.js";
 export type { ItemIconProps, ItemLabelProps, ItemProps } from "./components/item/type.js";
 export type { NavigationBarProps } from "./components/navigation_bar/type.js";
+export type { PopoverAlign, PopoverAnchorProps, PopoverBodyProps, PopoverPosition, PopoverProps } from "./components/popover/type.js";
 export type { ProgressBarMode, ProgressBarProps } from "./components/progress_bar/type.js";
 export type {
   TableBodyProps,
@@ -69,7 +72,7 @@ export type {
 } from "./components/table/type.js";
 export type { SplashProps, SplashServeProps } from "./components/splash/type.js";
 export type { SheetBodyProps, SheetFooterProps, SheetProps, SheetSide } from "./components/sheet/type.js";
-export type { SnippetProps, SnippetToken, SnippetTokenType } from "./components/snippet/type.js";
+export type { SnippetPreviewProps, SnippetProps, SnippetToken, SnippetTokenType } from "./components/snippet/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
 export type { TooltipPosition, TooltipProps } from "./components/tooltip/type.js";
 

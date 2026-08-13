@@ -34,6 +34,10 @@
   --margo-layer-duration: 750ms;
   --margo-layer-easing: cubic-bezier(0.32, 0.72, 0, 1);
   --margo-layer-z-index: 100;
+
+  --margo-popover-duration: 200ms;
+  --margo-popover-easing: cubic-bezier(0.32, 0.72, 0, 1);
+
   --margo-max-z-index: 9999;
 
   --margo-grid-max-width: 80rem;
@@ -114,5 +118,6 @@
 @media (prefers-reduced-motion: reduce) {
   :root {
     --margo-layer-duration: 1ms;
+    --margo-popover-duration: 1ms;
   }
 }

@@ -1,5 +1,5 @@
 import type { TagProps } from "react-renderable";
-import type { ElementType } from "react";
+import type { ElementType, ReactNode } from "react";
 
 export type SnippetTokenType =
   | "plain"
@@ -21,6 +21,9 @@ export type SnippetToken = {
 export type SnippetOwnProps = {
   snippet: string;
   title?: string;
+  children?: ReactNode;
 };
 
 export type SnippetProps<T extends ElementType = "div"> = TagProps<T, SnippetOwnProps>;
+
+export type SnippetPreviewProps<T extends ElementType = "div"> = TagProps<T>;

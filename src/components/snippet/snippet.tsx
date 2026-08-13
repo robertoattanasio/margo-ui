@@ -12,15 +12,22 @@ import {
   snippetBaseClassName,
   snippetCodeClassName,
   snippetCopyClassName,
+  snippetPreviewClassName,
   snippetTitleClassName,
   snippetTokenClassName,
 } from "./style.js";
 
 import type { ElementType } from "react";
 import { MaskGradientX } from "../../hoc/mask_gradient_x/mask_gradient_x.js";
-import type { SnippetProps } from "./type.js";
+import type { SnippetPreviewProps, SnippetProps } from "./type.js";
 
-export const Snippet = <T extends ElementType = "div">({ snippet, title, className, ...rest }: SnippetProps<T>) => {
+export const Snippet = <T extends ElementType = "div">({
+  snippet,
+  title,
+  className,
+  children,
+  ...rest
+}: SnippetProps<T>) => {
   const [isCopied, setIsCopied] = useState(false);
   const source = snippet.trim();
 
@@ -61,6 +68,13 @@ export const Snippet = <T extends ElementType = "div">({ snippet, title, classNa
           </code>
         </pre>
       </MaskGradientX>
+      {children}
     </Tag>
   );
 };
+
+Snippet.Preview = <T extends ElementType = "div">({ className, children, ...rest }: SnippetPreviewProps<T>) => (
+  <Tag {...Tag.forward<T>(rest)} className={cn(snippetPreviewClassName, className)}>
+    {children}
+  </Tag>
+);

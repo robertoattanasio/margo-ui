@@ -1,0 +1,18 @@
+.margo-popover {
+  opacity: 0;
+  scale: 0.98;
+  transition:
+    opacity var(--margo-popover-duration) var(--margo-popover-easing),
+    scale var(--margo-popover-duration) var(--margo-popover-easing),
+    visibility var(--margo-popover-duration) var(--margo-popover-easing);
+}
+
+.margo-popover:not([data-margo-open="true"]) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.margo-popover[data-margo-open="true"] {
+  opacity: 1;
+  scale: 1;
+}

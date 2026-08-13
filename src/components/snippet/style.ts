@@ -1,13 +1,16 @@
 import type { SnippetTokenType } from "./type.js";
 
-export const snippetBaseClassName = "overflow-hidden rounded-lg border-2 border-border bg-(--margo-code-surface)";
+export const snippetBaseClassName = "rounded-lg border-2 border-border bg-(--margo-code-surface)";
 
-export const snippetBarClassName =
-  "flex items-center justify-between gap-4 border-b-2 border-border bg-(--margo-code-bar) px-3 py-2";
+export const snippetBarClassName = `flex items-center justify-between gap-4 border-b-2 border-border
+rounded-t-[calc(var(--radius-lg)-var(--margo-border-width-2))] bg-(--margo-code-bar) px-3 py-2`;
 
 export const snippetTitleClassName = "text-mc uppercase tracking-widest text-medium";
 
 export const snippetCopyClassName = "ml-auto bg-neutral/60";
+
+export const snippetPreviewClassName =
+  "flex flex-wrap items-center justify-center gap-6 rounded-b-lg border-t-2 border-border p-8";
 
 export const snippetCodeClassName = "overflow-x-auto p-4 text-xs leading-relaxed";
 
