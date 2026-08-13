@@ -4,6 +4,8 @@ import type { ElementType } from "react";
 import type { SplashProps, SplashServeProps } from "./type.js";
 
 import { cn } from "../../utils/cn/cn.js";
+import { splashBaseClassName, splashOverrideClassName } from "./style.js";
+
 import "./splash.css";
 
 export const Splash = <T extends ElementType = "div">({ initial = true, className, ...rest }: SplashProps<T>) => (
@@ -14,11 +16,7 @@ export const Splash = <T extends ElementType = "div">({ initial = true, classNam
     role="presentation"
     data-margo-splash=""
     data-margo-splash-initial={initial}
-    className={cn(
-      "fixed inset-0 z-max",
-      className && "[clip-path:none] margo-splash-idle:[clip-path:none]",
-      className,
-    )}
+    className={cn(splashBaseClassName, className && splashOverrideClassName, className)}
   />
 );
 
