@@ -1,5 +1,29 @@
 # margo-ui
 
+## 2.1.0
+
+### Minor Changes
+
+- 36b8171: Checkbox component added: a native `input[type="checkbox"]` with `appearance: none`, painted by the kit. Being the real control, it belongs to a form under its `name`, answers the space bar, follows a `label` that points at it and announces itself without a declared `role` — the component adds a class list and nothing else. The tick and the indeterminate bar are the same pseudo-element cut to two shapes with `clip-path`, so they never disagree about size or colour. `indeterminate` is the one prop the DOM cannot take as an attribute: it is mirrored onto the node in an effect.
+
+  Toggle component added: the same element carrying `role="switch"`, so what changes is the announcement — on and off — rather than the behaviour. The thumb is a pseudo-element moved with `translate`; its travel is the track's width minus its height, exposed as `--margo-toggle-travel` for anyone who resizes the switch.
+
+  Both read the way `Button` does — border strengthening on hover, `primary` on `focus-visible` with the same outline, the checked state carried by the border alone — and scope hover to `enabled`, since a disabled input still matches `:hover`.
+
+  `Chip` gains the focus ring the rest of the kit has: a chip rendered as a button or a link is now visible under keyboard focus.
+
+- ab20daf: Popover component added: a surface that opens beside the element that opened it and stays in the flow of the page. Three parts — `Popover.Anchor`, the positioned box that holds the pair; `Popover`, the surface, controlled through `open` and `onClose`; and `Popover.Body`, which owns the padding, the gap and the scroll. `position` picks the side of the anchor and `align` the offset across it, twelve placements resolved as classes rather than measured. While it is open the component listens for a pointer press outside itself and its anchor and for escape, and asks to close through `onClose`; nothing closes on its own. The content is mounted on opening and cleared once the closing animation has finished.
+
+  `Snippet.Preview` added: a part mounted under the code, divided by a border, for showing what the snippet renders without a second box and a second heading around it. `Snippet` accepts children for it, and drops `overflow-hidden` so that a preview can open a surface past its edge; the bar keeps its own corner radius instead.
+
+  `isMargoLayerSupported` exported: the check `Layer` runs before calling `showModal()`, so an app can warn about a browser without the `dialog` element instead of leaving a modal that never opens. `Layer` itself no longer throws there — it stays shut, and mounts nothing.
+
+- b228b57: Select component added: a native `select` with `appearance: none`, wrapped in the box `Input` already draws — the same background, the same border strengthening on hover, `primary` on focus, the chevron pinned on the right. Being the real control, it submits under its `name`, answers `required`, opens with the keyboard and shows the system picker on mobile without the kit declaring a `role`.
+
+  The component owns its children: it walks `options` and renders one `option` per row, taking the caption from `itemExtractor` and the submitted value from `valueExtractor`. Both return a string, because an option holds text and nothing else survives in the open list. `placeholder` is the caption of the empty row, whose value is the empty string; it is a prompt hidden from the list unless `canBeEmpty` keeps it selectable, which is how the field is cleared. When that row is the selected one the box dims to `medium`, the way an input placeholder reads — a selector on the option rather than a line of JavaScript, so it needs neither state nor `required`.
+
+  The open list belongs to the operating system, so the options carry the theme's own colours — `main` and `on-main`, `primary-darken` on the selected row — for the browsers that honour them, and `color-scheme` does the rest. Hover inside the list stays the system's.
+
 ## 2.0.1
 
 ### Patch Changes
