@@ -1,5 +1,11 @@
 # margo-ui
 
+## 3.0.1
+
+### Patch Changes
+
+- 57cd506: Ui variables fixes for light theme
+
 ## 3.0.0
 
 ### Major Changes
