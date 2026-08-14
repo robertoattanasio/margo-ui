@@ -2,7 +2,7 @@ export const tableWrapperClassName = "w-full overflow-x-auto overscroll-x-none r
 
 export const tableBaseClassName = "w-full border-collapse text-xs text-on-main";
 
-export const tableHeadClassName = "border-b-2 border-border bg-neutral/40 text-left";
+export const tableHeadClassName = "border-b-2 border-border bg-low text-left";
 
 export const tableBodyClassName = "align-top";
 
