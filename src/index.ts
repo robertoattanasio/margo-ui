@@ -19,7 +19,6 @@ export { Toggle } from "./components/toggle/toggle.js";
 export { Splash } from "./components/splash/splash.js";
 export { Select } from "./components/select/select.js";
 export { Sheet } from "./components/sheet/sheet.js";
-export { Snippet } from "./components/snippet/snippet.js";
 export { Spinner } from "./components/spinner/spinner.js";
 export { Tooltip } from "./components/tooltip/tooltip.js";
 
@@ -77,7 +76,6 @@ export type {
 export type { SplashProps, SplashServeProps } from "./components/splash/type.js";
 export type { SelectOwnProps, SelectProps } from "./components/select/type.js";
 export type { SheetBodyProps, SheetFooterProps, SheetProps, SheetSide } from "./components/sheet/type.js";
-export type { SnippetPreviewProps, SnippetProps, SnippetToken, SnippetTokenType } from "./components/snippet/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
 export type { ToggleProps } from "./components/toggle/type.js";
 export type { TooltipPosition, TooltipProps } from "./components/tooltip/type.js";

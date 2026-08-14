@@ -1,6 +1,6 @@
 export const selectBaseClassName = `group/select relative flex min-h-[2.5rem] w-full items-center gap-1 rounded-lg
 border-2 border-transparent bg-low text-sm text-medium select-none
-hover:border-on-main hover:text-on-main hover:shadow-input
+hover:border-on-main hover:text-on-main hover:shadow-item
 focus-within:border-primary focus-within:text-on-main
 has-[select:disabled]:pointer-events-none has-[select:disabled]:opacity-40`;
 

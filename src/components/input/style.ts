@@ -1,6 +1,6 @@
 export const inputBaseClassName = `group/input flex w-full cursor-text items-center gap-1 rounded-lg border-2 px-3 py-2 text-on-main
 text-sm select-none min-h-[2.5rem] bg-low
-border-transparent text-medium hover:border-on-main hover:text-on-main hover:shadow-input
+border-transparent text-medium hover:border-on-main hover:text-on-main hover:shadow-item
 focus-within:border-primary focus-within:text-on-main
 has-[input:disabled]:pointer-events-none has-[input:disabled]:cursor-auto has-[input:disabled]:opacity-40`;
 

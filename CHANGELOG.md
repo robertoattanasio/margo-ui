@@ -1,5 +1,58 @@
 # margo-ui
 
+## 3.0.0
+
+### Major Changes
+
+- Remove `Snippet`, `Snippet.Preview`, the `--margo-code-*` tokens and the `--margo-shadow-input`
+  token with its `shadow-input` utility.
+
+  `Snippet` was documentation infrastructure rather than a UI primitive, and its highlighter was a
+  single regular expression tuned for TypeScript and TSX: `title` named the block for the reader but
+  never selected a grammar, so CSS, shell and HTML blocks were coloured by the TypeScript rules.
+  Build the code block in your own app and pair it with a dedicated highlighter, such as
+  `@tanstack/highlight`. The `SnippetProps`, `SnippetPreviewProps`, `SnippetToken` and
+  `SnippetTokenType` types are gone with it.
+
+  `--margo-shadow-input` always carried the same value as `--margo-shadow-item`, so a second token
+  bought nothing but a second thing to keep in sync. `Input` and `Select` now use `shadow-item` on
+  hover, which renders identically. Replace `shadow-input` with `shadow-item` in your own markup.
+
+  The `--margo-code-*` palette went with `Snippet`. Copy the values into your own tokens if you were
+  theming a code block through them:
+
+  ```css
+  :root {
+    --margo-code-surface: #fbfbfb;
+    --margo-code-bar: #f1f1f1;
+    --margo-code-plain: #24292f;
+    --margo-code-comment: #8b949e;
+    --margo-code-string: #0a7d3f;
+    --margo-code-keyword: #a5309a;
+    --margo-code-number: #b3510f;
+    --margo-code-tag: #1f6fd6;
+    --margo-code-attr: #7a5cd6;
+    --margo-code-fn: #0f7c93;
+    --margo-code-type: #1f6fd6;
+    --margo-code-punct: #6e7781;
+  }
+  
+  .dark {
+    --margo-code-surface: #0d0d0d;
+    --margo-code-bar: #161616;
+    --margo-code-plain: #e6e6e6;
+    --margo-code-comment: #6b6b6b;
+    --margo-code-string: #7ee787;
+    --margo-code-keyword: #ff7bd5;
+    --margo-code-number: #ffab70;
+    --margo-code-tag: #79c0ff;
+    --margo-code-attr: #c3a6ff;
+    --margo-code-fn: #56d4dd;
+    --margo-code-type: #79c0ff;
+    --margo-code-punct: #8b949e;
+  }
+  ```
+
 ## 2.1.0
 
 ### Minor Changes
