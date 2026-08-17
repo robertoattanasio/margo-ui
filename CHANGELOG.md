@@ -1,5 +1,11 @@
 # margo-ui
 
+## 3.0.2
+
+### Patch Changes
+
+- 21243d3: Minor fix in clickable surface area for Input and Select components, Toggle and Checkbox UI refinements on click
+
 ## 3.0.1
 
 ### Patch Changes
