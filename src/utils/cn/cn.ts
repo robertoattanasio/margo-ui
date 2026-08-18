@@ -7,6 +7,25 @@ const isNumber = (value: string) => /^\d+$/.test(value);
 
 const isColumnLine = (value: string) => value === "full" || value === "content" || isNumber(value);
 
+const isMargoStep = (value: string) => /^margo-\d+(\/\d+)?$/.test(value);
+
+const BORDER_SIDES = ["", "x", "y", "s", "e", "t", "r", "b", "l"] as const;
+const RADIUS_CORNERS = ["", "s", "e", "t", "r", "b", "l", "ss", "se", "ee", "es", "tl", "tr", "br", "bl"] as const;
+
+const borderWidthGroups = Object.fromEntries(
+  BORDER_SIDES.map((side) => [
+    side ? `border-w-${side}` : "border-w",
+    [{ [side ? `border-${side}` : "border"]: ["margo"] }],
+  ]),
+);
+
+const radiusGroups = Object.fromEntries(
+  RADIUS_CORNERS.map((corner) => [
+    corner ? `rounded-${corner}` : "rounded",
+    [{ [corner ? `rounded-${corner}` : "rounded"]: [isMargoStep] }],
+  ]),
+);
+
 type MargoClassGroupIds =
   | "margo-col"
   | "margo-col-start"
@@ -24,6 +43,8 @@ const twMerge = extendTailwindMerge<MargoClassGroupIds>({
   extend: {
     classGroups: {
       "font-size": ["text-mc"],
+      ...borderWidthGroups,
+      ...radiusGroups,
       "margo-col": [{ "margo-col": [isColumnLine] }],
       "margo-col-start": [{ "margo-col-start": [isColumnLine] }],
       "margo-col-end": [{ "margo-col-end": [isColumnLine] }],

@@ -19,9 +19,9 @@
 }
 
 .margo-border-glow--ring::before {
-  inset: calc(-1 * var(--border-width-2));
+  inset: calc(-1 * var(--margo-border));
   border-radius: inherit;
-  padding: var(--border-width-2);
+  padding: var(--margo-border);
   mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -30,21 +30,21 @@
 }
 
 .margo-border-glow--edge-top::before {
-  inset: calc(-1 * var(--border-width-2)) 0 auto 0;
-  height: var(--border-width-2);
+  inset: calc(-1 * var(--margo-border)) 0 auto 0;
+  height: var(--margo-border);
 }
 
 .margo-border-glow--edge-bottom::before {
-  inset: auto 0 calc(-1 * var(--border-width-2)) 0;
-  height: var(--border-width-2);
+  inset: auto 0 calc(-1 * var(--margo-border)) 0;
+  height: var(--margo-border);
 }
 
 .margo-border-glow--edge-left::before {
-  inset: 0 auto 0 calc(-1 * var(--border-width-2));
-  width: var(--border-width-2);
+  inset: 0 auto 0 calc(-1 * var(--margo-border));
+  width: var(--margo-border);
 }
 
 .margo-border-glow--edge-right::before {
-  inset: 0 calc(-1 * var(--border-width-2)) 0 auto;
-  width: var(--border-width-2);
+  inset: 0 calc(-1 * var(--margo-border)) 0 auto;
+  width: var(--margo-border);
 }

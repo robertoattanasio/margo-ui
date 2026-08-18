@@ -1,4 +1,4 @@
-export const buttonBaseClassName = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-lg border-2 text-on-main
+export const buttonBaseClassName = `group/button flex h-8 w-fit shrink-0 items-center px-2 rounded-margo-1 border-margo text-on-main
 hover:border-on-main hover:text-on-main focus-visible:border-primary
 focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-on-main
 select-none origin-center transition-transform duration-[160ms] ease-out active:scale-[0.95] bg-main`;

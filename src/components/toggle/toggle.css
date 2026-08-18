@@ -2,7 +2,6 @@
   appearance: none;
 }
 
-/* the thumb travels the track's width minus its height: borders and padding cancel out on both axes */
 .margo-toggle::before {
   content: "";
   display: block;

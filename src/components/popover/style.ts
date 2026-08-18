@@ -3,7 +3,7 @@ import type { PopoverAlign, PopoverPosition } from "./type.js";
 export const popoverAnchorClassName = "relative inline-block size-fit";
 
 export const popoverBaseClassName = `margo-popover absolute z-20 m-0 flex w-max max-w-[calc(100vw-2rem)] flex-col
-overflow-clip rounded-lg border-2 border-border bg-main text-on-main shadow-card outline-none`;
+overflow-clip rounded-margo-1 border-margo border-border bg-main text-on-main shadow-card outline-none`;
 
 export const popoverBodyClassName = `flex min-h-0 max-h-56 flex-col gap-1
 overflow-y-auto overscroll-contain w-64 p-2 text-sm`;

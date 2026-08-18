@@ -29,7 +29,9 @@
   --margo-font-weight-extrabold: 800;
   --margo-font-weight-black: 900;
 
-  --margo-border-width-2: 1.5px;
+  --margo-radius: 0.5rem;
+
+  --margo-border: 1.5px;
 
   --margo-layer-duration: 750ms;
   --margo-layer-easing: cubic-bezier(0.32, 0.72, 0, 1);

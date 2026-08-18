@@ -1,4 +1,4 @@
-export const inputBaseClassName = `group/input flex h-10 w-full cursor-text items-center rounded-lg border-2 text-on-main
+export const inputBaseClassName = `group/input flex h-10 w-full cursor-text items-center rounded-margo-1 border-margo text-on-main
 text-sm select-none bg-low
 border-transparent text-medium hover:border-on-main hover:text-on-main hover:shadow-item
 focus-within:border-primary focus-within:text-on-main

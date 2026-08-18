@@ -2,7 +2,7 @@ import type { TooltipPosition } from "./type.js";
 
 export const tooltipAnchorClassName = "group relative inline-block size-fit";
 
-export const tooltipBubbleClassName = `pointer-events-none absolute z-10 rounded-sm bg-on-main px-2 py-0.5 text-xs text-main lowercase
+export const tooltipBubbleClassName = `pointer-events-none absolute z-10 rounded-margo-1/2 bg-on-main px-2 py-0.5 text-xs text-main lowercase
 whitespace-nowrap opacity-0`;
 
 export const tooltipTransitionClassName = "transition-opacity duration-[250ms] ease-in-out";

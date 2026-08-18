@@ -39,8 +39,13 @@
   --z-index-layer: var(--margo-layer-z-index);
   --z-index-max: var(--margo-max-z-index);
 
+  /* Radii */
+  --radius-margo-1: var(--margo-radius);
+  --radius-margo-3\/4: calc(var(--margo-radius) * 3 / 4);
+  --radius-margo-1\/2: calc(var(--margo-radius) / 2);
+
   /* Border widths */
-  --border-width-2: var(--margo-border-width-2);
+  --border-width-margo: var(--margo-border);
 
   /* Font weights */
   --font-weight-thin: var(--margo-font-weight-thin);
