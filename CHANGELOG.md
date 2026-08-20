@@ -1,5 +1,11 @@
 # margo-ui
 
+## 4.0.1
+
+### Patch Changes
+
+- 8f62977: Minor fix in sheet styling
+
 ## 4.0.0
 
 ### Major Changes
