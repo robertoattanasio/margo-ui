@@ -9,6 +9,6 @@ export const sheetSideClassName: Record<SheetSide, string> = {
   bottom: "h-auto max-h-[40%] w-full self-end justify-self-stretch border-t-margo",
 };
 
-export const sheetBodyClassName = "min-h-0 flex-1 overflow-y-auto px-5 py-4 text-sm";
+export const sheetBodyClassName = "min-h-0 flex-1 overflow-y-auto outline-on-main px-5 py-4 text-sm";
 
 export const sheetFooterClassName = "flex items-center justify-end gap-2 border-t-margo border-border px-5 py-4";
