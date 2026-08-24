@@ -1,5 +1,11 @@
 # margo-ui
 
+## 4.0.2
+
+### Patch Changes
+
+- cd386b7: Minor UI fixes in Blockquote and variables
+
 ## 4.0.1
 
 ### Patch Changes
