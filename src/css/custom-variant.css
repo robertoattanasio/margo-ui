@@ -1,2 +1,1 @@
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant margo-splash-idle (:root:not(:has([data-margo-splash-serve])) &);

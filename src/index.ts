@@ -11,12 +11,10 @@ export { Label } from "./components/label/label.js";
 export { Layer } from "./components/layer/layer.js";
 export { Input } from "./components/input/input.js";
 export { Item } from "./components/item/item.js";
-export { NavigationBar } from "./components/navigation_bar/navigation_bar.js";
 export { Popover } from "./components/popover/popover.js";
 export { ProgressBar } from "./components/progress_bar/progress_bar.js";
 export { Table } from "./components/table/table.js";
 export { Toggle } from "./components/toggle/toggle.js";
-export { Splash } from "./components/splash/splash.js";
 export { Select } from "./components/select/select.js";
 export { Sheet } from "./components/sheet/sheet.js";
 export { Spinner } from "./components/spinner/spinner.js";
@@ -62,7 +60,6 @@ export type { LabelOwnProps, LabelProps } from "./components/label/type.js";
 export type { LayerProps } from "./components/layer/type.js";
 export type { InputIconProps, InputProps, InputTextProps } from "./components/input/type.js";
 export type { ItemIconProps, ItemLabelProps, ItemProps } from "./components/item/type.js";
-export type { NavigationBarProps } from "./components/navigation_bar/type.js";
 export type { PopoverAlign, PopoverAnchorProps, PopoverBodyProps, PopoverPosition, PopoverProps } from "./components/popover/type.js";
 export type { ProgressBarMode, ProgressBarProps } from "./components/progress_bar/type.js";
 export type {
@@ -73,7 +70,6 @@ export type {
   TableProps,
   TableRowProps,
 } from "./components/table/type.js";
-export type { SplashProps, SplashServeProps } from "./components/splash/type.js";
 export type { SelectOwnProps, SelectProps } from "./components/select/type.js";
 export type { SheetBodyProps, SheetFooterProps, SheetProps, SheetSide } from "./components/sheet/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
