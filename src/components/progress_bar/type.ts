@@ -5,6 +5,7 @@ export type ProgressBarMode = "determinate" | "indeterminate";
 
 export type ProgressBarOwnProps = {
   animate?: boolean;
+  delay?: number | string;
   fill?: string;
   mode?: ProgressBarMode;
   value?: number;

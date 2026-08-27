@@ -10,6 +10,7 @@ import "./progress_bar.css";
 
 export const ProgressBar = <T extends ElementType = "div">({
   animate = true,
+  delay,
   fill = progressBarDefaultFill,
   mode = "indeterminate",
   style,
@@ -30,7 +31,14 @@ export const ProgressBar = <T extends ElementType = "div">({
       data-margo-mode={mode}
       data-margo-animate={animate}
       style={
-        { ...style, "--margo-progress-bar-fill": fill, "--margo-progress-bar-value": `${progress}%` } as CSSProperties
+        {
+          ...style,
+          "--margo-progress-bar-fill": fill,
+          "--margo-progress-bar-value": `${progress}%`,
+          ...(delay != null && {
+            "--margo-progress-bar-delay": typeof delay === "number" ? `${delay}ms` : delay,
+          }),
+        } as CSSProperties
       }
       className={cn(progressBarBaseClassName, className)}
     />
