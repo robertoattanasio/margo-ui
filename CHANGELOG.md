@@ -1,5 +1,11 @@
 # margo-ui
 
+## 5.0.1
+
+### Patch Changes
+
+- af39b71: ProgressBar CSS improvements
+
 ## 5.0.0
 
 ### Major Changes
