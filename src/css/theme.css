@@ -40,9 +40,10 @@
   --z-index-max: var(--margo-max-z-index);
 
   /* Radii */
-  --radius-margo-1: var(--margo-radius);
-  --radius-margo-3\/4: calc(var(--margo-radius) * 3 / 4);
-  --radius-margo-1\/2: calc(var(--margo-radius) / 2);
+  --radius-margo-mc: calc(var(--margo-radius) / 4);
+  --radius-margo-xs: calc(var(--margo-radius) / 2);
+  --radius-margo-sm: calc(var(--margo-radius) * 3 / 4);
+  --radius-margo-base: var(--margo-radius);
 
   /* Border widths */
   --border-width-margo: var(--margo-border);
@@ -60,35 +61,42 @@
 
   /* Font sizes */
   --text-mc: var(--margo-font-size-mc);
-  --text-mc--line-height: 1.5;
   --text-xs: var(--margo-font-size-xs);
-  --text-xs--line-height: 1.5;
+  --text-xs--line-height: initial;
   --text-sm: var(--margo-font-size-sm);
-  --text-sm--line-height: 1.5;
+  --text-sm--line-height: initial;
   --text-base: var(--margo-font-size-base);
-  --text-base--line-height: 1.25;
+  --text-base--line-height: initial;
   --text-md: var(--margo-font-size-md);
-  --text-md--line-height: 1.25;
   --text-lg: var(--margo-font-size-lg);
-  --text-lg--line-height: 1.25;
+  --text-lg--line-height: initial;
   --text-2lg: var(--margo-font-size-2lg);
-  --text-2lg--line-height: 1;
   --text-xl: var(--margo-font-size-xl);
-  --text-xl--line-height: 1;
+  --text-xl--line-height: initial;
   --text-2xl: var(--margo-font-size-2xl);
-  --text-2xl--line-height: 0.75;
+  --text-2xl--line-height: initial;
   --text-3xl: var(--margo-font-size-3xl);
-  --text-3xl--line-height: 0.75;
+  --text-3xl--line-height: initial;
   --text-4xl: var(--margo-font-size-4xl);
-  --text-4xl--line-height: 0.75;
+  --text-4xl--line-height: initial;
   --text-5xl: var(--margo-font-size-5xl);
-  --text-5xl--line-height: 0.75;
+  --text-5xl--line-height: initial;
   --text-6xl: var(--margo-font-size-6xl);
-  --text-6xl--line-height: 0.75;
+  --text-6xl--line-height: initial;
   --text-7xl: var(--margo-font-size-7xl);
-  --text-7xl--line-height: 0.75;
+  --text-7xl--line-height: initial;
   --text-8xl: var(--margo-font-size-8xl);
-  --text-8xl--line-height: 0.75;
+  --text-8xl--line-height: initial;
   --text-9xl: var(--margo-font-size-9xl);
-  --text-9xl--line-height: 0.75;
+  --text-9xl--line-height: initial;
+
+  /* Line heights */
+  --leading-mc: calc(var(--margo-line-height) / 6);
+  --leading-xs: calc(var(--margo-line-height) / 3);
+  --leading-sm: calc(var(--margo-line-height) / 2);
+  --leading-md: calc(var(--margo-line-height) * 2 / 3);
+  --leading-lg: calc(var(--margo-line-height) * 5 / 6);
+  --leading-base: var(--margo-line-height);
+  --leading-xl: calc(var(--margo-line-height) * 7 / 6);
+  --leading-2xl: calc(var(--margo-line-height) * 4 / 3);
 }

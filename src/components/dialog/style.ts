@@ -1,5 +1,5 @@
 export const dialogBaseClassName = `flex m-4 max-h-[calc(100%-2rem)] w-[calc(100%-2rem)] flex-col overflow-hidden
-rounded-margo-1 border-margo border-border bg-main text-on-main shadow-sm`;
+rounded-margo-base border-margo border-border bg-main text-on-main shadow-sm`;
 
 export const dialogBodyClassName = "min-h-0 flex-1 overflow-y-auto px-5 py-4 text-sm";
 

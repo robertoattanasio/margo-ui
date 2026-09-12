@@ -7,7 +7,7 @@ const isNumber = (value: string) => /^\d+$/.test(value);
 
 const isColumnLine = (value: string) => value === "full" || value === "content" || isNumber(value);
 
-const isMargoStep = (value: string) => /^margo-\d+(\/\d+)?$/.test(value);
+const isMargoRadiusStep = (value: string) => /^margo-(mc|xs|sm|base)$/.test(value);
 
 const BORDER_SIDES = ["", "x", "y", "s", "e", "t", "r", "b", "l"] as const;
 const RADIUS_CORNERS = ["", "s", "e", "t", "r", "b", "l", "ss", "se", "ee", "es", "tl", "tr", "br", "bl"] as const;
@@ -22,7 +22,7 @@ const borderWidthGroups = Object.fromEntries(
 const radiusGroups = Object.fromEntries(
   RADIUS_CORNERS.map((corner) => [
     corner ? `rounded-${corner}` : "rounded",
-    [{ [corner ? `rounded-${corner}` : "rounded"]: [isMargoStep] }],
+    [{ [corner ? `rounded-${corner}` : "rounded"]: [isMargoRadiusStep] }],
   ]),
 );
 

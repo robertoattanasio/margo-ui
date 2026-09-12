@@ -45,6 +45,7 @@ export const Button = <T extends ElementType = "button">({
         data-margo-open={open}
         data-margo-disabled={disabled}
         aria-disabled={disabled || undefined}
+        data-active={active || undefined}
         inert={disabled || !clickable || undefined}
         onClick={handleClick}
         className={cn(

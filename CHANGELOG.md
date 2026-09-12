@@ -1,5 +1,12 @@
 # margo-ui
 
+## 5.1.0
+
+### Minor Changes
+
+- Remove the built-in Tailwind line-height pairing from every `text-*` size and expose `--margo-line-height` as the single overridable baseline. Add a `leading-mc`/`leading-xs`/`leading-sm`/`leading-md`/`leading-lg`/`leading-base`/`leading-xl`/`leading-2xl` scale defined as multiples of that baseline.
+- Rename the radius scale from fractions to named steps: `rounded-margo-1` → `rounded-margo-base`, `rounded-margo-3/4` → `rounded-margo-sm`, `rounded-margo-1/2` → `rounded-margo-xs`. Add `rounded-margo-mc` (a quarter of `--margo-radius`) as a new, smaller step. `--margo-radius` remains the ceiling the scale divides.
+
 ## 5.0.1
 
 ### Patch Changes
