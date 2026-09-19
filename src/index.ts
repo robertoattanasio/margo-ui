@@ -33,7 +33,7 @@ export { useMargoTheme } from "./hooks/use_theme.js";
 
 export { cn } from "./utils/cn/cn.js";
 export { isMargoLayerSupported } from "./utils/support/support.js";
-export { margoTheme, margoThemeClient } from "./utils/theme/theme.js";
+export { margoTheme } from "./utils/theme/theme.js";
 
 export type { BlockquoteProps } from "./components/blockquote/type.js";
 
@@ -83,4 +83,4 @@ export type { MaskGradientXProps } from "./hoc/mask_gradient_x/type.js";
 export type { MaskGradientYProps } from "./hoc/mask_gradient_y/type.js";
 export type { RippleProps } from "./hoc/ripple/type.js";
 
-export type { MargoTheme, MargoThemeClient } from "./utils/theme/type.js";
+export type { MargoTheme } from "./utils/theme/type.js";

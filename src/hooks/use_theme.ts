@@ -1,29 +1,35 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 
-import { margoThemeClient } from "../utils/theme/theme.js";
+import { margoTheme } from "../utils/theme/theme.js";
 
 import type { MargoTheme } from "../utils/theme/type.js";
 
-export const useMargoTheme = (): [MargoTheme, (next: MargoTheme | ((current: MargoTheme) => MargoTheme)) => void] => {
-  const [theme, setThemeState] = useState<MargoTheme>(() => margoThemeClient.get());
+type SetMargoTheme = MargoTheme | ((current: MargoTheme) => MargoTheme);
 
-  useEffect(() => {
-    if (typeof document === "undefined") return;
+const getSnapshot = (): MargoTheme =>
+  document.documentElement.classList.contains(margoTheme.DARK) ? margoTheme.DARK : margoTheme.LIGHT;
 
-    const root = document.documentElement;
-    setThemeState(margoThemeClient.get());
+const getServerSnapshot = () => undefined;
 
-    const observer = new MutationObserver(() => {
-      setThemeState(margoThemeClient.get());
-    });
+const subscribe = (onChange: () => void) => {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+};
 
-    return () => observer.disconnect();
-  }, []);
+const applyTheme = (next: MargoTheme) => {
+  const { classList } = document.documentElement;
 
-  const setTheme = useCallback((next: MargoTheme | ((current: MargoTheme) => MargoTheme)) => {
-    margoThemeClient.set(typeof next === "function" ? next(margoThemeClient.get()) : next);
+  classList.remove(margoTheme.LIGHT, margoTheme.DARK);
+  classList.add(next);
+};
+
+export const useMargoTheme = (): [MargoTheme | undefined, (next: SetMargoTheme) => void] => {
+  const theme = useSyncExternalStore<MargoTheme | undefined>(subscribe, getSnapshot, getServerSnapshot);
+
+  const setTheme = useCallback((next: SetMargoTheme) => {
+    applyTheme(typeof next === "function" ? next(getSnapshot()) : next);
   }, []);
 
   return [theme, setTheme];
