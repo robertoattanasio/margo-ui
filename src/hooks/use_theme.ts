@@ -1,10 +1,14 @@
-import { useCallback, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 
 import { margoTheme } from "../utils/theme/theme.js";
 
 import type { MargoTheme } from "../utils/theme/type.js";
 
-type SetMargoTheme = MargoTheme | ((current: MargoTheme) => MargoTheme);
+type UseMargoTheme = {
+  theme: MargoTheme | undefined;
+  set: (next: MargoTheme) => void;
+  toggle: () => void;
+};
 
 const getSnapshot = (): MargoTheme =>
   document.documentElement.classList.contains(margoTheme.DARK) ? margoTheme.DARK : margoTheme.LIGHT;
@@ -25,12 +29,10 @@ const applyTheme = (next: MargoTheme) => {
   classList.add(next);
 };
 
-export const useMargoTheme = (): [MargoTheme | undefined, (next: SetMargoTheme) => void] => {
+const toggle = () => applyTheme(getSnapshot() === margoTheme.DARK ? margoTheme.LIGHT : margoTheme.DARK);
+
+export const useMargoTheme = (): UseMargoTheme => {
   const theme = useSyncExternalStore<MargoTheme | undefined>(subscribe, getSnapshot, getServerSnapshot);
 
-  const setTheme = useCallback((next: SetMargoTheme) => {
-    applyTheme(typeof next === "function" ? next(getSnapshot()) : next);
-  }, []);
-
-  return [theme, setTheme];
+  return { theme, set: applyTheme, toggle };
 };

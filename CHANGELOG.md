@@ -1,5 +1,36 @@
 # margo-ui
 
+## 5.2.0
+
+### Minor Changes
+
+- e8888ba: Make `useMargoTheme` the single theme API: it returns `{ theme, set, toggle }` and is driven by the class on `<html>`.
+
+  ```tsx
+  const { theme, set, toggle } = useMargoTheme();
+  ```
+
+  The hook is built on `useSyncExternalStore`, so it re-renders on every class change and is hydration-safe. The default theme is the class you write on the `<html>` element in the server render (`className={margoTheme.DARK}`), not an argument.
+
+  **Breaking**
+
+  - `useMargoTheme()` returns an object instead of a tuple. `const [theme, setTheme] = useMargoTheme()` becomes `const { theme, set } = useMargoTheme()`.
+  - `set` takes a theme only: the updater form `setTheme((current) => ...)` is gone. Use `toggle()` to switch to the other theme.
+  - `theme` is now `MargoTheme | undefined`: it is `undefined` during server render and hydration, then the value found on `<html>`. Handle the `undefined` case, or drive theme-dependent UI with the `dark:` variant instead.
+  - Removed the `margoThemeClient` export and the `MargoThemeClient` type. Use `useMargoTheme` to read and change the theme: `margoThemeClient.get()` → `theme`, `margoThemeClient.set(next)` → `set(next)`, `margoThemeClient.toggle()` → `toggle()`.
+  - `set` and `toggle` write to the document, so call them from event handlers or effects, never during render.
+
+  **Fixed**
+
+  - A missing `dark` class is now always read as `light`, matching what the CSS renders, instead of depending on a default.
+  - Changing the theme now writes exactly one of the `light` / `dark` classes on `<html>` instead of only toggling `dark`.
+
+  `margoTheme` and the `MargoTheme` type are unchanged.
+
+### Patch Changes
+
+- 4c8a68d: Fix Chip losing its `leading-none` class: it sat before the `text-mc` size class in the same string, and `tailwind-merge` silently drops an earlier `leading-*` class when a `font-size` class follows it. Reordered so `leading-none` comes after `text-mc`.
+
 ## 5.1.0
 
 ### Minor Changes
