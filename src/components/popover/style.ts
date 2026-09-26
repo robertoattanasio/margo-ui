@@ -1,4 +1,4 @@
-import type { PopoverAlign, PopoverPosition } from "./type.js";
+import type { PopoverAlign, PopoverPlacement } from "./type.js";
 
 export const popoverAnchorClassName = "relative inline-block size-fit";
 
@@ -8,13 +8,13 @@ overflow-clip rounded-margo-base border-margo border-border bg-main text-on-main
 export const popoverBodyClassName = `flex min-h-0 max-h-56 flex-col gap-1
 overflow-y-auto overscroll-contain w-64 p-2 text-sm`;
 
-export const popoverPositionClassName: Record<PopoverPosition, Record<PopoverAlign, string>> = {
-  up: {
+export const popoverPlacementClassName: Record<PopoverPlacement, Record<PopoverAlign, string>> = {
+  top: {
     start: "bottom-full left-0 my-1",
     center: "bottom-full left-1/2 my-1 -translate-x-1/2",
     end: "right-0 bottom-full my-1",
   },
-  down: {
+  bottom: {
     start: "top-full left-0 my-1",
     center: "top-full left-1/2 my-1 -translate-x-1/2",
     end: "top-full right-0 my-1",
@@ -31,9 +31,9 @@ export const popoverPositionClassName: Record<PopoverPosition, Record<PopoverAli
   },
 };
 
-export const popoverOriginClassName: Record<PopoverPosition, string> = {
-  up: "origin-bottom",
-  down: "origin-top",
+export const popoverOriginClassName: Record<PopoverPlacement, string> = {
+  top: "origin-bottom",
+  bottom: "origin-top",
   left: "origin-right",
   right: "origin-left",
 };

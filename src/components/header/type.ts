@@ -9,7 +9,7 @@ export type HeaderLeadingProps = {
 };
 
 export type HeaderTitleProps = {
-  title: ReactNode;
+  children: ReactNode;
   id?: string;
   className?: string;
 };

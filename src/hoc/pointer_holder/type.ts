@@ -1,12 +1,10 @@
-import type { FocusEventHandler, PointerEventHandler, ReactElement } from "react";
+import type { PointerEventHandler, ReactElement } from "react";
 
 export type PointerHolderApi = {
   keys: string[];
 };
 
 export type PointerHolderChildProps = {
-  onBlur?: FocusEventHandler<HTMLElement>;
-  onFocus?: FocusEventHandler<HTMLElement>;
   onPointerLeave?: PointerEventHandler<HTMLElement>;
   onPointerOver?: PointerEventHandler<HTMLElement>;
 };

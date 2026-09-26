@@ -1,12 +1,7 @@
 import { Tag } from "react-renderable";
 
 import { cn } from "../../utils/cn/cn.js";
-import {
-  headerBaseClassName,
-  headerLeadingClassName,
-  headerTitleClassName,
-  headerTrailingClassName,
-} from "./style.js";
+import { headerBaseClassName, headerLeadingClassName, headerTitleClassName, headerTrailingClassName } from "./style.js";
 
 import type { ElementType } from "react";
 import type { HeaderLeadingProps, HeaderProps, HeaderTitleProps, HeaderTrailingProps } from "./type.js";
@@ -23,9 +18,9 @@ Header.Leading = ({ children, className }: HeaderLeadingProps) => (
   </span>
 );
 
-Header.Title = ({ title, id, className }: HeaderTitleProps) => (
+Header.Title = ({ children, id, className }: HeaderTitleProps) => (
   <span data-margo-header-slot={true} id={id} className={cn(headerTitleClassName, className)}>
-    {title}
+    {children}
   </span>
 );
 

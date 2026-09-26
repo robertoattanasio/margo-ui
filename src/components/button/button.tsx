@@ -23,19 +23,15 @@ export const Button = <T extends ElementType = "button">({
   disabled = false,
   active = false,
   open = false,
-  onClickBlur,
   className,
   onClick,
   ...rest
 }: ButtonProps<T>) => {
+  const isNativeButton = (rest.as ?? "button") === "button";
+
   const handleClick = (event: MouseEvent<HTMLElement>) => {
-    if (disabled) return;
+    if (disabled) return event.preventDefault();
     onClick?.(event);
-    if (typeof onClickBlur === "function") {
-      const target = event.currentTarget;
-      onClickBlur(event);
-      setTimeout(() => target.blur(), 150);
-    }
   };
 
   return (
@@ -44,9 +40,10 @@ export const Button = <T extends ElementType = "button">({
         {...Tag.forward<T>(rest, "button")}
         data-margo-open={open}
         data-margo-disabled={disabled}
-        aria-disabled={disabled || undefined}
-        data-active={active || undefined}
-        inert={disabled || !clickable || undefined}
+        data-margo-active={active}
+        disabled={(isNativeButton && disabled) || undefined}
+        aria-disabled={(!isNativeButton && disabled) || undefined}
+        inert={!clickable || undefined}
         onClick={handleClick}
         className={cn(
           buttonBaseClassName,
@@ -59,12 +56,12 @@ export const Button = <T extends ElementType = "button">({
   );
 };
 
-Button.Icon = ({ icon, className }: ButtonIconProps) => (
-  <span className={cn(buttonIconClassName, className)}>{icon}</span>
+Button.Icon = ({ children, className }: ButtonIconProps) => (
+  <span className={cn(buttonIconClassName, className)}>{children}</span>
 );
 
-Button.Label = ({ label, className }: ButtonLabelProps) => (
-  <span className={cn(buttonLabelClassName, className)}>{label}</span>
+Button.Label = ({ children, className }: ButtonLabelProps) => (
+  <span className={cn(buttonLabelClassName, className)}>{children}</span>
 );
 
 Button.IconLabel = ({
@@ -72,14 +69,14 @@ Button.IconLabel = ({
   label,
   gap = "0.5rem",
   reverse = false,
-  side = "end",
+  direction = "right",
   className,
 }: ButtonIconLabelProps) => (
   <span
     style={{ "--margo-button-gap": gap } as CSSProperties}
     className={cn(
       buttonGridClassName,
-      side === "start" && "[direction:rtl]",
+      direction === "left" && "[direction:rtl]",
       reverse ? buttonGridReverseClassName : buttonGridForwardClassName,
       className,
     )}

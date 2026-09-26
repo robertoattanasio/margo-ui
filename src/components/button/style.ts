@@ -7,7 +7,7 @@ export const buttonSurfaceClassName = "border-border";
 
 export const buttonActiveClassName = "border-primary shadow-button";
 
-export const buttonDisabledClassName = "opacity-40";
+export const buttonDisabledClassName = "pointer-events-none opacity-40";
 
 export const buttonIconClassName =
   "relative z-10 flex size-4 min-w-0 shrink-0 items-center justify-center [direction:ltr]";

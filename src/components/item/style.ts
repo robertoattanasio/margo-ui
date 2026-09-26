@@ -8,7 +8,7 @@ hover:shadow-item focus-visible:shadow-item`;
 
 export const itemActiveClassName = "border-primary";
 
-export const itemDisabledClassName = "opacity-40";
+export const itemDisabledClassName = "pointer-events-none opacity-40";
 
 export const itemIconClassName = `ml-auto flex size-4 shrink-0 items-center justify-center first:ml-0
 [[data-margo-item-slot]+&]:ml-0`;

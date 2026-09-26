@@ -6,7 +6,7 @@ import { cn } from "../../utils/cn/cn.js";
 import {
   tooltipAnchorClassName,
   tooltipBubbleClassName,
-  tooltipPositionClassName,
+  tooltipPlacementClassName,
   tooltipTransitionClassName,
   tooltipVisibleClassName,
 } from "./style.js";
@@ -20,7 +20,7 @@ export const Tooltip = <T extends ElementType = "div">({
   className,
   id,
   content,
-  position = "down",
+  placement = "bottom",
   ...rest
 }: TooltipProps<T>) => {
   const contentRef = useRef<ReactNode>(null);
@@ -40,7 +40,7 @@ export const Tooltip = <T extends ElementType = "div">({
           tooltipBubbleClassName,
           tooltipTransitionClassName,
           isFilled && tooltipVisibleClassName,
-          tooltipPositionClassName[position],
+          tooltipPlacementClassName[placement],
         )}
       >
         {contentRef.current}

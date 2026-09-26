@@ -52,6 +52,20 @@ export const Layer = ({ open = false, onClose, dismissible = true, className, ch
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open || dismissible) return;
+
+    const controller = new AbortController();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") event.preventDefault();
+    };
+
+    document.addEventListener("keydown", handleKeyDown, { capture: true, signal: controller.signal });
+
+    return () => controller.abort();
+  }, [dismissible, open]);
+
   const handleClick = (event: MouseEvent<HTMLDialogElement>) => {
     if (!dismissible || event.target !== event.currentTarget) return;
 
@@ -60,7 +74,7 @@ export const Layer = ({ open = false, onClose, dismissible = true, className, ch
 
   const handleCancel = (event: SyntheticEvent<HTMLDialogElement>) => {
     event.preventDefault();
-    onClose?.();
+    if (dismissible) onClose?.();
   };
 
   return (

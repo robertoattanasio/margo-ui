@@ -1,5 +1,34 @@
 # margo-ui
 
+## 6.0.0
+
+### Major Changes
+
+- Breaking changes for 6.0.0. `MIGRATION.md` lists what to search for and what to replace it with.
+
+  - Parts take their content as `children`: `Button.Label`, `Button.Icon`, `Header.Title`, `Item.Label`, `Item.Icon`, `Input.Icon`. `Button.IconLabel` keeps its `icon` and `label` props.
+  - `onClickBlur` is removed from `Button`, `Item` and `ButtonMicro`. Use `onClick`.
+  - `disabled` on `Button` and `Item` is native: the `disabled` attribute on a `<button>`, `aria-disabled` otherwise, no longer `inert`. `clickable={false}` still uses `inert`.
+  - Placement props are renamed to `placement`, with physical values: `Popover`, `Tooltip` and `BorderGlow` (`position`, `up`/`down` → `top`/`bottom`), `Sheet` (`side`, `start`/`end` → `left`/`right`). `Button.IconLabel` `side` becomes `direction="left" | "right"`. The related types are renamed (`PopoverPlacement`, `TooltipPlacement`, `BorderGlowPlacement`, `SheetPlacement`, `ButtonIconLabelDirection`).
+  - `Sheet` exposes `data-margo-placement` instead of `data-margo-side`; `Button` exposes `data-margo-active` instead of `data-active`.
+  - A non-dismissible `Layer` ignores Escape as well as backdrop clicks.
+  - `base.css` no longer hides scrollbars and no longer forces `canvas` to full width.
+
+### Minor Changes
+
+- Add `TextArea`, a multi-line field with the look and states of `Input`: `<TextArea><TextArea.Text /></TextArea>`.
+- Add `Callout`, a box for notes and warnings, with an optional `Callout.Title` part.
+- `cn` knows the kit's line heights (`leading-mc` … `leading-2xl`) and shadows (`shadow-card`, `shadow-button`, `shadow-item`, `shadow-chip`), and no longer drops a `leading-*` class written before a `text-*` class: in the kit, `text-*` only sets the font size.
+
+### Patch Changes
+
+- `Blockquote` stacks its children vertically instead of side by side.
+- `Chip` merges `className` last, so it wins over the active colours.
+- `Tooltip` uses a named group (`group/tooltip`), so it no longer reacts to the hover of an outer `group`.
+- `Card` shows its primary border on keyboard focus only (`focus-visible`).
+- `BackgroundGlow` uses the same default opacity (0.2) in CSS as in the prop.
+- Remove the `--duration-layer` theme variable, which generated no utility.
+
 ## 5.2.0
 
 ### Minor Changes

@@ -1,7 +1,7 @@
 import type { TagProps } from "react-renderable";
 import type { ElementType, MouseEventHandler, ReactNode } from "react";
 
-export type ButtonIconLabelSide = "start" | "end";
+export type ButtonIconLabelDirection = "left" | "right";
 
 export type ButtonOwnProps = {
   clickable?: boolean;
@@ -9,18 +9,17 @@ export type ButtonOwnProps = {
   active?: boolean;
   open?: boolean;
   onClick?: MouseEventHandler<HTMLElement>;
-  onClickBlur?: MouseEventHandler<HTMLElement>;
 };
 
 export type ButtonProps<T extends ElementType = "button"> = TagProps<T, ButtonOwnProps>;
 
 export type ButtonIconProps = {
-  icon: ReactNode;
+  children: ReactNode;
   className?: string;
 };
 
 export type ButtonLabelProps = {
-  label: string;
+  children: ReactNode;
   className?: string;
 };
 
@@ -29,6 +28,6 @@ export type ButtonIconLabelProps = {
   label: ReactNode;
   gap?: string;
   reverse?: boolean;
-  side?: ButtonIconLabelSide;
+  direction?: ButtonIconLabelDirection;
   className?: string;
 };

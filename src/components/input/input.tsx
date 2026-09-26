@@ -22,9 +22,9 @@ export const Input = <T extends ElementType = "div">({
   />
 );
 
-Input.Icon = ({ icon = <MdSearch className="text-md" />, className }: InputIconProps) => (
+Input.Icon = ({ children = <MdSearch className="text-md" />, className }: InputIconProps) => (
   <span data-margo-input-slot={true} className={cn(inputIconClassName, className)}>
-    {icon}
+    {children}
   </span>
 );
 

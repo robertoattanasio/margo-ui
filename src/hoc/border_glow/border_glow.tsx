@@ -1,14 +1,14 @@
 import { cloneElement } from "react";
 
 import { cn } from "../../utils/cn/cn.js";
-import { borderGlowBaseClassName, borderGlowPositionClassName } from "./style.js";
+import { borderGlowBaseClassName, borderGlowPlacementClassName } from "./style.js";
 
 import type { PointerEvent } from "react";
 import type { BorderGlowProps } from "./type.js";
 
 import "./border_glow.css";
 
-export const BorderGlow = ({ children, position = "all", tolerance = 1 }: BorderGlowProps) => {
+export const BorderGlow = ({ children, placement = "all", tolerance = 1 }: BorderGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
     if (event.pointerType !== "mouse") return children.props.onPointerMove?.(event);
 
@@ -18,14 +18,17 @@ export const BorderGlow = ({ children, position = "all", tolerance = 1 }: Border
     const size = Math.max(bounds.width, bounds.height) * Math.min(Math.max(tolerance, 0), 1);
 
     event.currentTarget.style.setProperty("--margo-border-glow-size", `${size}px`);
-    event.currentTarget.style.setProperty("--margo-border-glow-x", `${position === "right" ? bounds.width - x : x}px`);
-    event.currentTarget.style.setProperty("--margo-border-glow-y", `${position === "down" ? bounds.height - y : y}px`);
+    event.currentTarget.style.setProperty("--margo-border-glow-x", `${placement === "right" ? bounds.width - x : x}px`);
+    event.currentTarget.style.setProperty(
+      "--margo-border-glow-y",
+      `${placement === "bottom" ? bounds.height - y : y}px`,
+    );
 
     children.props.onPointerMove?.(event);
   };
 
   return cloneElement(children, {
-    className: cn(borderGlowBaseClassName, borderGlowPositionClassName[position], children.props.className),
+    className: cn(borderGlowBaseClassName, borderGlowPlacementClassName[placement], children.props.className),
     onPointerMove: handlePointerMove,
   });
 };

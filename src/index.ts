@@ -1,6 +1,7 @@
 export { Blockquote } from "./components/blockquote/blockquote.js";
 export { Button } from "./components/button/button.js";
 export { ButtonMicro } from "./components/button_micro/button_micro.js";
+export { Callout } from "./components/callout/callout.js";
 export { Card } from "./components/card/card.js";
 export { Checkbox } from "./components/checkbox/checkbox.js";
 export { Chip } from "./components/chip/chip.js";
@@ -17,6 +18,7 @@ export { Table } from "./components/table/table.js";
 export { Toggle } from "./components/toggle/toggle.js";
 export { Select } from "./components/select/select.js";
 export { Sheet } from "./components/sheet/sheet.js";
+export { TextArea } from "./components/text_area/text_area.js";
 export { Spinner } from "./components/spinner/spinner.js";
 export { Tooltip } from "./components/tooltip/tooltip.js";
 
@@ -39,12 +41,13 @@ export type { BlockquoteProps } from "./components/blockquote/type.js";
 
 export type {
   ButtonIconLabelProps,
-  ButtonIconLabelSide,
+  ButtonIconLabelDirection,
   ButtonIconProps,
   ButtonLabelProps,
   ButtonProps,
 } from "./components/button/type.js";
 export type { ButtonMicroProps } from "./components/button_micro/type.js";
+export type { CalloutProps, CalloutTitleProps } from "./components/callout/type.js";
 export type { CardProps } from "./components/card/type.js";
 export type { CheckboxProps } from "./components/checkbox/type.js";
 export type { ChipProps } from "./components/chip/type.js";
@@ -60,7 +63,13 @@ export type { LabelOwnProps, LabelProps } from "./components/label/type.js";
 export type { LayerProps } from "./components/layer/type.js";
 export type { InputIconProps, InputProps, InputTextProps } from "./components/input/type.js";
 export type { ItemIconProps, ItemLabelProps, ItemProps } from "./components/item/type.js";
-export type { PopoverAlign, PopoverAnchorProps, PopoverBodyProps, PopoverPosition, PopoverProps } from "./components/popover/type.js";
+export type {
+  PopoverAlign,
+  PopoverAnchorProps,
+  PopoverBodyProps,
+  PopoverPlacement,
+  PopoverProps,
+} from "./components/popover/type.js";
 export type { ProgressBarMode, ProgressBarProps } from "./components/progress_bar/type.js";
 export type {
   TableBodyProps,
@@ -71,13 +80,14 @@ export type {
   TableRowProps,
 } from "./components/table/type.js";
 export type { SelectOwnProps, SelectProps } from "./components/select/type.js";
-export type { SheetBodyProps, SheetFooterProps, SheetProps, SheetSide } from "./components/sheet/type.js";
+export type { SheetBodyProps, SheetFooterProps, SheetPlacement, SheetProps } from "./components/sheet/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
+export type { TextAreaOwnProps, TextAreaProps, TextAreaTextProps } from "./components/text_area/type.js";
 export type { ToggleProps } from "./components/toggle/type.js";
-export type { TooltipPosition, TooltipProps } from "./components/tooltip/type.js";
+export type { TooltipPlacement, TooltipProps } from "./components/tooltip/type.js";
 
 export type { BackgroundGlowProps } from "./hoc/background_glow/type.js";
-export type { BorderGlowPosition, BorderGlowProps } from "./hoc/border_glow/type.js";
+export type { BorderGlowPlacement, BorderGlowProps } from "./hoc/border_glow/type.js";
 export type { PointerHolderProps } from "./hoc/pointer_holder/type.js";
 export type { MaskGradientXProps } from "./hoc/mask_gradient_x/type.js";
 export type { MaskGradientYProps } from "./hoc/mask_gradient_y/type.js";

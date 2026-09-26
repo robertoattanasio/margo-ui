@@ -2,19 +2,19 @@
   transition: translate var(--margo-layer-duration) var(--margo-layer-easing);
 }
 
-.margo-sheet[data-margo-side="start"] {
+.margo-sheet[data-margo-placement="left"] {
   translate: -100% 0;
 }
 
-.margo-sheet[data-margo-side="end"] {
+.margo-sheet[data-margo-placement="right"] {
   translate: 100% 0;
 }
 
-.margo-sheet[data-margo-side="top"] {
+.margo-sheet[data-margo-placement="top"] {
   translate: 0 -100%;
 }
 
-.margo-sheet[data-margo-side="bottom"] {
+.margo-sheet[data-margo-placement="bottom"] {
   translate: 0 100%;
 }
 
@@ -23,19 +23,19 @@ dialog[open] .margo-sheet {
 }
 
 @starting-style {
-  dialog[open] .margo-sheet[data-margo-side="start"] {
+  dialog[open] .margo-sheet[data-margo-placement="left"] {
     translate: -100% 0;
   }
 
-  dialog[open] .margo-sheet[data-margo-side="end"] {
+  dialog[open] .margo-sheet[data-margo-placement="right"] {
     translate: 100% 0;
   }
 
-  dialog[open] .margo-sheet[data-margo-side="top"] {
+  dialog[open] .margo-sheet[data-margo-placement="top"] {
     translate: 0 -100%;
   }
 
-  dialog[open] .margo-sheet[data-margo-side="bottom"] {
+  dialog[open] .margo-sheet[data-margo-placement="bottom"] {
     translate: 0 100%;
   }
 }

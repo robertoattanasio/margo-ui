@@ -9,7 +9,7 @@ export type InputOwnProps = {
 export type InputProps<T extends ElementType = "div"> = TagProps<T, InputOwnProps>;
 
 export type InputIconProps = {
-  icon?: ReactNode;
+  children?: ReactNode;
   className?: string;
 };
 

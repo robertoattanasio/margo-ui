@@ -8,7 +8,7 @@ import {
   popoverBaseClassName,
   popoverBodyClassName,
   popoverOriginClassName,
-  popoverPositionClassName,
+  popoverPlacementClassName,
 } from "./style.js";
 
 import type { ElementType } from "react";
@@ -20,7 +20,7 @@ export const Popover = ({
   open = false,
   onClose,
   dismissible = true,
-  position = "down",
+  placement = "bottom",
   align = "center",
   className,
   children,
@@ -90,8 +90,8 @@ export const Popover = ({
       data-margo-open={open}
       className={cn(
         popoverBaseClassName,
-        popoverPositionClassName[position][align],
-        popoverOriginClassName[position],
+        popoverPlacementClassName[placement][align],
+        popoverOriginClassName[placement],
         className,
       )}
     >

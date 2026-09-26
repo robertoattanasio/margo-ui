@@ -9,7 +9,11 @@ const readKey = (target: EventTarget | null, attribute: string) => {
   return holder?.getAttribute(attribute) ?? null;
 };
 
-export const PointerHolder = ({ children, attribute = "data-margo-pointer-holder", disabled = false }: PointerHolderProps) => {
+export const PointerHolder = ({
+  children,
+  attribute = "data-margo-pointer-holder",
+  disabled = false,
+}: PointerHolderProps) => {
   const [keys, setKeys] = useState<string[]>([]);
 
   const hold = (target: EventTarget | null) => {

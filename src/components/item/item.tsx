@@ -20,20 +20,16 @@ export const Item = <T extends ElementType = "button">({
   clickable = true,
   disabled = false,
   active = false,
-  onClickBlur,
   onClick,
   className,
   children,
   ...rest
 }: ItemProps<T>) => {
+  const isNativeButton = (rest.as ?? "button") === "button";
+
   const handleClick = (event: MouseEvent<HTMLElement>) => {
-    if (disabled) return;
+    if (disabled) return event.preventDefault();
     onClick?.(event);
-    if (typeof onClickBlur === "function") {
-      const target = event.currentTarget;
-      onClickBlur(event);
-      setTimeout(() => target.blur(), 150);
-    }
   };
 
   return (
@@ -42,8 +38,9 @@ export const Item = <T extends ElementType = "button">({
         {...Tag.forward<T>(rest, "button")}
         data-margo-active={active}
         data-margo-disabled={disabled}
-        aria-disabled={disabled || undefined}
-        inert={disabled || !clickable || undefined}
+        disabled={(isNativeButton && disabled) || undefined}
+        aria-disabled={(!isNativeButton && disabled) || undefined}
+        inert={!clickable || undefined}
         onClick={handleClick}
         className={cn(
           itemBaseClassName,
@@ -58,12 +55,12 @@ export const Item = <T extends ElementType = "button">({
   );
 };
 
-Item.Icon = ({ icon = <MdChevronRight className="text-md translate-x-1" />, className }: ItemIconProps) => (
+Item.Icon = ({ children = <MdChevronRight className="text-md translate-x-1" />, className }: ItemIconProps) => (
   <span data-margo-item-slot={true} className={cn(itemIconClassName, className)}>
-    {icon}
+    {children}
   </span>
 );
 
-Item.Label = ({ label, className }: ItemLabelProps) => (
-  <span className={cn(itemLabelClassName, className)}>{label}</span>
+Item.Label = ({ children, className }: ItemLabelProps) => (
+  <span className={cn(itemLabelClassName, className)}>{children}</span>
 );

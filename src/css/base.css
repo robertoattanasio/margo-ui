@@ -5,10 +5,6 @@
     box-sizing: border-box;
   }
 
-  canvas {
-    width: 100% !important;
-  }
-
   li {
     list-style: none;
   }
@@ -20,16 +16,6 @@
 
   button {
     text-align: left;
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
-    -webkit-appearance: none;
-  }
-
-  ::-webkit-scrollbar-button {
-    display: none;
-    -webkit-appearance: none;
   }
 
   input::-webkit-outer-spin-button,

@@ -1,6 +1,6 @@
 import type { PointerEventHandler, ReactElement } from "react";
 
-export type BorderGlowPosition = "up" | "down" | "left" | "right" | "all";
+export type BorderGlowPlacement = "top" | "right" | "bottom" | "left" | "all";
 
 export type BorderGlowChildProps = {
   className?: string;
@@ -9,6 +9,6 @@ export type BorderGlowChildProps = {
 
 export type BorderGlowProps = {
   children: ReactElement<BorderGlowChildProps>;
-  position?: BorderGlowPosition;
+  placement?: BorderGlowPlacement;
   tolerance?: number;
 };

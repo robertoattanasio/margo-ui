@@ -7,7 +7,8 @@
   opacity: 0;
   border-radius: inherit;
   background: radial-gradient(
-    var(--margo-background-glow-size, 480px) circle at var(--margo-background-glow-x, 50%) var(--margo-background-glow-y, 50%),
+    var(--margo-background-glow-size, 480px) circle at var(--margo-background-glow-x, 50%)
+      var(--margo-background-glow-y, 50%),
     var(--color-primary),
     transparent 70%
   );
@@ -30,13 +31,10 @@
 
 @media (hover: hover) and (pointer: fine) {
   .margo-background-glow:hover::before {
-    opacity: var(--margo-background-glow-opacity, 0.1);
+    opacity: var(--margo-background-glow-opacity, 0.2);
   }
 
   .margo-background-glow:hover::after {
     opacity: var(--margo-background-glow-noise-opacity, 0.04);
   }
 }
-
-
-

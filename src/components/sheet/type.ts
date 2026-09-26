@@ -1,10 +1,10 @@
 import type { TagProps } from "react-renderable";
 import type { ElementType } from "react";
 
-export type SheetSide = "start" | "end" | "top" | "bottom";
+export type SheetPlacement = "top" | "right" | "bottom" | "left";
 
 export type SheetOwnProps = {
-  side?: SheetSide;
+  placement?: SheetPlacement;
 };
 
 export type SheetProps<T extends ElementType = "div"> = TagProps<T, SheetOwnProps>;
