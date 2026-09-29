@@ -18,6 +18,7 @@ export { Table } from "./components/table/table.js";
 export { Toggle } from "./components/toggle/toggle.js";
 export { Select } from "./components/select/select.js";
 export { Sheet } from "./components/sheet/sheet.js";
+export { Slider } from "./components/slider/slider.js";
 export { TextArea } from "./components/text_area/text_area.js";
 export { Spinner } from "./components/spinner/spinner.js";
 export { Tooltip } from "./components/tooltip/tooltip.js";
@@ -81,6 +82,7 @@ export type {
 } from "./components/table/type.js";
 export type { SelectOwnProps, SelectProps } from "./components/select/type.js";
 export type { SheetBodyProps, SheetFooterProps, SheetPlacement, SheetProps } from "./components/sheet/type.js";
+export type { SliderProps } from "./components/slider/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
 export type { TextAreaOwnProps, TextAreaProps, TextAreaTextProps } from "./components/text_area/type.js";
 export type { ToggleProps } from "./components/toggle/type.js";

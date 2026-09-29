@@ -1,0 +1,73 @@
+.margo-slider {
+  appearance: none;
+
+  --margo-slider-track: var(--margo-color-border);
+  --margo-slider-fill: var(--margo-color-primary);
+  --margo-slider-thumb: var(--margo-color-primary);
+  --margo-slider-thumb-border: var(--margo-color-primary-darken);
+  --margo-slider-thumb-size: 1rem;
+  --margo-slider-track-size: 0.375rem;
+}
+
+.margo-slider::-webkit-slider-runnable-track {
+  block-size: var(--margo-slider-track-size);
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--margo-slider-fill) var(--margo-slider-value, 0%),
+    var(--margo-slider-track) var(--margo-slider-value, 0%)
+  );
+}
+
+.margo-slider::-moz-range-track {
+  block-size: var(--margo-slider-track-size);
+  border-radius: 9999px;
+  background: var(--margo-slider-track);
+}
+
+.margo-slider::-moz-range-progress {
+  block-size: var(--margo-slider-track-size);
+  border-radius: 9999px;
+  background: var(--margo-slider-fill);
+}
+
+.margo-slider::-webkit-slider-thumb {
+  appearance: none;
+  inline-size: var(--margo-slider-thumb-size);
+  block-size: var(--margo-slider-thumb-size);
+  margin-block-start: calc((var(--margo-slider-track-size) - var(--margo-slider-thumb-size)) / 2);
+  border: var(--margo-border) solid var(--margo-slider-thumb-border);
+  border-radius: 9999px;
+  background-color: var(--margo-slider-thumb);
+  box-shadow: var(--margo-shadow-button);
+  transition: scale 120ms ease-out;
+}
+
+.margo-slider::-moz-range-thumb {
+  inline-size: var(--margo-slider-thumb-size);
+  block-size: var(--margo-slider-thumb-size);
+  box-sizing: border-box;
+  border: var(--margo-border) solid var(--margo-slider-thumb-border);
+  border-radius: 9999px;
+  background-color: var(--margo-slider-thumb);
+  box-shadow: var(--margo-shadow-button);
+  transition: scale 120ms ease-out;
+}
+
+.margo-slider:enabled:active::-webkit-slider-thumb {
+  scale: 0.92;
+}
+
+.margo-slider:enabled:active::-moz-range-thumb {
+  scale: 0.92;
+}
+
+.margo-slider:focus-visible::-webkit-slider-thumb {
+  outline: var(--margo-border) solid var(--margo-color-on-main);
+  outline-offset: 1px;
+}
+
+.margo-slider:focus-visible::-moz-range-thumb {
+  outline: var(--margo-border) solid var(--margo-color-on-main);
+  outline-offset: 1px;
+}
