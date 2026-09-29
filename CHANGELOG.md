@@ -1,5 +1,11 @@
 # margo-ui
 
+## 6.1.1
+
+### Patch Changes
+
+- Item height className refactor, now change from min-h to h-10
+
 ## 6.1.0
 
 ### Minor Changes

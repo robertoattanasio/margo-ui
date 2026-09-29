@@ -35,11 +35,11 @@
 
   --margo-border: 1.5px;
 
-  --margo-layer-duration: 750ms;
+  --margo-layer-duration: 450ms;
   --margo-layer-easing: cubic-bezier(0.32, 0.72, 0, 1);
   --margo-layer-z-index: 100;
 
-  --margo-popover-duration: 200ms;
+  --margo-popover-duration: 450ms;
   --margo-popover-easing: cubic-bezier(0.32, 0.72, 0, 1);
 
   --margo-max-z-index: 9999;
