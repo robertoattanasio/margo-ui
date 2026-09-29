@@ -1,5 +1,20 @@
 # margo-ui
 
+## 6.1.0
+
+### Minor Changes
+
+- c258c34: Add `Slider`, a range input with the kit's track, fill and thumb. It extends the native `<input type="range">` props; the filled part follows `value` (or `defaultValue`) and the input while dragging. Track, fill, thumb and sizes are overridable through `--margo-slider-track`, `--margo-slider-fill`, `--margo-slider-thumb`, `--margo-slider-thumb-border`, `--margo-slider-track-size` and `--margo-slider-thumb-size`.
+- c258c34: `Label` no longer has an indent and a bottom margin by default. Pass `spaced` to get them back where the label sits above an `Input`, a `Select` or a `TextArea`:
+
+  ```tsx
+  <Label spaced htmlFor="email">
+    email
+  </Label>
+  ```
+
+  Labels next to a `Checkbox` or a `Toggle`, or used as plain captions, no longer need `className="mb-0 pl-0"`: remove it.
+
 ## 6.0.0
 
 ### Major Changes

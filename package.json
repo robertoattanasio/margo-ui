@@ -1,6 +1,6 @@
 {
   "name": "margo-ui",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "margo-ui is a React component kit built on Tailwind CSS v4, with compound components and overridable CSS tokens.",
   "keywords": [
     "react",
