@@ -12,8 +12,6 @@ export { Label } from "./components/label/label.js";
 export { Layer } from "./components/layer/layer.js";
 export { Input } from "./components/input/input.js";
 export { Item } from "./components/item/item.js";
-export { IconMargo } from "./components/icon_margo/icon_margo.js";
-export { IconR } from "./components/icon_r/icon_r.js";
 export { Popover } from "./components/popover/popover.js";
 export { ProgressBar } from "./components/progress_bar/progress_bar.js";
 export { Table } from "./components/table/table.js";
@@ -64,8 +62,6 @@ export type {
 } from "./components/header/type.js";
 export type { LabelOwnProps, LabelProps } from "./components/label/type.js";
 export type { LayerProps } from "./components/layer/type.js";
-export type { IconMargoOwnProps, IconMargoProps } from "./components/icon_margo/type.js";
-export type { IconROwnProps, IconRProps } from "./components/icon_r/type.js";
 export type { InputIconProps, InputProps, InputTextProps } from "./components/input/type.js";
 export type { ItemIconProps, ItemLabelProps, ItemProps } from "./components/item/type.js";
 export type {
