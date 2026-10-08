@@ -21,12 +21,12 @@
     "url": "https://github.com/robertoattanasio/margo-ui/issues"
   },
   "type": "module",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
+    "dist",
     "src",
-    "margo.css",
-    "css.d.ts"
+    "margo.css"
   ],
   "workspaces": [
     "."
@@ -38,15 +38,20 @@
     "node": ">=18"
   },
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./css": "./margo.css",
     "./fonts/*": "./src/fonts/*"
   },
   "scripts": {
     "ts:check": "tsc --noEmit",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "build": "rm -rf dist && tsc",
     "changeset:add": "changeset",
     "changeset:bump": "changeset version",
-    "build:release": "npm run ts:check && npm pack && changeset publish && git push --follow-tags"
+    "build:release": "npm run ts:check && npm run build && npm pack && changeset publish && git push --follow-tags"
   },
   "dependencies": {
     "clsx": "^2.1.1",

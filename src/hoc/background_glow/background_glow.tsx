@@ -1,3 +1,5 @@
+"use client";
+
 import { cloneElement } from "react";
 
 import { cn } from "../../utils/cn/cn.js";
@@ -5,8 +7,6 @@ import { backgroundGlowBaseClassName } from "./style.js";
 
 import type { CSSProperties, PointerEvent } from "react";
 import type { BackgroundGlowProps } from "./type.js";
-
-import "./background_glow.css";
 
 export const BackgroundGlow = ({ children, tolerance = 1, opacity = 0.2, noise = 0.04 }: BackgroundGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {

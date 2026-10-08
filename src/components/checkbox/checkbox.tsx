@@ -1,11 +1,11 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 
 import { cn } from "../../utils/cn/cn.js";
 import { checkboxBaseClassName } from "./style.js";
 
 import type { CheckboxProps } from "./type.js";
-
-import "./checkbox.css";
 
 export const Checkbox = ({ indeterminate = false, className, ref, ...rest }: CheckboxProps) => {
   const checkboxRef = useRef<HTMLInputElement>(null);

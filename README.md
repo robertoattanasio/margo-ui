@@ -22,11 +22,13 @@ npm install margo-ui
 
 Order matters: `tailwindcss` first, the kit after, your own overrides last. The font imports are optional.
 
+## Server Components
+
+Every component, compound parts included, can be rendered from a Server Component.
+
 ## Built with
 
 React 19, Tailwind CSS v4, TypeScript. [react-renderable](https://www.npmjs.com/package/react-renderable) for polymorphic rendering, clsx and tailwind-merge for class resolution, react-icons for the few built-in glyphs. Nunito and Bebas Neue are bundled as self-hosted woff2.
-
-The package is published as TypeScript source: your bundler compiles it, exactly as it already has to scan it for Tailwind classes.
 
 ## Approach
 

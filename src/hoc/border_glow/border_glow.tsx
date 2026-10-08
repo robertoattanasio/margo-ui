@@ -1,3 +1,5 @@
+"use client";
+
 import { cloneElement } from "react";
 
 import { cn } from "../../utils/cn/cn.js";
@@ -5,8 +7,6 @@ import { borderGlowBaseClassName, borderGlowPlacementClassName } from "./style.j
 
 import type { PointerEvent } from "react";
 import type { BorderGlowProps } from "./type.js";
-
-import "./border_glow.css";
 
 export const BorderGlow = ({ children, placement = "all", tolerance = 1 }: BorderGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {

@@ -1,10 +1,10 @@
+"use client";
+
 import { cn } from "../../utils/cn/cn.js";
 import { sliderBaseClassName } from "./style.js";
 
 import type { ChangeEvent, CSSProperties } from "react";
 import type { SliderProps } from "./type.js";
-
-import "./slider.css";
 
 const sliderPercent = (value: number, min: number, max: number) =>
   max > min ? `${((Math.min(max, Math.max(min, value)) - min) / (max - min)) * 100}%` : "0%";

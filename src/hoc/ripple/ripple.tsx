@@ -1,3 +1,5 @@
+"use client";
+
 import { cloneElement } from "react";
 
 import { Guard } from "react-renderable";
@@ -7,8 +9,6 @@ import { useRipple } from "./use_ripple.js";
 
 import type { PointerEvent } from "react";
 import type { RippleProps } from "./type.js";
-
-import "./ripple.css";
 
 export const Ripple = ({ children, disabled = false, rippleClassName = "bg-primary-darken" }: RippleProps) => {
   const { endRipple, ripple, startRipple } = useRipple();

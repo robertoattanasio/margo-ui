@@ -5,8 +5,6 @@ import { cn } from "../../utils/cn/cn.js";
 import type { CSSProperties } from "react";
 import type { MaskGradientYProps } from "./type.js";
 
-import "./mask_gradient_y.css";
-
 export const MaskGradientY = ({ children, fade, fadeTop, fadeBottom, offsetTop, offsetBottom }: MaskGradientYProps) => {
   const style = {
     "--margo-mask-gradient-y-offset-top": offsetTop,

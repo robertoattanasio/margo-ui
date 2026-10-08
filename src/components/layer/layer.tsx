@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "../../utils/cn/cn.js";
@@ -6,8 +8,6 @@ import { layerBaseClassName } from "./style.js";
 
 import type { MouseEvent, SyntheticEvent } from "react";
 import type { LayerProps } from "./type.js";
-
-import "./layer.css";
 
 export const Layer = ({ open = false, onClose, dismissible = true, className, children, ...rest }: LayerProps) => {
   const layerRef = useRef<HTMLDialogElement>(null);

@@ -8,13 +8,14 @@ One folder per component under `components/`, per decorator under `hoc/`, named 
 
 ```
 components/button/
-  button.tsx    the component and its parts
-  style.ts      its classes
-  type.ts       its prop types
-  button.css    when Tailwind is not enough: pseudo-elements, keyframes, complex selectors
+  button.tsx         the component and its parts
+  button_client.tsx  the part that needs the browser, when the component also has parts
+  style.ts           its classes
+  type.ts            its prop types
+  button.css         when Tailwind is not enough: pseudo-elements, keyframes, complex selectors
 ```
 
-Components and their public types are exported from `src/index.ts`.
+Components and their public types are exported from `src/index.ts`. A component that uses hooks or handles events needs the browser. Without parts, its file starts with `"use client"`. With parts, that code moves to `<component>_client.tsx`, marked `"use client"` and never exported, and `<component>.tsx` renders it and holds the parts, so `Component.Part` also works from Server Components. A component's CSS file is imported from `margo.css`, never from the component.
 
 ## Naming
 

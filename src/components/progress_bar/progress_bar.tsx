@@ -6,8 +6,6 @@ import { progressBarDefaultFill, progressBarBaseClassName } from "./style.js";
 import type { CSSProperties, ElementType } from "react";
 import type { ProgressBarProps } from "./type.js";
 
-import "./progress_bar.css";
-
 export const ProgressBar = <T extends ElementType = "div">({
   animate = true,
   delay,

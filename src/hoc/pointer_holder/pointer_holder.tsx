@@ -1,3 +1,5 @@
+"use client";
+
 import { cloneElement, useState } from "react";
 
 import type { PointerEvent } from "react";

@@ -6,8 +6,6 @@ import { sheetBaseClassName, sheetBodyClassName, sheetFooterClassName, sheetPlac
 import type { ElementType } from "react";
 import type { SheetBodyProps, SheetFooterProps, SheetProps } from "./type.js";
 
-import "./sheet.css";
-
 export const Sheet = <T extends ElementType = "div">({
   placement = "right",
   className,

@@ -5,4 +5,18 @@
 @import "./src/css/utility.css";
 @import "./src/css/grid.css";
 
-@source "../**/*.{ts,tsx,js,mjs}";
+@import "./src/components/checkbox/checkbox.css";
+@import "./src/components/layer/layer.css";
+@import "./src/components/popover/popover.css";
+@import "./src/components/progress_bar/progress_bar.css";
+@import "./src/components/sheet/sheet.css";
+@import "./src/components/slider/slider.css";
+@import "./src/components/toggle/toggle.css";
+
+@import "./src/hoc/background_glow/background_glow.css";
+@import "./src/hoc/border_glow/border_glow.css";
+@import "./src/hoc/mask_gradient_x/mask_gradient_x.css";
+@import "./src/hoc/mask_gradient_y/mask_gradient_y.css";
+@import "./src/hoc/ripple/ripple.css";
+
+@source "./dist";
