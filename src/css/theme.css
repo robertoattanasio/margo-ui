@@ -30,6 +30,7 @@
   --shadow-button: var(--margo-shadow-button);
   --shadow-item: var(--margo-shadow-item);
   --shadow-chip: var(--margo-shadow-chip);
+  --shadow-callout: var(--margo-shadow-callout);
 
   /* Easings */
   --ease-layer: var(--margo-layer-easing);

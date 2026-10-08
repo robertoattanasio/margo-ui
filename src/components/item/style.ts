@@ -1,7 +1,7 @@
 export const itemBaseClassName = `group/item flex w-full cursor-pointer items-center gap-1 rounded-margo-base border-margo px-3 text-on-main
 text-sm focus-visible:border-primary focus-visible:outline select-none
 focus-visible:outline-offset-1 h-10 focus-visible:outline-on-main
-origin-center bg-low transition-transform duration-[160ms] ease-out active:scale-[0.98]`;
+origin-center bg-low transition-transform duration-[160ms] ease-out active:scale-[0.99]`;
 
 export const itemSurfaceClassName = `border-transparent text-medium hover:border-on-main hover:text-on-main
 hover:shadow-item focus-visible:shadow-item`;

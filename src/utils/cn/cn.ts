@@ -10,7 +10,7 @@ const isColumnLine = (value: string) => value === "full" || value === "content" 
 const isMargoRadiusStep = (value: string) => /^margo-(mc|xs|sm|base)$/.test(value);
 
 const MARGO_LEADING_STEPS = ["mc", "xs", "sm", "md", "lg", "base", "xl", "2xl"];
-const MARGO_SHADOWS = ["card", "button", "item", "chip"];
+const MARGO_SHADOWS = ["card", "button", "item", "chip", "callout"];
 
 const BORDER_SIDES = ["", "x", "y", "s", "e", "t", "r", "b", "l"] as const;
 const RADIUS_CORNERS = ["", "s", "e", "t", "r", "b", "l", "ss", "se", "ee", "es", "tl", "tr", "br", "bl"] as const;

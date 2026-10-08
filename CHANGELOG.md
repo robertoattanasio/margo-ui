@@ -1,5 +1,17 @@
 # margo-ui
 
+## 6.2.0
+
+### Minor Changes
+
+- Callout has a base shadow, `--margo-shadow-callout`, exposed to Tailwind as `shadow-callout`. It starts from the values of `--margo-shadow-item`.
+- 37a4593: Components no longer import their own CSS: every stylesheet is reached from `margo-ui/css`, and the JavaScript ships compiled to `dist`. `@source` now scans the package's own build instead of the folder above it, so Tailwind no longer reads the whole of `node_modules`. Projects that import `margo-ui/css` need no change.
+
+### Patch Changes
+
+- Item presses down less when clicked: `active:scale-[0.99]` instead of `active:scale-[0.98]`.
+- 37a4593: Mark the components that use hooks or handle events as client components with `"use client"`: Button, Checkbox, Item, Layer, Popover, Slider, Tooltip, BackgroundGlow, BorderGlow, PointerHolder and Ripple. Every component, compound parts such as `Button.Label` included, can now be rendered from a Server Component.
+
 ## 6.1.1
 
 ### Patch Changes
