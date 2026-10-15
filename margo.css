@@ -3,7 +3,6 @@
 @import "./src/css/theme.css";
 @import "./src/css/custom-variant.css";
 @import "./src/css/utility.css";
-@import "./src/css/grid.css";
 
 @import "./src/components/checkbox/checkbox.css";
 @import "./src/components/layer/layer.css";
