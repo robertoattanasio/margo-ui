@@ -1,0 +1,11 @@
+@layer components {
+  :where(.margo-blockquote) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 0.125rem;
+    padding-left: 1rem;
+    border-left: var(--margo-border) solid;
+    border-color: var(--margo-color-primary-darken);
+  }
+}

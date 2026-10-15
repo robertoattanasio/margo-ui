@@ -1,0 +1,14 @@
+@layer components {
+  :where(.margo-code) {
+    color: var(--margo-color-medium);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.75rem;
+  }
+
+  :where(.margo-code[data-margo-filled="true"]) {
+    padding: 0.125rem 0.25rem;
+    border-radius: var(--margo-radius-xs);
+    background-color: color-mix(in oklab, var(--margo-color-neutral) 60%, transparent);
+    color: color-mix(in oklab, var(--margo-color-on-main) 90%, transparent);
+  }
+}

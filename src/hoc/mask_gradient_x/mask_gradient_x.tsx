@@ -1,6 +1,6 @@
 import { cloneElement } from "react";
 
-import { cn } from "../../utils/cn/cn.js";
+import { join } from "../../utils/join/join.js";
 
 import type { CSSProperties } from "react";
 import type { MaskGradientXProps } from "./type.js";
@@ -14,7 +14,7 @@ export const MaskGradientX = ({ children, fade, fadeLeft, fadeRight, offsetLeft,
   } as CSSProperties;
 
   return cloneElement(children, {
-    className: cn("margo-mask-gradient-x", children.props.className),
+    className: join("margo-mask-gradient-x", children.props.className),
     style: { ...style, ...children.props.style },
   });
 };

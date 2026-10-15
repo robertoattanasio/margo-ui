@@ -1,0 +1,21 @@
+@layer components {
+  :where(.margo-label) {
+    display: block;
+    overflow: hidden;
+    color: var(--margo-color-medium);
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  :where(.margo-label[data-margo-spaced="true"]) {
+    margin-bottom: 0.25rem;
+    padding-left: 0.875rem;
+  }
+
+  :where(.margo-label[data-margo-disabled="true"]) {
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,59 @@
+@layer components {
+  :where(.margo-tooltip) {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  :where(.margo-tooltip-bubble) {
+    position: absolute;
+    z-index: 10;
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--margo-radius-xs);
+    background-color: var(--margo-color-on-main);
+    color: var(--margo-color-main);
+    font-size: 0.75rem;
+    text-transform: lowercase;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  :where(.margo-tooltip-bubble[data-margo-placement="top"]) {
+    bottom: 120%;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  :where(.margo-tooltip-bubble[data-margo-placement="bottom"]) {
+    top: 120%;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  :where(.margo-tooltip-bubble[data-margo-placement="left"]) {
+    top: 50%;
+    right: calc(100% + 0.5rem);
+    translate: 0 -50%;
+  }
+
+  :where(.margo-tooltip-bubble[data-margo-placement="right"]) {
+    top: 50%;
+    left: calc(100% + 0.5rem);
+    translate: 0 -50%;
+  }
+
+  :where(.margo-tooltip:focus-within > .margo-tooltip-bubble[data-margo-filled="true"]) {
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    :where(.margo-tooltip:hover > .margo-tooltip-bubble[data-margo-filled="true"]) {
+      opacity: 1;
+    }
+  }
+}

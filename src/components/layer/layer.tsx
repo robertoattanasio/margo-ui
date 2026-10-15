@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { cn } from "../../utils/cn/cn.js";
+import { join } from "../../utils/join/join.js";
 import { isMargoLayerSupported } from "../../utils/support/support.js";
-import { layerBaseClassName } from "./style.js";
 
 import type { MouseEvent, SyntheticEvent } from "react";
 import type { LayerProps } from "./type.js";
@@ -83,7 +82,7 @@ export const Layer = ({ open = false, onClose, dismissible = true, className, ch
       ref={layerRef}
       onCancel={handleCancel}
       onClick={handleClick}
-      className={cn(layerBaseClassName, className)}
+      className={join("margo-layer", className)}
     >
       {isMounted ? childrenRef.current : null}
     </dialog>

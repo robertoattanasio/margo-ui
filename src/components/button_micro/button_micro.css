@@ -1,0 +1,24 @@
+@layer components {
+  :where(.margo-button-micro) {
+    width: fit-content;
+    color: var(--margo-color-medium);
+    font-size: 0.75rem;
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+    outline-style: none;
+  }
+
+  :where(.margo-button-micro[data-margo-active="true"]) {
+    color: var(--margo-color-primary-darken);
+  }
+
+  @media (hover: hover) {
+    :where(.margo-button-micro:hover) {
+      color: var(--margo-color-on-main);
+    }
+  }
+
+  :where(.margo-button-micro:focus-visible) {
+    color: var(--margo-color-on-main);
+  }
+}

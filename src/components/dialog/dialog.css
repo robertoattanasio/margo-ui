@@ -1,0 +1,35 @@
+@layer components {
+  :where(.margo-dialog) {
+    display: flex;
+    overflow: hidden;
+    width: calc(100% - 2rem);
+    max-height: calc(100% - 2rem);
+    flex-direction: column;
+    margin: 1rem;
+    border: var(--margo-border) solid var(--margo-color-border);
+    border-radius: var(--margo-radius);
+    background-color: var(--margo-color-main);
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+    color: var(--margo-color-on-main);
+  }
+
+  :where(.margo-dialog-body) {
+    overflow-y: auto;
+    min-height: 0;
+    flex: 1;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  :where(.margo-dialog-footer) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    border-top: var(--margo-border) solid;
+    border-color: var(--margo-color-border);
+  }
+}

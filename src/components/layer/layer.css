@@ -1,48 +1,71 @@
-.margo-layer {
-  position: fixed;
-  inset: 0;
-  z-index: var(--margo-layer-z-index);
-  transition:
-    visibility var(--margo-layer-duration) var(--margo-layer-easing),
-    overlay var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete,
-    display var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete;
-}
-
-.margo-layer:not([open]) {
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.margo-layer > *:not([data-margo-travel]) {
-  opacity: 0;
-  transition: opacity var(--margo-layer-duration) var(--margo-layer-easing);
-}
-
-.margo-layer[open] > *:not([data-margo-travel]) {
-  opacity: 1;
-}
-
-@starting-style {
-  .margo-layer[open] > *:not([data-margo-travel]) {
-    opacity: 0;
+@layer components {
+  :where(.margo-layer) {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    overflow: clip;
+    width: 100dvw;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: var(--margo-color-on-main);
+    outline-style: none;
+    transition:
+      visibility 450ms cubic-bezier(0.32, 0.72, 0, 1),
+      overlay 450ms cubic-bezier(0.32, 0.72, 0, 1) allow-discrete,
+      display 450ms cubic-bezier(0.32, 0.72, 0, 1) allow-discrete;
   }
-}
 
-.margo-layer::backdrop {
-  opacity: 0;
-  transition:
-    opacity var(--margo-layer-duration) var(--margo-layer-easing),
-    overlay var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete,
-    display var(--margo-layer-duration) var(--margo-layer-easing) allow-discrete;
-}
+  :where(.margo-layer:not([open])) {
+    visibility: hidden;
+    pointer-events: none;
+  }
 
-.margo-layer[open]::backdrop {
-  opacity: 1;
-}
-
-@starting-style {
-  .margo-layer[open]::backdrop {
+  :where(.margo-layer > *:not([data-margo-travel])) {
     opacity: 0;
+    transition: opacity 450ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  :where(.margo-layer[open] > *:not([data-margo-travel])) {
+    opacity: 1;
+  }
+
+  @starting-style {
+    :where(.margo-layer[open] > *:not([data-margo-travel])) {
+      opacity: 0;
+    }
+  }
+
+  :where(.margo-layer)::backdrop {
+    background-color: rgb(0 0 0 / 0.5);
+    opacity: 0;
+    backdrop-filter: blur(4px);
+    transition:
+      opacity 450ms cubic-bezier(0.32, 0.72, 0, 1),
+      overlay 450ms cubic-bezier(0.32, 0.72, 0, 1) allow-discrete,
+      display 450ms cubic-bezier(0.32, 0.72, 0, 1) allow-discrete;
+  }
+
+  :where(.margo-layer[open])::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    :where(.margo-layer[open])::backdrop {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where(.margo-layer, .margo-layer > *:not([data-margo-travel])),
+    :where(.margo-layer)::backdrop {
+      transition-duration: 1ms;
+    }
   }
 }
 

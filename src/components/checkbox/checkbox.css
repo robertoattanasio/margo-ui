@@ -1,28 +1,69 @@
-.margo-checkbox {
-  appearance: none;
-}
+@layer components {
+  :where(.margo-checkbox) {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: none;
+    padding: 0.25rem;
+    border: var(--margo-border) solid var(--margo-color-border);
+    border-radius: var(--margo-radius-sm);
+    background-color: var(--margo-color-main);
+    color: var(--margo-color-on-main);
+    cursor: pointer;
+    transform-origin: center;
+    transition-property: transform, translate, scale, rotate;
+    transition-duration: 120ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    user-select: none;
+    appearance: none;
+  }
 
-.margo-checkbox::before {
-  content: "";
-  display: block;
-  block-size: 100%;
-  inline-size: 100%;
-  background-color: currentColor;
-  clip-path: polygon(14% 44%, 0 60%, 39% 100%, 100% 16%, 85% 0, 39% 69%);
-  scale: 0.6;
-  opacity: 0;
-  transition:
-    scale 160ms ease-out,
-    opacity 160ms ease-out;
-}
+  :where(.margo-checkbox)::before {
+    content: "";
+    display: block;
+    block-size: 100%;
+    inline-size: 100%;
+    background-color: currentColor;
+    clip-path: polygon(14% 44%, 0 60%, 39% 100%, 100% 16%, 85% 0, 39% 69%);
+    scale: 0.6;
+    opacity: 0;
+    transition:
+      scale 160ms ease-out,
+      opacity 160ms ease-out;
+  }
 
-.margo-checkbox:checked::before {
-  scale: 1;
-  opacity: 1;
-}
+  :where(.margo-checkbox:checked)::before {
+    scale: 1;
+    opacity: 1;
+  }
 
-.margo-checkbox:indeterminate::before {
-  clip-path: inset(44% 12% 44% 12% round 1px);
-  scale: 1;
-  opacity: 1;
+  :where(.margo-checkbox:indeterminate)::before {
+    clip-path: inset(44% 12% 44% 12% round 1px);
+    scale: 1;
+    opacity: 1;
+  }
+
+  :where(.margo-checkbox:checked, .margo-checkbox:indeterminate) {
+    border-color: var(--margo-color-primary);
+  }
+
+  :where(.margo-checkbox:focus-visible) {
+    border-color: var(--margo-color-primary);
+    outline: 1px solid var(--margo-color-on-main);
+    outline-offset: 1px;
+  }
+
+  :where(.margo-checkbox:active) {
+    scale: 0.92;
+  }
+
+  @media (hover: hover) {
+    :where(.margo-checkbox:enabled:hover) {
+      border-color: var(--margo-color-on-main);
+    }
+  }
+
+  :where(.margo-checkbox:disabled) {
+    opacity: 0.4;
+    cursor: auto;
+  }
 }

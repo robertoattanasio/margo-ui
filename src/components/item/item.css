@@ -1,0 +1,92 @@
+@layer components {
+  :where(.margo-item) {
+    display: flex;
+    width: 100%;
+    height: 2.5rem;
+    align-items: center;
+    gap: 0.25rem;
+    padding-inline: 0.75rem;
+    border: var(--margo-border) solid transparent;
+    border-radius: var(--margo-radius);
+    background-color: var(--margo-color-low);
+    color: var(--margo-color-medium);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transform-origin: center;
+    transition-property: transform, translate, scale, rotate;
+    transition-duration: 160ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    user-select: none;
+  }
+
+  :where(.margo-item[data-margo-active="true"]) {
+    border-color: var(--margo-color-primary);
+    color: var(--margo-color-on-main);
+  }
+
+  @media (hover: hover) {
+    :where(.margo-item:not([data-margo-active="true"]):hover) {
+      border-color: var(--margo-color-on-main);
+      box-shadow: 0 3px 3px -3px rgb(139 139 139 / 0.6);
+      color: var(--margo-color-on-main);
+    }
+
+    :where(.dark .margo-item:not([data-margo-active="true"]):hover) {
+      box-shadow: 0 2px 3px -2px rgb(0 0 0 / 0.5);
+    }
+  }
+
+  :where(.margo-item:focus-visible) {
+    border-color: var(--margo-color-primary);
+    outline: 1px solid var(--margo-color-on-main);
+    outline-offset: 1px;
+  }
+
+  :where(.margo-item:not([data-margo-active="true"]):focus-visible) {
+    box-shadow: 0 3px 3px -3px rgb(139 139 139 / 0.6);
+  }
+
+  :where(.dark .margo-item:not([data-margo-active="true"]):focus-visible) {
+    box-shadow: 0 2px 3px -2px rgb(0 0 0 / 0.5);
+  }
+
+  :where(.margo-item:active) {
+    scale: 0.99;
+  }
+
+  :where(.margo-item[data-margo-disabled="true"]) {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  :where(.margo-item-icon) {
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  :where(.margo-item-icon:first-child) {
+    margin-left: 0;
+  }
+
+  :where([data-margo-item-slot] + .margo-item-icon) {
+    margin-left: 0;
+  }
+
+  :where(.margo-item-chevron) {
+    font-size: 1.125rem;
+    translate: 0.25rem 0;
+  }
+
+  :where(.margo-item-label) {
+    overflow: hidden;
+    min-width: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

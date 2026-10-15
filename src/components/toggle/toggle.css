@@ -1,17 +1,58 @@
-.margo-toggle {
-  appearance: none;
-}
+@layer components {
+  :where(.margo-toggle) {
+    width: 2.25rem;
+    height: 1.25rem;
+    flex: none;
+    padding: 0.125rem;
+    border: var(--margo-border) solid var(--margo-color-border);
+    border-radius: calc(infinity * 1px);
+    background-color: var(--margo-color-main);
+    color: var(--margo-color-on-main);
+    cursor: pointer;
+    transform-origin: center;
+    transition-property: transform, translate, scale, rotate;
+    transition-duration: 160ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    user-select: none;
+    appearance: none;
+  }
 
-.margo-toggle::before {
-  content: "";
-  display: block;
-  block-size: 100%;
-  aspect-ratio: 1;
-  border-radius: 9999px;
-  background-color: currentColor;
-  transition: translate 160ms ease-out;
-}
+  :where(.margo-toggle)::before {
+    content: "";
+    display: block;
+    block-size: 100%;
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    background-color: currentColor;
+    transition: translate 160ms ease-out;
+  }
 
-.margo-toggle:checked::before {
-  translate: var(--margo-toggle-travel, 1rem) 0;
+  :where(.margo-toggle:checked)::before {
+    translate: var(--margo-toggle-travel, 1rem) 0;
+  }
+
+  :where(.margo-toggle:checked) {
+    border-color: var(--margo-color-primary);
+  }
+
+  :where(.margo-toggle:focus-visible) {
+    border-color: var(--margo-color-primary);
+    outline: 1px solid var(--margo-color-on-main);
+    outline-offset: 1px;
+  }
+
+  :where(.margo-toggle:active) {
+    scale: 0.92;
+  }
+
+  @media (hover: hover) {
+    :where(.margo-toggle:enabled:hover) {
+      border-color: var(--margo-color-on-main);
+    }
+  }
+
+  :where(.margo-toggle:disabled) {
+    opacity: 0.4;
+    cursor: auto;
+  }
 }

@@ -1,0 +1,139 @@
+@layer components {
+  :where(.margo-button) {
+    display: flex;
+    width: fit-content;
+    height: 2rem;
+    flex-shrink: 0;
+    align-items: center;
+    padding-inline: 0.5rem;
+    border: var(--margo-border) solid var(--margo-color-border);
+    border-radius: var(--margo-radius);
+    background-color: var(--margo-color-main);
+    color: var(--margo-color-on-main);
+    transform-origin: center;
+    transition-property: transform, translate, scale, rotate;
+    transition-duration: 160ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    user-select: none;
+  }
+
+  :where(.margo-button[data-margo-active="true"]) {
+    border-color: var(--margo-color-primary);
+    box-shadow: 0 2px 3px -1px rgb(220 220 220 / 0.6);
+  }
+
+  :where(.dark .margo-button[data-margo-active="true"]) {
+    box-shadow: 0 2px 6px -2px rgb(0 0 0 / 0.5);
+  }
+
+  @media (hover: hover) {
+    :where(.margo-button:hover) {
+      border-color: var(--margo-color-on-main);
+      color: var(--margo-color-on-main);
+    }
+  }
+
+  :where(.margo-button:focus-visible) {
+    border-color: var(--margo-color-primary);
+    outline: 1px solid var(--margo-color-on-main);
+    outline-offset: 1px;
+  }
+
+  :where(.margo-button:active) {
+    scale: 0.95;
+  }
+
+  :where(.margo-button[data-margo-disabled="true"]) {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  :where(.margo-button-icon) {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    width: 1rem;
+    min-width: 0;
+    height: 1rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+  }
+
+  :where(.margo-button-label) {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    padding-inline: 0.125rem;
+    font-size: 0.875rem;
+    text-transform: lowercase;
+    white-space: nowrap;
+    direction: ltr;
+    text-box: trim-start cap alphabetic;
+  }
+
+  :where(.margo-button-icon-label) {
+    display: grid;
+    align-items: center;
+    gap: 0;
+    grid-template-columns: 1rem 0fr;
+    white-space: nowrap;
+    transition-property: grid-template-columns, gap;
+    transition-duration: 180ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  :where(.margo-button-icon-label[data-margo-reverse="true"]) {
+    grid-template-columns: auto 0rem;
+  }
+
+  :where(.margo-button-icon-label[data-margo-direction="left"]) {
+    direction: rtl;
+  }
+
+  :where(.margo-button-slot) {
+    overflow: hidden;
+    min-width: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 180ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  :where(
+    .margo-button:focus-visible .margo-button-icon-label,
+    .margo-button[data-margo-open="true"] .margo-button-icon-label
+  ) {
+    gap: var(--margo-button-gap);
+    grid-template-columns: 1rem 1fr;
+  }
+
+  :where(
+    .margo-button:focus-visible .margo-button-icon-label[data-margo-reverse="true"],
+    .margo-button[data-margo-open="true"] .margo-button-icon-label[data-margo-reverse="true"]
+  ) {
+    grid-template-columns: auto 1rem;
+  }
+
+  :where(.margo-button:focus-visible .margo-button-slot, .margo-button[data-margo-open="true"] .margo-button-slot) {
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    :where(.margo-button:hover .margo-button-icon-label) {
+      gap: var(--margo-button-gap);
+      grid-template-columns: 1rem 1fr;
+    }
+
+    :where(.margo-button:hover .margo-button-icon-label[data-margo-reverse="true"]) {
+      grid-template-columns: auto 1rem;
+    }
+
+    :where(.margo-button:hover .margo-button-slot) {
+      opacity: 1;
+    }
+  }
+}

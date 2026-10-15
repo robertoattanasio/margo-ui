@@ -2,8 +2,7 @@
 
 import { cloneElement } from "react";
 
-import { cn } from "../../utils/cn/cn.js";
-import { backgroundGlowBaseClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { CSSProperties, PointerEvent } from "react";
 import type { BackgroundGlowProps } from "./type.js";
@@ -23,7 +22,7 @@ export const BackgroundGlow = ({ children, tolerance = 1, opacity = 0.2, noise =
   };
 
   return cloneElement(children, {
-    className: cn(backgroundGlowBaseClassName, children.props.className),
+    className: join("margo-background-glow", children.props.className),
     style: {
       ...children.props.style,
       "--margo-background-glow-opacity": opacity,

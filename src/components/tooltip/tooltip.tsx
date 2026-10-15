@@ -4,14 +4,7 @@ import { useRef } from "react";
 
 import { Tag } from "react-renderable";
 
-import { cn } from "../../utils/cn/cn.js";
-import {
-  tooltipAnchorClassName,
-  tooltipBubbleClassName,
-  tooltipPlacementClassName,
-  tooltipTransitionClassName,
-  tooltipVisibleClassName,
-} from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { ElementType, ReactNode } from "react";
 import type { TooltipProps } from "./type.js";
@@ -32,18 +25,15 @@ export const Tooltip = <T extends ElementType = "div">({
   if (isFilled) contentRef.current = content;
 
   return (
-    <Tag {...Tag.forward<T>(rest)} className={cn(tooltipAnchorClassName, className)}>
+    <Tag {...Tag.forward<T>(rest)} className={join("margo-tooltip", className)}>
       {children}
       <span
         id={id}
         role="tooltip"
         aria-label={isFilled ? undefined : label}
-        className={cn(
-          tooltipBubbleClassName,
-          tooltipTransitionClassName,
-          isFilled && tooltipVisibleClassName,
-          tooltipPlacementClassName[placement],
-        )}
+        data-margo-filled={isFilled}
+        data-margo-placement={placement}
+        className="margo-tooltip-bubble"
       >
         {contentRef.current}
       </span>

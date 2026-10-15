@@ -2,8 +2,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 import { List } from "react-renderable";
 
-import { cn } from "../../utils/cn/cn.js";
-import { selectActiveClassName, selectBaseClassName, selectControlClassName, selectIconClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { SelectProps } from "./type.js";
 
@@ -19,12 +18,8 @@ export const Select = <T,>({
   ...rest
 }: SelectProps<T>) => {
   return (
-    <div
-      data-margo-active={active}
-      inert={!clickable || undefined}
-      className={cn(selectBaseClassName, active && selectActiveClassName, className)}
-    >
-      <select {...rest} className={selectControlClassName}>
+    <div data-margo-active={active} inert={!clickable || undefined} className={join("margo-select", className)}>
+      <select {...rest} className="margo-select-control">
         {placeholder ? (
           <option value="" disabled={!canBeEmpty} hidden={!canBeEmpty}>
             {placeholder}
@@ -41,8 +36,8 @@ export const Select = <T,>({
         />
       </select>
 
-      <span className={selectIconClassName}>
-        <MdKeyboardArrowDown className="text-md translate-x-0.5" />
+      <span className="margo-select-icon">
+        <MdKeyboardArrowDown className="margo-select-arrow" />
       </span>
     </div>
   );

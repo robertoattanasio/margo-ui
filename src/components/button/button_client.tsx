@@ -3,13 +3,7 @@
 import { Tag } from "react-renderable";
 
 import { Ripple } from "../../hoc/ripple/ripple.js";
-import { cn } from "../../utils/cn/cn.js";
-import {
-  buttonActiveClassName,
-  buttonBaseClassName,
-  buttonDisabledClassName,
-  buttonSurfaceClassName,
-} from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { ElementType, MouseEvent } from "react";
 import type { ButtonProps } from "./type.js";
@@ -41,12 +35,7 @@ export const ButtonClient = <T extends ElementType = "button">({
         aria-disabled={(!isNativeButton && disabled) || undefined}
         inert={!clickable || undefined}
         onClick={handleClick}
-        className={cn(
-          buttonBaseClassName,
-          active ? buttonActiveClassName : buttonSurfaceClassName,
-          disabled && buttonDisabledClassName,
-          className,
-        )}
+        className={join("margo-button", className)}
       />
     </Ripple>
   );

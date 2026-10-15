@@ -1,0 +1,60 @@
+@layer components {
+  :where(.margo-text-area) {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    border: var(--margo-border) solid transparent;
+    border-radius: var(--margo-radius);
+    background-color: var(--margo-color-low);
+    color: var(--margo-color-medium);
+    font-size: 0.875rem;
+    cursor: text;
+  }
+
+  :where(.margo-text-area[data-margo-active="true"]) {
+    border-color: var(--margo-color-primary);
+  }
+
+  :where(.margo-text-area:focus-within) {
+    border-color: var(--margo-color-primary);
+    color: var(--margo-color-on-main);
+  }
+
+  @media (hover: hover) {
+    :where(.margo-text-area:hover) {
+      border-color: var(--margo-color-on-main);
+      box-shadow: 0 3px 3px -3px rgb(139 139 139 / 0.6);
+      color: var(--margo-color-on-main);
+    }
+
+    :where(.dark .margo-text-area:hover) {
+      box-shadow: 0 2px 3px -2px rgb(0 0 0 / 0.5);
+    }
+  }
+
+  :where(.margo-text-area:has(textarea:disabled)) {
+    opacity: 0.4;
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  :where(.margo-text-area-text) {
+    min-width: 0;
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background-color: transparent;
+    color: var(--margo-color-on-main);
+    text-align: left;
+    outline-style: none;
+    resize: none;
+  }
+
+  :where(.margo-text-area-text::placeholder) {
+    color: var(--margo-color-medium);
+  }
+
+  :where(.margo-text-area-text:disabled) {
+    cursor: auto;
+  }
+}

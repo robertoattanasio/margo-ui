@@ -2,11 +2,18 @@
 
 import { cloneElement } from "react";
 
-import { cn } from "../../utils/cn/cn.js";
-import { borderGlowBaseClassName, borderGlowPlacementClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { PointerEvent } from "react";
-import type { BorderGlowProps } from "./type.js";
+import type { BorderGlowPlacement, BorderGlowProps } from "./type.js";
+
+const borderGlowPlacementClassName: Record<BorderGlowPlacement, string> = {
+  top: "margo-border-glow--edge-top",
+  bottom: "margo-border-glow--edge-bottom",
+  left: "margo-border-glow--edge-left",
+  right: "margo-border-glow--edge-right",
+  all: "margo-border-glow--ring",
+};
 
 export const BorderGlow = ({ children, placement = "all", tolerance = 1 }: BorderGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
@@ -28,7 +35,7 @@ export const BorderGlow = ({ children, placement = "all", tolerance = 1 }: Borde
   };
 
   return cloneElement(children, {
-    className: cn(borderGlowBaseClassName, borderGlowPlacementClassName[placement], children.props.className),
+    className: join("margo-border-glow", borderGlowPlacementClassName[placement], children.props.className),
     onPointerMove: handlePointerMove,
   });
 };

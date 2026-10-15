@@ -1,0 +1,48 @@
+@layer components {
+  :where(.margo-table-wrapper) {
+    overflow-x: auto;
+    width: 100%;
+    border: var(--margo-border) solid var(--margo-color-border);
+    border-radius: var(--margo-radius);
+    overscroll-behavior-x: none;
+  }
+
+  :where(.margo-table) {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--margo-color-on-main);
+    font-size: 0.75rem;
+  }
+
+  :where(.margo-table-head) {
+    border-bottom: var(--margo-border) solid;
+    border-color: var(--margo-color-border);
+    background-color: var(--margo-color-low);
+    text-align: left;
+  }
+
+  :where(.margo-table-body) {
+    vertical-align: top;
+  }
+
+  :where(.margo-table-row) {
+    border-bottom: var(--margo-border) solid;
+    border-color: var(--margo-color-border);
+  }
+
+  :where(.margo-table-row:last-child) {
+    border-bottom-width: 0;
+  }
+
+  :where(.margo-table-head-cell) {
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  :where(.margo-table-cell) {
+    padding: 0.5rem 0.75rem;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+}

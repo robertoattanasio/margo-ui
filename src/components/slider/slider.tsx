@@ -1,7 +1,6 @@
 "use client";
 
-import { cn } from "../../utils/cn/cn.js";
-import { sliderBaseClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { ChangeEvent, CSSProperties } from "react";
 import type { SliderProps } from "./type.js";
@@ -38,7 +37,7 @@ export const Slider = ({
       defaultValue={defaultValue}
       onChange={handleChange}
       style={{ ...style, "--margo-slider-value": sliderPercent(current, Number(min), Number(max)) } as CSSProperties}
-      className={cn(sliderBaseClassName, className)}
+      className={join("margo-slider", className)}
     />
   );
 };

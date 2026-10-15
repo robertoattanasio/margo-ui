@@ -1,7 +1,6 @@
 import { Tag } from "react-renderable";
 
-import { cn } from "../../utils/cn/cn.js";
-import { textAreaActiveClassName, textAreaBaseClassName, textAreaTextClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { ElementType } from "react";
 import type { TextAreaProps, TextAreaTextProps } from "./type.js";
@@ -16,10 +15,10 @@ export const TextArea = <T extends ElementType = "div">({
     {...Tag.forward<T>(rest, "div")}
     data-margo-active={active}
     inert={!clickable || undefined}
-    className={cn(textAreaBaseClassName, active && textAreaActiveClassName, className)}
+    className={join("margo-text-area", className)}
   />
 );
 
 TextArea.Text = ({ rows = 4, className, ...rest }: TextAreaTextProps) => (
-  <textarea {...rest} rows={rows} className={cn(textAreaTextClassName, className)} />
+  <textarea {...rest} rows={rows} className={join("margo-text-area-text", className)} />
 );

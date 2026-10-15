@@ -2,8 +2,7 @@ import { MdSearch } from "react-icons/md";
 
 import { Tag } from "react-renderable";
 
-import { cn } from "../../utils/cn/cn.js";
-import { inputActiveClassName, inputBaseClassName, inputIconClassName, inputTextClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { ElementType } from "react";
 import type { InputIconProps, InputProps, InputTextProps } from "./type.js";
@@ -18,16 +17,16 @@ export const Input = <T extends ElementType = "div">({
     {...Tag.forward<T>(rest, "div")}
     data-margo-active={active}
     inert={!clickable || undefined}
-    className={cn(inputBaseClassName, active && inputActiveClassName, className)}
+    className={join("margo-input", className)}
   />
 );
 
-Input.Icon = ({ children = <MdSearch className="text-md" />, className }: InputIconProps) => (
-  <span data-margo-input-slot={true} className={cn(inputIconClassName, className)}>
+Input.Icon = ({ children = <MdSearch className="margo-input-search-icon" />, className }: InputIconProps) => (
+  <span data-margo-input-slot={true} className={join("margo-input-icon", className)}>
     {children}
   </span>
 );
 
 Input.Text = ({ className, ...rest }: InputTextProps) => (
-  <input {...rest} className={cn(inputTextClassName, className)} />
+  <input {...rest} className={join("margo-input-text", className)} />
 );

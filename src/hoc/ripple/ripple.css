@@ -1,5 +1,20 @@
-.margo-animation-ripple {
-  animation: margo-ripple 500ms ease-out forwards;
+@layer components {
+  :where(.margo-ripple-host) {
+    position: relative;
+    overflow: hidden;
+  }
+
+  :where(.margo-ripple) {
+    position: absolute;
+    z-index: 0;
+    border-radius: calc(infinity * 1px);
+    background-color: var(--margo-color-primary-darken);
+    pointer-events: none;
+  }
+
+  :where(.margo-animation-ripple) {
+    animation: margo-ripple 500ms ease-out forwards;
+  }
 }
 
 @keyframes margo-ripple {

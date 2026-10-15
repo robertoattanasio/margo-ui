@@ -1,8 +1,7 @@
-import { cn } from "../../utils/cn/cn.js";
-import { toggleBaseClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { ToggleProps } from "./type.js";
 
 export const Toggle = ({ className, ...rest }: ToggleProps) => (
-  <input {...rest} type="checkbox" role="switch" className={cn(toggleBaseClassName, className)} />
+  <input {...rest} type="checkbox" role="switch" className={join("margo-toggle", className)} />
 );

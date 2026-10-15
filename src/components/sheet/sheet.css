@@ -1,41 +1,100 @@
-.margo-sheet {
-  transition: translate var(--margo-layer-duration) var(--margo-layer-easing);
-}
+@layer components {
+  :where(.margo-sheet) {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border-color: var(--margo-color-border);
+    background-color: var(--margo-color-main);
+    color: var(--margo-color-on-main);
+    transition: translate 450ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
 
-.margo-sheet[data-margo-placement="left"] {
-  translate: -100% 0;
-}
+  :where(.margo-sheet[data-margo-placement="left"], .margo-sheet[data-margo-placement="right"]) {
+    width: 85%;
+    max-width: 26rem;
+    height: 100%;
+    align-self: stretch;
+  }
 
-.margo-sheet[data-margo-placement="right"] {
-  translate: 100% 0;
-}
+  :where(.margo-sheet[data-margo-placement="top"], .margo-sheet[data-margo-placement="bottom"]) {
+    width: 100%;
+    height: auto;
+    max-height: 40%;
+    justify-self: stretch;
+  }
 
-.margo-sheet[data-margo-placement="top"] {
-  translate: 0 -100%;
-}
-
-.margo-sheet[data-margo-placement="bottom"] {
-  translate: 0 100%;
-}
-
-dialog[open] .margo-sheet {
-  translate: 0 0;
-}
-
-@starting-style {
-  dialog[open] .margo-sheet[data-margo-placement="left"] {
+  :where(.margo-sheet[data-margo-placement="left"]) {
+    justify-self: start;
+    border-right-style: solid;
+    border-right-width: var(--margo-border);
     translate: -100% 0;
   }
 
-  dialog[open] .margo-sheet[data-margo-placement="right"] {
+  :where(.margo-sheet[data-margo-placement="right"]) {
+    justify-self: end;
+    border-left-style: solid;
+    border-left-width: var(--margo-border);
     translate: 100% 0;
   }
 
-  dialog[open] .margo-sheet[data-margo-placement="top"] {
+  :where(.margo-sheet[data-margo-placement="top"]) {
+    align-self: start;
+    border-bottom-style: solid;
+    border-bottom-width: var(--margo-border);
     translate: 0 -100%;
   }
 
-  dialog[open] .margo-sheet[data-margo-placement="bottom"] {
+  :where(.margo-sheet[data-margo-placement="bottom"]) {
+    align-self: end;
+    border-top-style: solid;
+    border-top-width: var(--margo-border);
     translate: 0 100%;
+  }
+
+  :where(dialog[open] .margo-sheet) {
+    translate: 0 0;
+  }
+
+  @starting-style {
+    :where(dialog[open] .margo-sheet[data-margo-placement="left"]) {
+      translate: -100% 0;
+    }
+
+    :where(dialog[open] .margo-sheet[data-margo-placement="right"]) {
+      translate: 100% 0;
+    }
+
+    :where(dialog[open] .margo-sheet[data-margo-placement="top"]) {
+      translate: 0 -100%;
+    }
+
+    :where(dialog[open] .margo-sheet[data-margo-placement="bottom"]) {
+      translate: 0 100%;
+    }
+  }
+
+  :where(.margo-sheet-body) {
+    overflow-y: auto;
+    min-height: 0;
+    flex: 1;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+    outline-color: var(--margo-color-on-main);
+  }
+
+  :where(.margo-sheet-footer) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    border-top: var(--margo-border) solid;
+    border-color: var(--margo-color-border);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where(.margo-sheet) {
+      transition-duration: 1ms;
+    }
   }
 }

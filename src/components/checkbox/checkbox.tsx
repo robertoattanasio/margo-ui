@@ -2,8 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-import { cn } from "../../utils/cn/cn.js";
-import { checkboxBaseClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { CheckboxProps } from "./type.js";
 
@@ -24,7 +23,7 @@ export const Checkbox = ({ indeterminate = false, className, ref, ...rest }: Che
         else if (ref) ref.current = node;
       }}
       type="checkbox"
-      className={cn(checkboxBaseClassName, className)}
+      className={join("margo-checkbox", className)}
     />
   );
 };

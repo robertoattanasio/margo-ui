@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { cn } from "../../utils/cn/cn.js";
-import { popoverBaseClassName, popoverOriginClassName, popoverPlacementClassName } from "./style.js";
+import { join } from "../../utils/join/join.js";
 
 import type { PopoverProps } from "./type.js";
 
@@ -79,12 +78,9 @@ export const PopoverClient = ({
       {...rest}
       ref={popoverRef}
       data-margo-open={open}
-      className={cn(
-        popoverBaseClassName,
-        popoverPlacementClassName[placement][align],
-        popoverOriginClassName[placement],
-        className,
-      )}
+      data-margo-placement={placement}
+      data-margo-align={align}
+      className={join("margo-popover", className)}
     >
       {isMounted ? childrenRef.current : null}
     </div>
