@@ -11,4 +11,5 @@ The kit is now styled in plain CSS and no longer needs Tailwind. Every component
 - **`cn` is removed.** Components no longer merge classes. Use your own `clsx` + `tailwind-merge` helper in your code.
 - **Theme switching is removed.** `useMargoTheme`, `margoTheme` and `MetaColorScheme` are gone. Put the `dark` class on an ancestor yourself; the colour tokens still follow it.
 - **Fonts are removed.** `margo-ui/fonts/*` is gone: components inherit the font of the page.
+- **The light theme has its own primary.** `--margo-color-primary` is `#9c0ea3` and `--margo-color-primary-darken` is `#7d0b82` in light; the dark theme keeps the greens. Redeclare them on `:root` to keep the old colour.
 - **`Ripple`'s `rippleClassName` has no default.** The circle is primary darken through CSS; pass a class to change it.

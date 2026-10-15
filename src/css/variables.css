@@ -14,8 +14,8 @@
   --margo-color-on-neutral: #000000;
   --margo-color-main: #f3f3f3;
   --margo-color-on-main: #151515;
-  --margo-color-primary: #57e550;
-  --margo-color-primary-darken: #45b93f;
+  --margo-color-primary: #9c0ea3;
+  --margo-color-primary-darken: #7d0b82;
   --margo-color-low: color-mix(in srgb, var(--margo-color-on-main) 3.5%, var(--margo-color-main));
   --margo-color-low-alpha: color-mix(in srgb, var(--margo-color-on-main) 3.5%, transparent);
   --margo-color-medium: #808080;
