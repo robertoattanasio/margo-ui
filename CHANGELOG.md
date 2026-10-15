@@ -1,5 +1,25 @@
 # margo-ui
 
+## 7.0.0
+
+### Major Changes
+
+- 584ab3f: The kit is now styled in plain CSS and no longer needs Tailwind. Every component has its own stylesheet, imported by `margo-ui/css`, with each rule wrapped in `:where()` inside the `components` cascade layer. Any class you pass wins over it, without merging.
+
+  - **Your classes win in every state.** A class without a variant now also applies on hover, focus and active: `bg-primary` on an active `Chip` stays primary on hover. Use a variant, like `hover:bg-primary`, to change a single state.
+  - **Component classes and state attributes.** Components render `margo-<name>` classes (`margo-chip`, `margo-button-label`) and their states as `data-margo-*` attributes (`data-margo-active`, `data-margo-disabled`, `data-margo-open`). Target them from your stylesheet to restyle a component everywhere.
+  - **Tokens are colours, border and radius only.** `--margo-color-*`, `--margo-border`, `--margo-radius` and the derived `--margo-radius-sm`, `--margo-radius-xs`, `--margo-radius-mc`. The font, size, weight, line-height, shadow, motion and z-index tokens are gone: those values live in each component's CSS.
+  - **No Tailwind integration.** The `@theme` mapping, the breakpoints, the `dark:` variant and the `margo-text-box-trim` utility are removed. Declare what your project needs in its own Tailwind theme.
+  - **`cn` is removed.** Components no longer merge classes. Use your own `clsx` + `tailwind-merge` helper in your code.
+  - **Theme switching is removed.** `useMargoTheme`, `margoTheme` and `MetaColorScheme` are gone. Put the `dark` class on an ancestor yourself; the colour tokens still follow it.
+  - **Fonts are removed.** `margo-ui/fonts/*` is gone: components inherit the font of the page.
+  - **The light theme has its own primary.** `--margo-color-primary` is `#9c0ea3` and `--margo-color-primary-darken` is `#7d0b82` in light; the dark theme keeps the greens. Redeclare them on `:root` to keep the old colour.
+  - **`Ripple`'s `rippleClassName` has no default.** The circle is primary darken through CSS; pass a class to change it.
+
+- 87d8e6e: The grid is no longer part of the kit. `margo-ui/css` no longer brings in the `margo-grid` utilities (`margo-grid`, `margo-grid-sub`, `margo-grid-sub-rows-*`, `margo-grid-flat`, `margo-container`, `margo-col-*`, `margo-row-*`, `margo-gutter-*`, `margo-padding-*`, `margo-pl-bleed` / `pr` / `px`), the `--margo-grid-*` tokens are gone, and `cn` no longer knows the grid classes.
+
+  The grid now lives in its own package, [outgrid](https://www.npmjs.com/package/outgrid), in plain CSS with an optional Tailwind entry. Placement uses Tailwind's own classes, so `margo-col-span-6` becomes `col-span-6` and `margo-grid-sub` becomes `grid grid-cols-subgrid`. Note that `col-end-*` is the line after the column: `margo-col-end-5` becomes `col-end-6`.
+
 ## 6.2.0
 
 ### Minor Changes

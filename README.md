@@ -1,6 +1,6 @@
 # margo-ui
 
-React UI kit built on Tailwind CSS v4 design tokens, themeable through plain CSS custom properties.
+React component kit in plain CSS, with compound components and styles your own classes always override.
 
 Package: [npmjs.com/package/margo-ui](https://www.npmjs.com/package/margo-ui)
 
@@ -14,13 +14,20 @@ npm install margo-ui
 
 ```css
 /* your entry stylesheet */
-@import "tailwindcss";
-@import "margo-ui/fonts/nunito.css";
-@import "margo-ui/fonts/bebas.css";
 @import "margo-ui/css";
 ```
 
-Order matters: `tailwindcss` first, the kit after, your own overrides last. The font imports are optional.
+The components don't import any CSS themselves, so this import is required. The kit doesn't need Tailwind, but works next to it: import it after `tailwindcss`.
+
+## Customization
+
+- **Your classes win.** Every rule in the kit is wrapped in `:where()` and sits in the `components` cascade layer, so any class you add overrides it: a plain one, a breakpoint, a hover or a dark variant, written in Tailwind or in your own CSS.
+- **Tokens for the whole kit.** Colours, the border width and the radius are `--margo-*` custom properties. Redeclare one after the import and every component follows.
+- **One component everywhere.** Every component has a `margo-<component>` class and exposes its states as `data-margo-*` attributes. A rule in your stylesheet restyles it across the app.
+
+## Light and dark
+
+The light values are declared on `:root`, the dark ones on `.dark`. Put the `dark` class on an ancestor, usually `html`. Deciding the theme is up to your app.
 
 ## Server Components
 
@@ -28,20 +35,17 @@ Every component, compound parts included, can be rendered from a Server Componen
 
 ## Built with
 
-React 19, Tailwind CSS v4, TypeScript. [react-renderable](https://www.npmjs.com/package/react-renderable) for polymorphic rendering, clsx and tailwind-merge for class resolution, react-icons for the few built-in glyphs. Nunito and Bebas Neue are bundled as self-hosted woff2.
+React 19, TypeScript and plain CSS. [react-renderable](https://www.npmjs.com/package/react-renderable) for polymorphic rendering, react-icons for the few built-in glyphs.
 
 ## Approach
 
-- **Tokens first.** Colours, type and elevation are `--margo-` custom properties, mirrored into Tailwind's theme: redeclaring them themes the kit. Per-instance overrides go through `className`, merged over the defaults.
-- **CSS first.** Effects live on pseudo-elements; JavaScript only writes coordinates. Most components hold no state.
-- **Polymorphic.** `as` chooses the rendered element, and the remaining props are typed against it.
+- **CSS first.** Styles and effects are plain CSS; JavaScript only writes state attributes and pointer coordinates. Most components hold no state.
 - **Composed, not configured.** Components expose parts to mount rather than booleans to set.
-- **The consumer owns the layout.** Components style themselves and never their position.
+- **Polymorphic where it helps.** Where a component accepts `as`, the remaining props are typed against the element it renders.
+- **The consumer owns the rest.** The kit sets no fonts, no type scale and no breakpoints, and components never decide their own position.
 
 Conventions for contributing: [RULE.md](./RULE.md).
 
 ## License
 
-Code: [MIT](./LICENSE).
-
-Fonts are redistributed under their own licenses — Nunito and Bebas Neue are both under the SIL Open Font License 1.1, bundled as `src/fonts/nunito/OFL.txt` and `src/fonts/bebas-neue/OFL.txt`.
+[MIT](./LICENSE).

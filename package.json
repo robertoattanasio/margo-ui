@@ -1,7 +1,7 @@
 {
   "name": "margo-ui",
-  "version": "6.2.0",
-  "description": "margo-ui is a React component kit in plain CSS, with compound components and styles your own classes always override.",
+  "version": "7.0.0",
+  "description": "Margo UI is a React component kit in plain CSS, with compound components and styles your own classes always override.",
   "keywords": [
     "react",
     "ui",
