@@ -19,11 +19,6 @@
 
   :where(.margo-button[data-margo-active="true"]) {
     border-color: var(--margo-color-primary);
-    box-shadow: 0 2px 3px -1px rgb(220 220 220 / 0.6);
-  }
-
-  :where(.dark .margo-button[data-margo-active="true"]) {
-    box-shadow: 0 2px 6px -2px rgb(0 0 0 / 0.5);
   }
 
   @media (hover: hover) {

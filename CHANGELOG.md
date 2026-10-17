@@ -1,5 +1,11 @@
 # margo-ui
 
+## 7.1.0
+
+### Minor Changes
+
+- Margo border changed, main color refactor, shadows refactor and cleanup
+
 ## 7.0.0
 
 ### Major Changes

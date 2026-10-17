@@ -18,7 +18,7 @@
     border: var(--margo-border) solid var(--margo-color-border);
     border-radius: var(--margo-radius);
     background-color: var(--margo-color-main);
-    box-shadow: 0 8px 6px -4px rgb(220 220 220 / 0.5);
+    box-shadow: 0 5px 5px -3px rgb(20 20 20 / 0.15);
     color: var(--margo-color-on-main);
     outline-style: none;
     opacity: 0;
