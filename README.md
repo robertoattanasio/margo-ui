@@ -1,51 +1,82 @@
 # margo-ui
 
-React component kit in plain CSS, with compound components and styles your own classes always override.
+Margo UI is a set of React components styled with plain CSS. Many components have smaller parts you can compose, and their state is exposed through `data-*` attributes. The component styles have zero specificity, so your own classes can override them directly.
 
 Package: [npmjs.com/package/margo-ui](https://www.npmjs.com/package/margo-ui)
 
 Documentation: [dev.robertoattanasio.com/margo-ui](https://dev.robertoattanasio.com/margo-ui)
 
-## Install
+## Installation
 
 ```sh
 npm install margo-ui
 ```
 
-```css
-/* your entry stylesheet */
-@import "margo-ui/css";
+React 19 and React DOM 19 are required as peer dependencies.
+
+Import the stylesheet once in your app's entry point or main stylesheet:
+
+```ts
+import "margo-ui/css";
 ```
 
-The components don't import any CSS themselves, so this import is required. The kit doesn't need Tailwind, but works next to it: import it after `tailwindcss`.
+Then import and compose the components you need:
 
-## Customization
+```tsx
+import { Button } from "margo-ui";
 
-- **Your classes win.** Every rule in the kit is wrapped in `:where()` and sits in the `components` cascade layer, so any class you add overrides it: a plain one, a breakpoint, a hover or a dark variant, written in Tailwind or in your own CSS.
-- **Tokens for the whole kit.** Colours, the border width and the radius are `--margo-*` custom properties. Redeclare one after the import and every component follows.
-- **One component everywhere.** Every component has a `margo-<component>` class and exposes its states as `data-margo-*` attributes. A rule in your stylesheet restyles it across the app.
+<Button onClick={save}>
+  <Button.Label>Save</Button.Label>
+</Button>;
+```
 
-## Light and dark
+## API
 
-The light values are declared on `:root`, the dark ones on `.dark`. Put the `dark` class on an ancestor, usually `html`. Deciding the theme is up to your app.
+Along with the components, Margo UI includes decorators that add effects to other elements and a theme defined with custom properties. Start with the guides to learn how the theme and styles work:
 
-## Server Components
+- [Theme](./docs/theme.md): colors, border and radius tokens, dark mode
+- [Styling](./docs/styling.md): layers, classes, states, base styles
 
-Every component, compound parts included, can be rendered from a Server Component.
+### Components
 
-## Built with
+- [Blockquote](./docs/components/blockquote.md)
+- [Button](./docs/components/button.md)
+- [ButtonMicro](./docs/components/button-micro.md)
+- [Callout](./docs/components/callout.md)
+- [Card](./docs/components/card.md)
+- [Checkbox](./docs/components/checkbox.md)
+- [Chip](./docs/components/chip.md)
+- [Code](./docs/components/code.md)
+- [Dialog](./docs/components/dialog.md)
+- [Header](./docs/components/header.md)
+- [Input](./docs/components/input.md)
+- [Item](./docs/components/item.md)
+- [Label](./docs/components/label.md)
+- [Layer](./docs/components/layer.md)
+- [Popover](./docs/components/popover.md)
+- [ProgressBar](./docs/components/progress-bar.md)
+- [Select](./docs/components/select.md)
+- [Sheet](./docs/components/sheet.md)
+- [Slider](./docs/components/slider.md)
+- [Spinner](./docs/components/spinner.md)
+- [Table](./docs/components/table.md)
+- [TextArea](./docs/components/text-area.md)
+- [Toggle](./docs/components/toggle.md)
+- [Tooltip](./docs/components/tooltip.md)
 
-React 19, TypeScript and plain CSS. [react-renderable](https://www.npmjs.com/package/react-renderable) for polymorphic rendering, react-icons for the few built-in glyphs.
+### Decorators
 
-## Approach
+- [BackgroundGlow](./docs/decorators/background-glow.md)
+- [BorderGlow](./docs/decorators/border-glow.md)
+- [MaskGradientX](./docs/decorators/mask-gradient-x.md)
+- [MaskGradientY](./docs/decorators/mask-gradient-y.md)
+- [PointerHolder](./docs/decorators/pointer-holder.md)
+- [Ripple](./docs/decorators/ripple.md)
 
-- **CSS first.** Styles and effects are plain CSS; JavaScript only writes state attributes and pointer coordinates. Most components hold no state.
-- **Composed, not configured.** Components expose parts to mount rather than booleans to set.
-- **Polymorphic where it helps.** Where a component accepts `as`, the remaining props are typed against the element it renders.
-- **The consumer owns the rest.** The kit sets no fonts, no type scale and no breakpoints, and components never decide their own position.
+## Scripts
 
-Conventions for contributing: [RULE.md](./RULE.md).
+For the available project scripts and what they do, see [docs/scripts.md](./docs/scripts.md).
 
 ## License
 
-[MIT](./LICENSE).
+[MIT](./LICENSE)
