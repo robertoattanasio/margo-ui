@@ -23,6 +23,7 @@ Button.IconLabel = ({
   className,
 }: ButtonIconLabelProps) => (
   <span
+    key={String(reverse)}
     style={{ "--margo-button-gap": gap } as CSSProperties}
     data-margo-reverse={reverse}
     data-margo-direction={direction}

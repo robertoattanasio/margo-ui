@@ -15,6 +15,7 @@ Checkbox(props: CheckboxProps): JSX.Element
 
 - Renders `<input type="checkbox">`: controlled or uncontrolled like the native one.
 - `indeterminate` has no HTML attribute: it's set on the element in an effect.
+- Presses down while pressed, unless disabled.
 - A client component.
 
 Class: `margo-checkbox`.

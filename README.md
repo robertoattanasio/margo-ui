@@ -4,7 +4,7 @@ Margo UI is a set of React components styled with plain CSS. Many components hav
 
 Package: [npmjs.com/package/margo-ui](https://www.npmjs.com/package/margo-ui)
 
-Documentation: [dev.robertoattanasio.com/margo-ui](https://dev.robertoattanasio.com/margo-ui)
+Documentation: [margo-ui.robertoattanasio.com](https://margo-ui.robertoattanasio.com)
 
 ## Installation
 
@@ -41,6 +41,7 @@ Along with the components, Margo UI includes decorators that add effects to othe
 
 - [Blockquote](./docs/components/blockquote.md)
 - [Button](./docs/components/button.md)
+- [ButtonGroup](./docs/components/button-group.md)
 - [ButtonMicro](./docs/components/button-micro.md)
 - [Callout](./docs/components/callout.md)
 - [Card](./docs/components/card.md)

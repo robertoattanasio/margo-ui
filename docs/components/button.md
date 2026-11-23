@@ -36,8 +36,8 @@ Button<T>(props: ButtonProps<T>): JSX.Element
 
 | Prop        | Type                | Default    |                                        |
 | ----------- | ------------------- | ---------- | -------------------------------------- |
-| `icon`      | `ReactNode`         | required   |                                        |
-| `label`     | `ReactNode`         | required   |                                        |
+| `icon`      | `ReactNode`         | required   | a `Button.Icon`                        |
+| `label`     | `ReactNode`         | required   | a `Button.Label`                       |
 | `gap`       | `string`            | `"0.5rem"` | space between them once revealed       |
 | `reverse`   | `boolean`           | `false`    | show the label, reveal the icon        |
 | `direction` | `"left" \| "right"` | `"right"`  | the side the hidden part slides out to |
@@ -48,6 +48,7 @@ Only the icon shows, and the label slides out on hover, on `:focus-visible`, or 
 ## Behavior
 
 - Wrapped in [Ripple](../decorators/ripple.md): the ripple plays on pointer up, unless `disabled` or not `clickable`.
+- Changing `reverse` on `Button.IconLabel` remounts it, without a transition.
 - Parts work from Server Components: only the root is a client component.
 - Types: `ButtonProps`, `ButtonIconProps`, `ButtonLabelProps`, `ButtonIconLabelProps`, `ButtonIconLabelDirection`.
 
@@ -61,7 +62,14 @@ Class: `margo-button`.
 </Button>
 
 <Button aria-label="Settings">
-  <Button.IconLabel icon={<MdSettings />} label="Settings" />
+  <Button.IconLabel
+    icon={
+      <Button.Icon>
+        <MdSettings />
+      </Button.Icon>
+    }
+    label={<Button.Label>Settings</Button.Label>}
+  />
 </Button>
 
 <Button as="a" href="/docs">

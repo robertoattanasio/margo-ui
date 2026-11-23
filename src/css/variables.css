@@ -12,14 +12,14 @@
 
   --margo-color-neutral: #ffffff;
   --margo-color-on-neutral: #000000;
-  --margo-color-main: #eceaea;
+  --margo-color-main: #e6e6e6;
   --margo-color-on-main: #222222;
   --margo-color-primary: #9c0ea3;
   --margo-color-primary-darken: #7d0b82;
-  --margo-color-low: color-mix(in srgb, var(--margo-color-on-main) 3.5%, var(--margo-color-main));
-  --margo-color-low-alpha: color-mix(in srgb, var(--margo-color-on-main) 3.5%, transparent);
-  --margo-color-medium: #787878;
-  --margo-color-border: #cecece;
+  --margo-color-low: color-mix(in srgb, var(--margo-color-on-main) 5.5%, var(--margo-color-main));
+  --margo-color-low-alpha: color-mix(in srgb, var(--margo-color-on-main) 5.5%, transparent);
+  --margo-color-medium: #707070;
+  --margo-color-border: #c9c9c9;
 }
 
 .dark {

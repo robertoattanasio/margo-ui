@@ -1,5 +1,6 @@
 export { Blockquote } from "./components/blockquote/blockquote.js";
 export { Button } from "./components/button/button.js";
+export { ButtonGroup } from "./components/button_group/button_group.js";
 export { ButtonMicro } from "./components/button_micro/button_micro.js";
 export { Callout } from "./components/callout/callout.js";
 export { Card } from "./components/card/card.js";
@@ -41,6 +42,11 @@ export type {
   ButtonLabelProps,
   ButtonProps,
 } from "./components/button/type.js";
+export type {
+  ButtonGroupItemOwnProps,
+  ButtonGroupItemProps,
+  ButtonGroupProps,
+} from "./components/button_group/type.js";
 export type { ButtonMicroProps } from "./components/button_micro/type.js";
 export type { CalloutProps, CalloutTitleProps } from "./components/callout/type.js";
 export type { CardProps } from "./components/card/type.js";

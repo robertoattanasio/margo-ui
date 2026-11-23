@@ -17,6 +17,8 @@ Every other prop is spread on the element: the props of `<input>`, without `type
 ## Behavior
 
 - Controlled or uncontrolled like the native checkbox.
+- When checked, the border and the knob turn `--margo-color-primary`.
+- Presses down while pressed, unless disabled.
 
 Class: `margo-toggle`.
 

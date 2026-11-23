@@ -8,14 +8,14 @@ Every color, the border width and the radius come from custom properties declare
 | ------------------------------ | --------------------------- | --------------------------- | --------------------------------- |
 | `--margo-color-neutral`        | `#ffffff`                   | `#000000`                   | the page background               |
 | `--margo-color-on-neutral`     | `#000000`                   | `#ffffff`                   | text on `neutral`                 |
-| `--margo-color-main`           | `#eceaea`                   | `#171717`                   | surfaces: cards, popovers, sheets |
+| `--margo-color-main`           | `#e6e6e6`                   | `#171717`                   | surfaces: cards, popovers, sheets |
 | `--margo-color-on-main`        | `#222222`                   | `#f3f3f3`                   | text on `main`                    |
 | `--margo-color-primary`        | `#9c0ea3`                   | `#57e550`                   | the accent                        |
 | `--margo-color-primary-darken` | `#7d0b82`                   | `#45b93f`                   | the accent, pressed or on borders |
-| `--margo-color-low`            | `on-main` 3.5% over `main`  | `on-main` 2.5% over `main`  | subtle fills                      |
-| `--margo-color-low-alpha`      | `on-main` 3.5%, transparent | `on-main` 2.5%, transparent | subtle fills over anything        |
-| `--margo-color-medium`         | `#787878`                   | `#999999`                   | secondary text                    |
-| `--margo-color-border`         | `#cecece`                   | `#2c2c2c`                   | borders                           |
+| `--margo-color-low`            | `on-main` 5.5% over `main`  | `on-main` 2.5% over `main`  | subtle fills                      |
+| `--margo-color-low-alpha`      | `on-main` 5.5%, transparent | `on-main` 2.5%, transparent | subtle fills over anything        |
+| `--margo-color-medium`         | `#707070`                   | `#999999`                   | secondary text                    |
+| `--margo-color-border`         | `#c9c9c9`                   | `#2c2c2c`                   | borders                           |
 | `--margo-border`               | `2px`                       |                             | border width                      |
 | `--margo-radius`               | `0.5rem`                    |                             | corner radius                     |
 | `--margo-radius-sm`            | `radius × 3/4`              |                             |                                   |

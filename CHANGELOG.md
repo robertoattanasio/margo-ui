@@ -1,5 +1,36 @@
 # margo-ui
 
+## 7.2.0
+
+### Minor Changes
+
+- Add `ButtonGroup`, a row of joined buttons with one of them the current one, for tabs, segmented controls and toolbars. Each `ButtonGroup.Item` takes the props of `Button` that make sense in a group (`as`, `active`, `disabled`, `clickable`, `onClick`) and its content as `children`:
+
+  ```tsx
+  <ButtonGroup aria-label="View">
+    <ButtonGroup.Item active={view === "preview"} onClick={() => setView("preview")}>
+      preview
+    </ButtonGroup.Item>
+    <ButtonGroup.Item active={view === "code"} onClick={() => setView("code")}>
+      code
+    </ButtonGroup.Item>
+  </ButtonGroup>
+  ```
+
+  - The root has `role="group"`; an active item on a `<button>` also sets `aria-pressed`.
+  - Every item is as wide as the widest one, and the group never grows wider than its container: items shrink and their content ends with an ellipsis.
+  - Borders overlap and follow `Button`: primary when active or focused, `on-main` on hover.
+  - States are exposed as `data-margo-active` and `data-margo-disabled`. Classes: `margo-button-group`, `margo-button-group-item`.
+  - Types: `ButtonGroupProps`, `ButtonGroupItemProps`, `ButtonGroupItemOwnProps`.
+
+- The light theme has more contrast. `--margo-color-main` is `#e6e6e6` (was `#eceaea`), `--margo-color-medium` is `#707070` (was `#787878`), `--margo-color-border` is `#c9c9c9` (was `#cecece`), and `--margo-color-low` and `--margo-color-low-alpha` mix 5.5% of `on-main` instead of 3.5%. The dark theme is unchanged. Redeclare them on `:root` to keep the old values.
+
+### Patch Changes
+
+- `Button.IconLabel` remounts when `reverse` changes: the icon and the label swap at once, without a transition.
+- A disabled `Checkbox` or `Toggle` no longer scales down when pressed.
+- A checked `Toggle` paints its knob `--margo-color-primary`, like its border.
+
 ## 7.1.0
 
 ### Minor Changes

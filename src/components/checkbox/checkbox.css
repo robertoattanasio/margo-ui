@@ -52,7 +52,7 @@
     outline-offset: 1px;
   }
 
-  :where(.margo-checkbox:active) {
+  :where(.margo-checkbox:enabled:active) {
     scale: 0.92;
   }
 

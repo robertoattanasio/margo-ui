@@ -1,0 +1,78 @@
+@layer components {
+  :where(.margo-button-group) {
+    display: inline-grid;
+    max-width: 100%;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
+
+  :where(.margo-button-group-item) {
+    display: flex;
+    min-width: 2rem;
+    height: 1.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding-inline: 0.75rem;
+    border: var(--margo-border) solid var(--margo-color-border);
+    background-color: var(--margo-color-main);
+    color: var(--margo-color-medium);
+    font-size: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  :where(.margo-button-group-item:first-child) {
+    border-start-start-radius: var(--margo-radius);
+    border-end-start-radius: var(--margo-radius);
+  }
+
+  :where(.margo-button-group-item:last-child) {
+    border-start-end-radius: var(--margo-radius);
+    border-end-end-radius: var(--margo-radius);
+  }
+
+  :where(.margo-button-group-item + .margo-button-group-item) {
+    margin-inline-start: calc(var(--margo-border) * -1);
+  }
+
+  :where(.margo-button-group-item[data-margo-active="true"]) {
+    z-index: 1;
+    border-color: var(--margo-color-primary);
+    color: var(--margo-color-on-main);
+  }
+
+  @media (hover: hover) {
+    :where(.margo-button-group-item:hover) {
+      z-index: 2;
+      border-color: var(--margo-color-on-main);
+      color: var(--margo-color-on-main);
+    }
+  }
+
+  :where(.margo-button-group-item:focus-visible) {
+    z-index: 3;
+    border-color: var(--margo-color-primary);
+    outline: 1px solid var(--margo-color-on-main);
+    outline-offset: 1px;
+  }
+
+  :where(.margo-button-group-item) > * {
+    overflow-x: clip;
+    min-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition-property: transform, translate, scale, rotate;
+    transition-duration: 160ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  :where(.margo-button-group-item:active) > * {
+    scale: 0.95;
+  }
+
+  :where(.margo-button-group-item[data-margo-disabled="true"]) {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}

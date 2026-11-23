@@ -6,12 +6,12 @@ A form label.
 Label<T>(props: LabelProps<T>): JSX.Element
 ```
 
-| Prop       | Type              | Default   |                                    |
-| ---------- | ----------------- | --------- | ---------------------------------- |
-| `as`       | `ElementType`     | `"label"` | the element or component to render |
-| `disabled` | `boolean`         | `false`   | dims it                            |
-| `spaced`   | `boolean`         | `false`   | adds space between its children    |
-| `...rest`  | the props of `as` |           | spread on the element              |
+| Prop       | Type              | Default   |                                                     |
+| ---------- | ----------------- | --------- | --------------------------------------------------- |
+| `as`       | `ElementType`     | `"label"` | the element or component to render                  |
+| `disabled` | `boolean`         | `false`   | dims it                                             |
+| `spaced`   | `boolean`         | `false`   | an indent and a bottom margin, to sit above a field |
+| `...rest`  | the props of `as` |           | spread on the element                               |
 
 ## Data attributes
 
@@ -25,8 +25,10 @@ Class: `margo-label`.
 ## Example
 
 ```tsx
-<Label spaced>
-  <Toggle checked={on} onChange={(event) => setOn(event.target.checked)} />
-  Notifications
+<Label spaced htmlFor="email">
+  email
 </Label>
+<Input>
+  <Input.Text id="email" />
+</Input>
 ```

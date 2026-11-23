@@ -3,6 +3,7 @@
 
 @import "./src/components/blockquote/blockquote.css";
 @import "./src/components/button/button.css";
+@import "./src/components/button_group/button_group.css";
 @import "./src/components/button_micro/button_micro.css";
 @import "./src/components/callout/callout.css";
 @import "./src/components/card/card.css";

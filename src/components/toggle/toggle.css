@@ -33,6 +33,7 @@
 
   :where(.margo-toggle:checked) {
     border-color: var(--margo-color-primary);
+    color: var(--margo-color-primary);
   }
 
   :where(.margo-toggle:focus-visible) {
@@ -41,7 +42,7 @@
     outline-offset: 1px;
   }
 
-  :where(.margo-toggle:active) {
+  :where(.margo-toggle:enabled:active) {
     scale: 0.92;
   }
 
