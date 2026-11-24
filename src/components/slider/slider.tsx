@@ -1,12 +1,10 @@
 "use client";
 
 import { join } from "../../utils/join/join.js";
+import { sliderPercent } from "./slider.helper.js";
 
 import type { ChangeEvent, CSSProperties } from "react";
 import type { SliderProps } from "./type.js";
-
-const sliderPercent = (value: number, min: number, max: number) =>
-  max > min ? `${((Math.min(max, Math.max(min, value)) - min) / (max - min)) * 100}%` : "0%";
 
 export const Slider = ({
   min = 0,

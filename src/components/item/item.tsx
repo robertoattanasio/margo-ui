@@ -1,7 +1,7 @@
 import { MdChevronRight } from "react-icons/md";
 
 import { join } from "../../utils/join/join.js";
-import { ItemClient } from "./item_client.js";
+import { ItemClient } from "./item-client.js";
 
 import type { ElementType } from "react";
 import type { ItemIconProps, ItemLabelProps, ItemProps } from "./type.js";

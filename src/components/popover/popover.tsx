@@ -1,7 +1,7 @@
 import { Tag } from "react-renderable";
 
 import { join } from "../../utils/join/join.js";
-import { PopoverClient } from "./popover_client.js";
+import { PopoverClient } from "./popover-client.js";
 
 import type { ElementType } from "react";
 import type { PopoverAnchorProps, PopoverBodyProps, PopoverProps } from "./type.js";

@@ -1,5 +1,5 @@
 import { join } from "../../utils/join/join.js";
-import { ButtonClient } from "./button_client.js";
+import { ButtonClient } from "./button-client.js";
 
 import type { CSSProperties, ElementType } from "react";
 import type { ButtonIconLabelProps, ButtonIconProps, ButtonLabelProps, ButtonProps } from "./type.js";

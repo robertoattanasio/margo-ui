@@ -1,12 +1,10 @@
 import { Tag } from "react-renderable";
 
 import { join } from "../../utils/join/join.js";
+import { progressBarDefaultFill } from "./progress-bar.constant.js";
 
 import type { CSSProperties, ElementType } from "react";
 import type { ProgressBarProps } from "./type.js";
-
-const progressBarDefaultFill =
-  "linear-gradient(to right, var(--margo-color-primary-darken), var(--margo-color-primary))";
 
 export const ProgressBar = <T extends ElementType = "div">({
   animate = true,

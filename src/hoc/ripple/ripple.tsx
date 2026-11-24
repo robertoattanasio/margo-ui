@@ -5,7 +5,7 @@ import { cloneElement } from "react";
 import { Guard } from "react-renderable";
 
 import { join } from "../../utils/join/join.js";
-import { useRipple } from "./use_ripple.js";
+import { useRipple } from "./use-ripple.js";
 
 import type { PointerEvent } from "react";
 import type { RippleProps } from "./type.js";

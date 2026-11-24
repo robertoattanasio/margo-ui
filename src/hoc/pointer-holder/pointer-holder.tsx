@@ -2,14 +2,10 @@
 
 import { cloneElement, useState } from "react";
 
+import { readKey } from "./pointer-holder.helper.js";
+
 import type { PointerEvent } from "react";
 import type { PointerHolderProps } from "./type.js";
-
-const readKey = (target: EventTarget | null, attribute: string) => {
-  if (!(target instanceof Element)) return null;
-  const holder = target.closest(`[${attribute}]`);
-  return holder?.getAttribute(attribute) ?? null;
-};
 
 export const PointerHolder = ({
   children,

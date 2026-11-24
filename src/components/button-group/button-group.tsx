@@ -2,7 +2,7 @@ import type { ElementType } from "react";
 import { Tag } from "react-renderable";
 
 import { join } from "../../utils/join/join.js";
-import { ButtonGroupItemClient } from "./button_group_client.js";
+import { ButtonGroupItemClient } from "./button-group-client.js";
 import type { ButtonGroupItemProps, ButtonGroupProps } from "./type.js";
 
 export const ButtonGroup = <T extends ElementType = "div">({ className, children, ...rest }: ButtonGroupProps<T>) => (

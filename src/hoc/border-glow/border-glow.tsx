@@ -3,17 +3,10 @@
 import { cloneElement } from "react";
 
 import { join } from "../../utils/join/join.js";
+import { borderGlowPlacementClassName } from "./border-glow.constant.js";
 
 import type { PointerEvent } from "react";
-import type { BorderGlowPlacement, BorderGlowProps } from "./type.js";
-
-const borderGlowPlacementClassName: Record<BorderGlowPlacement, string> = {
-  top: "margo-border-glow--edge-top",
-  bottom: "margo-border-glow--edge-bottom",
-  left: "margo-border-glow--edge-left",
-  right: "margo-border-glow--edge-right",
-  all: "margo-border-glow--ring",
-};
+import type { BorderGlowProps } from "./type.js";
 
 export const BorderGlow = ({ children, placement = "all", tolerance = 1 }: BorderGlowProps) => {
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {

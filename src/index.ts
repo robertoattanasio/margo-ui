@@ -1,7 +1,7 @@
 export { Blockquote } from "./components/blockquote/blockquote.js";
 export { Button } from "./components/button/button.js";
-export { ButtonGroup } from "./components/button_group/button_group.js";
-export { ButtonMicro } from "./components/button_micro/button_micro.js";
+export { ButtonGroup } from "./components/button-group/button-group.js";
+export { ButtonMicro } from "./components/button-micro/button-micro.js";
 export { Callout } from "./components/callout/callout.js";
 export { Card } from "./components/card/card.js";
 export { Checkbox } from "./components/checkbox/checkbox.js";
@@ -14,21 +14,21 @@ export { Layer } from "./components/layer/layer.js";
 export { Input } from "./components/input/input.js";
 export { Item } from "./components/item/item.js";
 export { Popover } from "./components/popover/popover.js";
-export { ProgressBar } from "./components/progress_bar/progress_bar.js";
+export { ProgressBar } from "./components/progress-bar/progress-bar.js";
 export { Table } from "./components/table/table.js";
 export { Toggle } from "./components/toggle/toggle.js";
 export { Select } from "./components/select/select.js";
 export { Sheet } from "./components/sheet/sheet.js";
 export { Slider } from "./components/slider/slider.js";
-export { TextArea } from "./components/text_area/text_area.js";
+export { TextArea } from "./components/text-area/text-area.js";
 export { Spinner } from "./components/spinner/spinner.js";
 export { Tooltip } from "./components/tooltip/tooltip.js";
 
-export { BackgroundGlow } from "./hoc/background_glow/background_glow.js";
-export { BorderGlow } from "./hoc/border_glow/border_glow.js";
-export { PointerHolder } from "./hoc/pointer_holder/pointer_holder.js";
-export { MaskGradientX } from "./hoc/mask_gradient_x/mask_gradient_x.js";
-export { MaskGradientY } from "./hoc/mask_gradient_y/mask_gradient_y.js";
+export { BackgroundGlow } from "./hoc/background-glow/background-glow.js";
+export { BorderGlow } from "./hoc/border-glow/border-glow.js";
+export { PointerHolder } from "./hoc/pointer-holder/pointer-holder.js";
+export { MaskGradientX } from "./hoc/mask-gradient-x/mask-gradient-x.js";
+export { MaskGradientY } from "./hoc/mask-gradient-y/mask-gradient-y.js";
 export { Ripple } from "./hoc/ripple/ripple.js";
 
 export { isMargoLayerSupported } from "./utils/support/support.js";
@@ -46,8 +46,8 @@ export type {
   ButtonGroupItemOwnProps,
   ButtonGroupItemProps,
   ButtonGroupProps,
-} from "./components/button_group/type.js";
-export type { ButtonMicroProps } from "./components/button_micro/type.js";
+} from "./components/button-group/type.js";
+export type { ButtonMicroProps } from "./components/button-micro/type.js";
 export type { CalloutProps, CalloutTitleProps } from "./components/callout/type.js";
 export type { CardProps } from "./components/card/type.js";
 export type { CheckboxProps } from "./components/checkbox/type.js";
@@ -71,7 +71,7 @@ export type {
   PopoverPlacement,
   PopoverProps,
 } from "./components/popover/type.js";
-export type { ProgressBarMode, ProgressBarProps } from "./components/progress_bar/type.js";
+export type { ProgressBarMode, ProgressBarProps } from "./components/progress-bar/type.js";
 export type {
   TableBodyProps,
   TableCellProps,
@@ -84,13 +84,13 @@ export type { SelectOwnProps, SelectProps } from "./components/select/type.js";
 export type { SheetBodyProps, SheetFooterProps, SheetPlacement, SheetProps } from "./components/sheet/type.js";
 export type { SliderProps } from "./components/slider/type.js";
 export type { SpinnerProps } from "./components/spinner/type.js";
-export type { TextAreaOwnProps, TextAreaProps, TextAreaTextProps } from "./components/text_area/type.js";
+export type { TextAreaOwnProps, TextAreaProps, TextAreaTextProps } from "./components/text-area/type.js";
 export type { ToggleProps } from "./components/toggle/type.js";
 export type { TooltipPlacement, TooltipProps } from "./components/tooltip/type.js";
 
-export type { BackgroundGlowProps } from "./hoc/background_glow/type.js";
-export type { BorderGlowPlacement, BorderGlowProps } from "./hoc/border_glow/type.js";
-export type { PointerHolderProps } from "./hoc/pointer_holder/type.js";
-export type { MaskGradientXProps } from "./hoc/mask_gradient_x/type.js";
-export type { MaskGradientYProps } from "./hoc/mask_gradient_y/type.js";
+export type { BackgroundGlowProps } from "./hoc/background-glow/type.js";
+export type { BorderGlowPlacement, BorderGlowProps } from "./hoc/border-glow/type.js";
+export type { PointerHolderProps } from "./hoc/pointer-holder/type.js";
+export type { MaskGradientXProps } from "./hoc/mask-gradient-x/type.js";
+export type { MaskGradientYProps } from "./hoc/mask-gradient-y/type.js";
 export type { RippleProps } from "./hoc/ripple/type.js";
